@@ -1,6 +1,6 @@
 # Become a Mountain Guide App
 
-<img src="https://www.bmg.org.uk/wp-content/themes/bmg/images/logo.png">
+<img src="https://www.facewest.co.uk/mm5/graphics/catimages/Mountain-Guides.jpg">
 
 An app to track your progress to becoming a British Mountain Guide Trainee. 
 
