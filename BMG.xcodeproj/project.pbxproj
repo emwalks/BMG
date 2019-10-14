@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D136F8923549E08003D117E /* Style Notes in Resources */ = {isa = PBXBuildFile; fileRef = 8D136F8823549E08003D117E /* Style Notes */; };
 		985413F82350B1C2003768CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F72350B1C2003768CE /* AppDelegate.swift */; };
 		985413FA2350B1C2003768CE /* LogRockClimbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F92350B1C2003768CE /* LogRockClimbViewController.swift */; };
 		985413FD2350B1C2003768CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985413FB2350B1C2003768CE /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D136F8823549E08003D117E /* Style Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Style Notes"; sourceTree = "<group>"; };
 		985413F42350B1C2003768CE /* BMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		985413F72350B1C2003768CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		985413F92350B1C2003768CE /* LogRockClimbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D136F8A23549E47003D117E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				985413FB2350B1C2003768CE /* Main.storyboard */,
+				985414002350B1C3003768CE /* LaunchScreen.storyboard */,
+				985413F92350B1C2003768CE /* LogRockClimbViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D136F8B23549EF3003D117E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				985413F72350B1C2003768CE /* AppDelegate.swift */,
+				985413FE2350B1C3003768CE /* Assets.xcassets */,
+				985414032350B1C3003768CE /* Info.plist */,
+				8D136F8823549E08003D117E /* Style Notes */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		985413EB2350B1C2003768CE = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +77,8 @@
 		985413F62350B1C2003768CE /* BMG */ = {
 			isa = PBXGroup;
 			children = (
-				985413F72350B1C2003768CE /* AppDelegate.swift */,
-				985413F92350B1C2003768CE /* LogRockClimbViewController.swift */,
-				985413FB2350B1C2003768CE /* Main.storyboard */,
-				985413FE2350B1C3003768CE /* Assets.xcassets */,
-				985414002350B1C3003768CE /* LaunchScreen.storyboard */,
-				985414032350B1C3003768CE /* Info.plist */,
+				8D136F8A23549E47003D117E /* View */,
+				8D136F8B23549EF3003D117E /* Supporting Files */,
 			);
 			path = BMG;
 			sourceTree = "<group>";
@@ -123,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				985414022350B1C3003768CE /* LaunchScreen.storyboard in Resources */,
+				8D136F8923549E08003D117E /* Style Notes in Resources */,
 				985413FF2350B1C3003768CE /* Assets.xcassets in Resources */,
 				985413FD2350B1C2003768CE /* Main.storyboard in Resources */,
 			);
@@ -284,7 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y983APTU2S;
-				INFOPLIST_FILE = BMG/Info.plist;
+				INFOPLIST_FILE = "BMG/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y983APTU2S;
-				INFOPLIST_FILE = BMG/Info.plist;
+				INFOPLIST_FILE = "BMG/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
