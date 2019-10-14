@@ -10,11 +10,17 @@ import UIKit
 
 class LogRockClimbViewController: UIViewController {
     
-    @IBOutlet weak var submitButton: UIButton!
+    // MARK: IBOutlets
     
     @IBOutlet weak var routeTextField: UITextField!
-    
+    @IBOutlet weak var gradeTextField: UITextField!
+    @IBOutlet weak var venueTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var partnersTextField: UITextField!
     @IBOutlet weak var styleTableView: UITableView!
+    @IBOutlet weak var submitButton: UIButton!
+    
+    // MARK: View formatting
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,8 @@ class LogRockClimbViewController: UIViewController {
         styleTableView.separatorInset.left = 20
         styleTableView.separatorInset.right = 20
     }
+    
+    // MARK: TableView
 
 
 }
