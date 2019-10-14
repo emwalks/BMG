@@ -8,7 +8,9 @@
 
 import UIKit
 
-class LogRockClimbViewController: UIViewController {
+class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let climbingStyles = ["Led","Alternate","Seconded"]
     
     // MARK: IBOutlets
     
@@ -25,6 +27,8 @@ class LogRockClimbViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         formatView()
+        styleTableView.dataSource = self
+        styleTableView.delegate = self
     }
     
     func formatView(){
@@ -35,7 +39,25 @@ class LogRockClimbViewController: UIViewController {
     }
     
     // MARK: TableView
-
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let climbingStyleCell = tableView.dequeueReusableCell(withIdentifier: "ClimbingStyle")
+        climbingStyleCell?.textLabel?.text = climbingStyles[indexPath.row]
+        
+        return climbingStyleCell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
 }
 
