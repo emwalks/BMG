@@ -10,7 +10,10 @@ import UIKit
 
 class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let climbingStyles = ["Led","Alternate","Seconded"]
+    // MARK: Fields / Variables
+    
+    let climbingStyles = ["Led","Alternate","Second"]
+    let datePicker = UIDatePicker()
     
     // MARK: IBOutlets
     
@@ -22,11 +25,12 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var styleTableView: UITableView!
     @IBOutlet weak var submitButton: UIButton!
     
-    // MARK: View formatting
+    // MARK: Formatting the view
     
     override func viewDidLoad() {
         super.viewDidLoad()
         formatView()
+        createDatePicker()
         styleTableView.dataSource = self
         styleTableView.delegate = self
     }
@@ -36,6 +40,35 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
         styleTableView.layer.cornerRadius = 5
         styleTableView.separatorInset.left = 20
         styleTableView.separatorInset.right = 20
+    }
+    
+    // MARK: DatePicker
+    
+    func createDatePicker(){
+        
+        datePicker.datePickerMode = .date
+        datePicker.locale = .current
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
+    }
+    
+    @objc func doneDatePicker(){
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateTextField.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        
+        self.view.endEditing(true)
     }
     
     // MARK: TableView
@@ -53,10 +86,12 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }
