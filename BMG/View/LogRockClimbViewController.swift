@@ -48,12 +48,13 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
         
         datePicker.datePickerMode = .date
         datePicker.locale = .current
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneDatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelDatePicker));
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        toolbar.barStyle = .default
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.sizeToFit()
         dateTextField.inputAccessoryView = toolbar
         dateTextField.inputView = datePicker
     }

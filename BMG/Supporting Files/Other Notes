@@ -1,0 +1,6 @@
+
+LogRockClimbViewController Notes
+
+Init toolbar with CGRect to prevent constraints breaking in iOS13 - iOS13 and/or simulator bug
+
+Constraints break when launching keyboard for other textfields in simulator - Also possible iOS13 and/or simulator bug
