@@ -36,6 +36,7 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate {
         submitButton.layer.cornerRadius = 5
         createDatePicker()
         styleTableView.formatTableView()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     // MARK: DatePicker
