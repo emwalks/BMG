@@ -12,6 +12,11 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     
     // MARK: Fields / Variables
     
+    let logRockClimbViewModel = LogRockClimbViewModel()
+    
+    // Model init'ed here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
+    
+    var climbingStyleSelectedIndex = 0
     let climbingStyles = ["Led","Alternate","Second"]
     let datePicker = UIDatePicker()
     
@@ -28,6 +33,7 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: Formatting the view
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         formatView()
         createDatePicker()
@@ -36,6 +42,7 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func formatView(){
+        
         submitButton.layer.cornerRadius = 5
         styleTableView.layer.cornerRadius = 5
         styleTableView.separatorInset.left = 20
@@ -43,6 +50,13 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     // MARK: DatePicker
+    
+    // We could shift date picker and tableview into their own classes / files in order to slim down the VC (Solid principles)
+    // E.g.
+    // let datePicker = CustomDatePicker()
+    // let toolbar = CustomDatePickerToolbar()
+    // dateTextField.inputAccessoryView = toolbar
+    // dateTextField.inputView = datePicker
     
     func createDatePicker(){
         
@@ -75,6 +89,7 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return 3
     }
     
@@ -89,6 +104,7 @@ class LogRockClimbViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        climbingStyleSelectedIndex = indexPath.row
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

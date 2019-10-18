@@ -1,6 +1,14 @@
 
-LogRockClimbViewController Notes
+LogRockClimbViewController Notes:
 
 Init toolbar with CGRect to prevent constraints breaking in iOS13 - iOS13 and/or simulator bug
 
 Constraints break when launching keyboard for other textfields in simulator - Also possible iOS13 and/or simulator bug
+
+
+
+
+Other things:
+
+
+Possibly rename LogRockClimbViewController to RockClimbViewController (Same with ViewModel) so we can reuse it to display past rock climbs? i.e. sometimes you might be logging a new one, sometimes you might be viewing a past one
