@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class CustomDatePickerToolbar: UIToolbar{
+class CustomPickerToolbar: UIToolbar{
     
-    func formatToolbar(doneSelector: Selector, cancelSelector: Selector){
+    func setup(doneSelector: Selector, cancelSelector: Selector){
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self.superview, action: doneSelector);
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)

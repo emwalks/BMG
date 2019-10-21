@@ -14,12 +14,14 @@ class LogRockClimbViewController: UIViewController {
     
     let logRockClimbViewModel = LogRockClimbViewModel()
     
-    // Model init'ed here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
+    // TODO: Model initialised here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
     
     // MARK: IBOutlets and custom views
     
     private let datePicker = CustomDatePicker()
-    private let toolbar = CustomDatePickerToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    private let datePickerToolbar = CustomPickerToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    private let gradePicker = GradePickerView()
+    private let gradePickerToolbar = CustomPickerToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     @IBOutlet weak var routeTextField: UITextField!
     @IBOutlet weak var gradeTextField: UITextField!
     @IBOutlet weak var venueTextField: UITextField!
@@ -33,10 +35,51 @@ class LogRockClimbViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        submitButton.layer.cornerRadius = 5
+        createGradePicker()
         createDatePicker()
-        styleTableView.formatTableView()
+        styleTableView.setup()
+        submitButton.layer.cornerRadius = 5
         view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    
+    // MARK: Grade PickerView
+    
+    func createGradePicker(){
+        
+        // TODO: Put actual grade data in picker, fetched from the viewmodel (and in turn, the model)
+        // TODO: Make picker uneditable / enforce validation
+        let data = [["Col 0, Item 0", "Col 0, Item 1"],["Col 1, Item 0", "Col 1, Item 1"]]
+        gradePicker.setup(withData: data)
+        gradePickerToolbar.setup(doneSelector: #selector(doneGradePicker), cancelSelector: #selector(cancelGradePicker))
+        gradeTextField.inputAccessoryView = gradePickerToolbar
+        gradeTextField.inputView = gradePicker
+    }
+    
+    @objc func doneGradePicker(){
+        
+        // Extract grades
+        var extractedGrades:[String] = []
+        for componentIndex in 0..<gradePicker.numberOfComponents{
+            if let rowTitle = gradePicker.delegate?.pickerView?(gradePicker, titleForRow: gradePicker.selectedRow(inComponent: componentIndex), forComponent: componentIndex){
+                extractedGrades.append(rowTitle)
+            }
+        }
+        // Concat grades
+        var concatenatedGrades = ""
+        for strIndex in 0..<extractedGrades.count{
+            if(strIndex == extractedGrades.count-1){
+                concatenatedGrades += (extractedGrades[strIndex])
+            }else{
+                concatenatedGrades += (extractedGrades[strIndex]) + " "
+            }
+        }
+        gradeTextField.text = concatenatedGrades
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelGradePicker(){
+        
+        self.view.endEditing(true)
     }
     
     // MARK: DatePicker
@@ -44,8 +87,8 @@ class LogRockClimbViewController: UIViewController {
     func createDatePicker(){
         
         datePicker.formatDatePicker()
-        toolbar.formatToolbar(doneSelector: #selector(doneDatePicker), cancelSelector: #selector(cancelDatePicker))
-        dateTextField.inputAccessoryView = toolbar
+        datePickerToolbar.setup(doneSelector: #selector(doneDatePicker), cancelSelector: #selector(cancelDatePicker))
+        dateTextField.inputAccessoryView = datePickerToolbar
         dateTextField.inputView = datePicker
     }
     
@@ -62,4 +105,3 @@ class LogRockClimbViewController: UIViewController {
         self.view.endEditing(true)
     }
 }
-

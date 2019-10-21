@@ -14,7 +14,7 @@ class ClimbingStylesTableView : UITableView, UITableViewDataSource, UITableViewD
     let climbingStyles = ["Led","Alternate","Second"]
     var climbingStyleSelectedIndex = 0
     
-    func formatTableView(){
+    func setup(){
         
         self.delegate = self
         self.dataSource = self

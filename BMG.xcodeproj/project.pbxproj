@@ -14,8 +14,9 @@
 		8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */; };
 		8D2C75F7235A09F30081D22F /* ClimbingStylesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F6235A09F30081D22F /* ClimbingStylesTableView.swift */; };
 		8D2C75F9235A0CDC0081D22F /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */; };
-		8D2C75FB235A0CEE0081D22F /* CustomDatePickerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75FA235A0CEE0081D22F /* CustomDatePickerToolbar.swift */; };
+		8D2C75FB235A0CEE0081D22F /* CustomPickerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75FA235A0CEE0081D22F /* CustomPickerToolbar.swift */; };
 		8DA4AA972357233500A543AC /* Other Notes in Resources */ = {isa = PBXBuildFile; fileRef = 8DA4AA962357233500A543AC /* Other Notes */; };
+		8DF3EEF7235DF2FE00D5D0E2 /* GradePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3EEF6235DF2FE00D5D0E2 /* GradePickerView.swift */; };
 		985413F82350B1C2003768CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F72350B1C2003768CE /* AppDelegate.swift */; };
 		985413FA2350B1C2003768CE /* LogRockClimbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F92350B1C2003768CE /* LogRockClimbViewController.swift */; };
 		985413FD2350B1C2003768CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985413FB2350B1C2003768CE /* Main.storyboard */; };
@@ -31,8 +32,9 @@
 		8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewModel.swift; sourceTree = "<group>"; };
 		8D2C75F6235A09F30081D22F /* ClimbingStylesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbingStylesTableView.swift; sourceTree = "<group>"; };
 		8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
-		8D2C75FA235A0CEE0081D22F /* CustomDatePickerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerToolbar.swift; sourceTree = "<group>"; };
+		8D2C75FA235A0CEE0081D22F /* CustomPickerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerToolbar.swift; sourceTree = "<group>"; };
 		8DA4AA962357233500A543AC /* Other Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Other Notes"; sourceTree = "<group>"; };
+		8DF3EEF6235DF2FE00D5D0E2 /* GradePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePickerView.swift; sourceTree = "<group>"; };
 		985413F42350B1C2003768CE /* BMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		985413F72350B1C2003768CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		985413F92350B1C2003768CE /* LogRockClimbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +99,8 @@
 			children = (
 				8D2C75F6235A09F30081D22F /* ClimbingStylesTableView.swift */,
 				8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */,
-				8D2C75FA235A0CEE0081D22F /* CustomDatePickerToolbar.swift */,
+				8D2C75FA235A0CEE0081D22F /* CustomPickerToolbar.swift */,
+				8DF3EEF6235DF2FE00D5D0E2 /* GradePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,13 +233,14 @@
 			files = (
 				8D2C75F9235A0CDC0081D22F /* CustomDatePicker.swift in Sources */,
 				8D2C75EF2359F88D0081D22F /* DatabaseService.swift in Sources */,
+				8DF3EEF7235DF2FE00D5D0E2 /* GradePickerView.swift in Sources */,
 				985413FA2350B1C2003768CE /* LogRockClimbViewController.swift in Sources */,
 				985413F82350B1C2003768CE /* AppDelegate.swift in Sources */,
 				8D2C75F32359F8BB0081D22F /* RockClimb.swift in Sources */,
 				8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */,
 				8D2C75F7235A09F30081D22F /* ClimbingStylesTableView.swift in Sources */,
 				8D2C75F12359F8A60081D22F /* Model.swift in Sources */,
-				8D2C75FB235A0CEE0081D22F /* CustomDatePickerToolbar.swift in Sources */,
+				8D2C75FB235A0CEE0081D22F /* CustomPickerToolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
