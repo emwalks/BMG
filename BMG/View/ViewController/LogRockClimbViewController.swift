@@ -25,7 +25,7 @@ class LogRockClimbViewController: UIViewController {
     @IBOutlet weak var venueTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var partnersTextField: UITextField!
-    @IBOutlet weak var styleTableView: LogRockClimbTableView!
+    @IBOutlet weak var styleTableView: ClimbingStylesTableView!
     @IBOutlet weak var submitButton: UIButton!
     
     // MARK: Formatting the view

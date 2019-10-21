@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LogRockClimbTableView : UITableView, UITableViewDataSource, UITableViewDelegate{
+class ClimbingStylesTableView : UITableView, UITableViewDataSource, UITableViewDelegate{
     
     let climbingStyles = ["Led","Alternate","Second"]
     var climbingStyleSelectedIndex = 0
