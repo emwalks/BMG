@@ -56,12 +56,9 @@
 		8D136F8A23549E47003D117E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				985413FB2350B1C2003768CE /* Main.storyboard */,
-				985414002350B1C3003768CE /* LaunchScreen.storyboard */,
-				985413F92350B1C2003768CE /* LogRockClimbViewController.swift */,
-				8D2C75F6235A09F30081D22F /* LogRockClimbTableView.swift */,
-				8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */,
-				8D2C75FA235A0CEE0081D22F /* CustomDatePickerToolbar.swift */,
+				8D2C75FE235DA22F0081D22F /* ViewController */,
+				8D2C75FD235DA2280081D22F /* View */,
+				8D2C75FC235DA21B0081D22F /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -84,6 +81,33 @@
 				8D2C75EE2359F88C0081D22F /* DatabaseService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8D2C75FC235DA21B0081D22F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				985413FB2350B1C2003768CE /* Main.storyboard */,
+				985414002350B1C3003768CE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8D2C75FD235DA2280081D22F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D2C75F6235A09F30081D22F /* LogRockClimbTableView.swift */,
+				8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */,
+				8D2C75FA235A0CEE0081D22F /* CustomDatePickerToolbar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D2C75FE235DA22F0081D22F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				985413F92350B1C2003768CE /* LogRockClimbViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8DA4AA982357373400A543AC /* ViewModel */ = {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogRockClimbViewController: UIViewController, UITableViewDelegate {
+class LogRockClimbViewController: UIViewController {
     
     // MARK: Fields / Variables
     
