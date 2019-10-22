@@ -47,11 +47,12 @@ class LogRockClimbViewController: UIViewController {
         
         // TODO: Put actual grade data in picker, fetched from the viewmodel (and in turn, the model)
         // TODO: Make picker uneditable / enforce validation
-        let data = [
+        
+        let rockClimbGrades = [
             ["M","D","HD","VD","HVD","S","HS","VS","HVS","E1", "E2", "E3", "E4", "E5", "E6", "E7","E8", "E9"],
             ["", "4a", "4b", "4c", "5a", "5b", "5c", "6a", "6b", "6c", "7a", "7b"]
         ]
-        gradePicker.setup(withData: data)
+        gradePicker.setup(withData: rockClimbGrades)
         gradePickerToolbar.setup(doneSelector: #selector(doneGradePicker), cancelSelector: #selector(cancelGradePicker))
         gradeTextField.inputAccessoryView = gradePickerToolbar
         gradeTextField.inputView = gradePicker
