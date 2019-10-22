@@ -17,7 +17,6 @@ class LogRockClimbViewController: UIViewController {
     // TODO: Model initialised here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
     
     // MARK: IBOutlets and custom views
-    
     private let datePicker = CustomDatePicker()
     private let datePickerToolbar = CustomPickerToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     private let gradePicker = GradePickerView()
@@ -39,7 +38,7 @@ class LogRockClimbViewController: UIViewController {
         createDatePicker()
         styleTableView.setup()
         submitButton.layer.cornerRadius = 5
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        addKeyboardDismissRecogniser()
     }
     
     // MARK: Grade PickerView
@@ -103,5 +102,19 @@ class LogRockClimbViewController: UIViewController {
     @objc func cancelDatePicker(){
         
         self.view.endEditing(true)
+    }
+    
+    func addKeyboardDismissRecogniser(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        // Fixes bug where you can't tap on tableview
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    // Need to understand why we need to expose to objc
+    @objc func dismissKeyboard(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.endEditing(true)
+        self.view.removeGestureRecognizer(tap)
     }
 }

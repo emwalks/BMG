@@ -30,7 +30,7 @@ class ClimbingStylesTableView : UITableView, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let climbingStyleCell = tableView.dequeueReusableCell(withIdentifier: "ClimbingStyle")
+        let climbingStyleCell = self.dequeueReusableCell(withIdentifier: "ClimbingStyle")
         climbingStyleCell?.textLabel?.text = climbingStyles[indexPath.row]
         
         return climbingStyleCell!
@@ -38,12 +38,12 @@ class ClimbingStylesTableView : UITableView, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        self.cellForRow(at: indexPath)?.accessoryType = .checkmark
         climbingStyleSelectedIndex = indexPath.row
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        self.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }
