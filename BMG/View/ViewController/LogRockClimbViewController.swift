@@ -29,6 +29,7 @@ class LogRockClimbViewController: UIViewController {
     @IBOutlet weak var styleTableView: ClimbingStylesTableView!
     @IBOutlet weak var submitButton: UIButton!
     
+    
     // MARK: Formatting the view
     
     override func viewDidLoad() {
@@ -39,41 +40,37 @@ class LogRockClimbViewController: UIViewController {
         styleTableView.setup()
         submitButton.layer.cornerRadius = 5
         addKeyboardDismissRecogniser()
+        
+        
     }
     
     // MARK: Grade PickerView
     
     func createGradePicker(){
         
-        // TODO: Put actual grade data in picker, fetched from the viewmodel (and in turn, the model)
         // TODO: Make picker uneditable / enforce validation
         
-        
-        gradePicker.setup(withData: Grades.rockClimbGrades)
+        gradePicker.setup(withData: logRockClimbViewModel.rockClimbGrades)
         gradePickerToolbar.setup(doneSelector: #selector(doneGradePicker), cancelSelector: #selector(cancelGradePicker))
         gradeTextField.inputAccessoryView = gradePickerToolbar
         gradeTextField.inputView = gradePicker
     }
     
     @objc func doneGradePicker(){
-        
+        let numberOfGrades = gradePicker.numberOfComponents
         // Extract grades
+        // can you work out the index of the array from the picker?
         var extractedGrades:[String] = []
-        for componentIndex in 0..<gradePicker.numberOfComponents{
-            if let rowTitle = gradePicker.delegate?.pickerView?(gradePicker, titleForRow: gradePicker.selectedRow(inComponent: componentIndex), forComponent: componentIndex){
+        for componentIndex in 0..<numberOfGrades{
+            if let rowTitle = gradePicker.delegate?.pickerView?(gradePicker, titleForRow: gradePicker.selectedRow(inComponent: componentIndex), forComponent: componentIndex)
+            {
                 extractedGrades.append(rowTitle)
             }
         }
-        // Concat grades
-        var concatenatedGrades = ""
-        for strIndex in 0..<extractedGrades.count{
-            if(strIndex == extractedGrades.count-1){
-                concatenatedGrades += (extractedGrades[strIndex])
-            }else{
-                concatenatedGrades += (extractedGrades[strIndex]) + " "
-            }
-        }
-        gradeTextField.text = concatenatedGrades
+        
+        logRockClimbViewModel.selectGrade(adjectivalGrade: extractedGrades[0], technicalGrade: extractedGrades[1])
+        
+        gradeTextField.text = logRockClimbViewModel.gradeText()
         self.view.endEditing(true)
     }
     
@@ -93,10 +90,15 @@ class LogRockClimbViewController: UIViewController {
     }
     
     @objc func doneDatePicker(){
+        let selectedDate =   datePicker.date
         
+        //VM
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateTextField.text = dateFormatter.string(from: datePicker.date)
+        let selectedDateString = dateFormatter.string(from: selectedDate)
+        //VM
+        
+        dateTextField.text = selectedDateString
         self.view.endEditing(true)
     }
     

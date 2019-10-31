@@ -18,12 +18,26 @@
 		8D56E813235F53670024CD50 /* Grades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56E812235F53670024CD50 /* Grades.swift */; };
 		8DA4AA972357233500A543AC /* Other Notes in Resources */ = {isa = PBXBuildFile; fileRef = 8DA4AA962357233500A543AC /* Other Notes */; };
 		8DF3EEF7235DF2FE00D5D0E2 /* GradePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3EEF6235DF2FE00D5D0E2 /* GradePickerView.swift */; };
+		981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B0D432369EC0A00D701D0 /* BMGTests.swift */; };
+		981B0D4B2369EE4C00D701D0 /* LogRockClimbViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */; };
+		981B0D4D2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */; };
+		981B0D4E236B069D00D701D0 /* Grades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56E812235F53670024CD50 /* Grades.swift */; };
 		985413F82350B1C2003768CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F72350B1C2003768CE /* AppDelegate.swift */; };
 		985413FA2350B1C2003768CE /* LogRockClimbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F92350B1C2003768CE /* LogRockClimbViewController.swift */; };
 		985413FD2350B1C2003768CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985413FB2350B1C2003768CE /* Main.storyboard */; };
 		985413FF2350B1C3003768CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985413FE2350B1C3003768CE /* Assets.xcassets */; };
 		985414022350B1C3003768CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985414002350B1C3003768CE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		981B0D462369EC0A00D701D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 985413EC2350B1C2003768CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 985413F32350B1C2003768CE;
+			remoteInfo = BMG;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8D136F8823549E08003D117E /* Style Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Style Notes"; sourceTree = "<group>"; };
@@ -37,6 +51,10 @@
 		8D56E812235F53670024CD50 /* Grades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grades.swift; sourceTree = "<group>"; };
 		8DA4AA962357233500A543AC /* Other Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Other Notes"; sourceTree = "<group>"; };
 		8DF3EEF6235DF2FE00D5D0E2 /* GradePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePickerView.swift; sourceTree = "<group>"; };
+		981B0D412369EC0A00D701D0 /* BMGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		981B0D432369EC0A00D701D0 /* BMGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMGTests.swift; sourceTree = "<group>"; };
+		981B0D452369EC0A00D701D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewModel_Tests.swift; sourceTree = "<group>"; };
 		985413F42350B1C2003768CE /* BMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		985413F72350B1C2003768CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		985413F92350B1C2003768CE /* LogRockClimbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		981B0D3E2369EC0A00D701D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		985413F12350B1C2003768CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,10 +158,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		981B0D422369EC0A00D701D0 /* BMGTests */ = {
+			isa = PBXGroup;
+			children = (
+				981B0D432369EC0A00D701D0 /* BMGTests.swift */,
+				981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */,
+				981B0D452369EC0A00D701D0 /* Info.plist */,
+			);
+			path = BMGTests;
+			sourceTree = "<group>";
+		};
 		985413EB2350B1C2003768CE = {
 			isa = PBXGroup;
 			children = (
 				985413F62350B1C2003768CE /* BMG */,
+				981B0D422369EC0A00D701D0 /* BMGTests */,
 				985413F52350B1C2003768CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				985413F42350B1C2003768CE /* BMG.app */,
+				981B0D412369EC0A00D701D0 /* BMGTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +201,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		981B0D402369EC0A00D701D0 /* BMGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 981B0D482369EC0A00D701D0 /* Build configuration list for PBXNativeTarget "BMGTests" */;
+			buildPhases = (
+				981B0D3D2369EC0A00D701D0 /* Sources */,
+				981B0D3E2369EC0A00D701D0 /* Frameworks */,
+				981B0D3F2369EC0A00D701D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				981B0D472369EC0A00D701D0 /* PBXTargetDependency */,
+			);
+			name = BMGTests;
+			productName = BMGTests;
+			productReference = 981B0D412369EC0A00D701D0 /* BMGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		985413F32350B1C2003768CE /* BMG */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 985414062350B1C3003768CE /* Build configuration list for PBXNativeTarget "BMG" */;
@@ -191,6 +246,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Emma Walker - TVandMobile Platforms - Core Engineering";
 				TargetAttributes = {
+					981B0D402369EC0A00D701D0 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 985413F32350B1C2003768CE;
+					};
 					985413F32350B1C2003768CE = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -210,11 +269,19 @@
 			projectRoot = "";
 			targets = (
 				985413F32350B1C2003768CE /* BMG */,
+				981B0D402369EC0A00D701D0 /* BMGTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		981B0D3F2369EC0A00D701D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		985413F22350B1C2003768CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,6 +297,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		981B0D3D2369EC0A00D701D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				981B0D4B2369EE4C00D701D0 /* LogRockClimbViewModel.swift in Sources */,
+				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
+				981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */,
+				981B0D4D2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		985413F02350B1C2003768CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +327,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		981B0D472369EC0A00D701D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 985413F32350B1C2003768CE /* BMG */;
+			targetProxy = 981B0D462369EC0A00D701D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		985413FB2350B1C2003768CE /* Main.storyboard */ = {
@@ -270,6 +356,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		981B0D492369EC0A00D701D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y983APTU2S;
+				INFOPLIST_FILE = BMGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.bbc.emma.walker02.BMGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BMG.app/BMG";
+			};
+			name = Debug;
+		};
+		981B0D4A2369EC0A00D701D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y983APTU2S;
+				INFOPLIST_FILE = BMGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.bbc.emma.walker02.BMGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BMG.app/BMG";
+			};
+			name = Release;
+		};
 		985414042350B1C3003768CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -425,6 +551,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		981B0D482369EC0A00D701D0 /* Build configuration list for PBXNativeTarget "BMGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				981B0D492369EC0A00D701D0 /* Debug */,
+				981B0D4A2369EC0A00D701D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		985413EF2350B1C2003768CE /* Build configuration list for PBXProject "BMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

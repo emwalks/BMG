@@ -10,5 +10,22 @@ import Foundation
 
 class LogRockClimbViewModel{
     
+    let rockClimbGrades = Grades.rockClimbGrades
     
+//    let adjectivalGrades = Grades.adjectivalGrades.description
+//    let technicalGrades = Grades.technicalGrades.description
+    
+    private var selectedGradeText : String?
+    
+    func selectGrade(adjectivalGrade: String, technicalGrade: String) -> Void
+    {
+        // Concat grades
+        selectedGradeText = adjectivalGrade + " " + technicalGrade
+    }
+    
+    
+    func gradeText() -> String
+    {
+        return selectedGradeText ?? "Please select a grade"
+    }
 }
