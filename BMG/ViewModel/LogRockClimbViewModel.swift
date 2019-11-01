@@ -10,10 +10,9 @@ import Foundation
 
 class LogRockClimbViewModel{
     
-    let rockClimbGrades = Grades.rockClimbGrades
+    ///Grades
     
-//    let adjectivalGrades = Grades.adjectivalGrades.description
-//    let technicalGrades = Grades.technicalGrades.description
+    let rockClimbGrades = Grades.rockClimbGrades
     
     private var selectedGradeText : String?
     
@@ -23,9 +22,20 @@ class LogRockClimbViewModel{
         selectedGradeText = adjectivalGrade + " " + technicalGrade
     }
     
-    
     func gradeText() -> String
     {
         return selectedGradeText ?? "Please select a grade"
     }
+    
+    ///Date
+    //need to move done date picker logic into here
+    
+    ///Submit button
+    func outputWhenSubmitButtonClicked() -> String {
+        defer { print("You clicked the submit button") }
+        return "You clicked the submit button"
+        
+    }
+    
+    
 }

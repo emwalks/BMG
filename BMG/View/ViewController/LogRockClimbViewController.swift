@@ -31,7 +31,7 @@ class LogRockClimbViewController: UIViewController {
     
     
     @IBAction func clickedSubmitButton(_ sender: UIButton) {
-        print("clicked submit button")
+        logRockClimbViewModel.outputWhenSubmitButtonClicked()
     }
     
     // MARK: Formatting the view

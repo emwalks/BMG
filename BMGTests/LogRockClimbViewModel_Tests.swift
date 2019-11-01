@@ -45,4 +45,14 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
 
+    func testSubmitButtonPrintsToConsole() {
+        
+        let logRockClimbViewModel = LogRockClimbViewModel()
+        
+        let actualResult = logRockClimbViewModel.outputWhenSubmitButtonClicked()
+        let expectedResult = "You clicked the submit button"
+        XCTAssertEqual(actualResult, expectedResult)
+    }
+
+    
 }
