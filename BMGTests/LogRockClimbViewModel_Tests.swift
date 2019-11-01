@@ -49,8 +49,8 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         
         let logRockClimbViewModel = LogRockClimbViewModel()
         
-        let actualResult = logRockClimbViewModel.outputWhenSubmitButtonClicked()
-        let expectedResult = "You clicked the submit button"
+        let actualResult = logRockClimbViewModel.outputWhenSubmitButtonClicked(routeName: "The Bat")
+        let expectedResult = "The Bat"
         XCTAssertEqual(actualResult, expectedResult)
     }
 

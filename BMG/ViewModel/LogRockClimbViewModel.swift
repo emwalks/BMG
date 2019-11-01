@@ -31,11 +31,10 @@ class LogRockClimbViewModel{
     //need to move done date picker logic into here
     
     ///Submit button
-    func outputWhenSubmitButtonClicked() -> String {
-        defer { print("You clicked the submit button") }
-        return "You clicked the submit button"
+    func outputWhenSubmitButtonClicked(routeName: String) -> String {
+        defer { print(routeName) }
+        return routeName
         
     }
-    
     
 }
