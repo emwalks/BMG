@@ -30,6 +30,10 @@ class LogRockClimbViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     
     
+    @IBAction func clickedSubmitButton(_ sender: UIButton) {
+        print("clicked submit button")
+    }
+    
     // MARK: Formatting the view
     
     override func viewDidLoad() {
