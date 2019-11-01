@@ -16,13 +16,13 @@ class LogRockClimbViewModel{
     
     private var selectedGradeText : String?
     
-    func selectGrade(adjectivalGrade: String, technicalGrade: String) -> Void
+    private func selectGrade(adjectivalGrade: String, technicalGrade: String) -> Void
     {
         // Concat grades
         selectedGradeText = adjectivalGrade + " " + technicalGrade
     }
     
-    func gradeText() -> String
+    private func gradeText() -> String
     {
         return selectedGradeText ?? "Please select a grade"
     }
@@ -31,9 +31,16 @@ class LogRockClimbViewModel{
     //need to move done date picker logic into here
     
     ///Submit button
-    func outputWhenSubmitButtonClicked(routeName: String) -> String {
-        defer { print(routeName) }
-        return routeName
+    
+    private var loggedRouteName: String?
+    
+    private  func getLoggedData(routeName: String) {
+        loggedRouteName = routeName
+    }
+    
+    private func outputWhenSubmitButtonClicked() -> String {
+        print(loggedRouteName ?? "No route name given")
+        return loggedRouteName ?? "No route name given"
         
     }
     
