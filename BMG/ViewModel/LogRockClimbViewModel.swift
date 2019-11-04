@@ -32,15 +32,17 @@ class LogRockClimbViewModel{
     
     ///Submit button
     
-    private var loggedRouteName: String?
+    
+    private var loggedClimbData = [String]()
     
     func getLoggedData(routeName: String) {
-        loggedRouteName = routeName
+        loggedClimbData.append(routeName)
     }
     
     func outputWhenSubmitButtonClicked() -> String {
-        print(loggedRouteName ?? "No route name given")
-        return loggedRouteName ?? "No route name given"
+        print(loggedClimbData.joined(separator: ",") )
+        return loggedClimbData.joined(separator: ",")
+        // call db service to handle data
         
     }
     
