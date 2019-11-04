@@ -40,9 +40,13 @@ class LogRockClimbViewModel{
     }
     
     func outputWhenSubmitButtonClicked() -> String {
+        
+        // call db service to handle data
+        
+        BMGDB.dbInstance.addRockClimb(crouteName: loggedClimbData.joined())
+        
         print(loggedClimbData.joined(separator: ",") )
         return loggedClimbData.joined(separator: ",")
-        // call db service to handle data
 
     }
     

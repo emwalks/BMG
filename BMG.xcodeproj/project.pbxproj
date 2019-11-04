@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		985413FD2350B1C2003768CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985413FB2350B1C2003768CE /* Main.storyboard */; };
 		985413FF2350B1C3003768CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985413FE2350B1C3003768CE /* Assets.xcassets */; };
 		985414022350B1C3003768CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985414002350B1C3003768CE /* LaunchScreen.storyboard */; };
+		98F6ACA623709C1F005DA077 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75EE2359F88C0081D22F /* DatabaseService.swift */; };
 		CBAA2B4754A6D85C99892CBD /* Pods_BMGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		985413FE2350B1C3003768CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		985414012350B1C3003768CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		985414032350B1C3003768CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1514B021EC8723C1EBED1D5 /* Pods-BMG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMG.release.xcconfig"; path = "Target Support Files/Pods-BMG/Pods-BMG.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 		985413EB2350B1C2003768CE = {
 			isa = PBXGroup;
 			children = (
+				98C7CC2B2370714A002AA781 /* SQLite.framework */,
 				985413F62350B1C2003768CE /* BMG */,
 				981B0D422369EC0A00D701D0 /* BMGTests */,
 				985413F52350B1C2003768CE /* Products */,
@@ -218,13 +222,13 @@
 				E47A3FFC376875A0D5A1DF9C /* Pods-BMGTests.debug.xcconfig */,
 				9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		EF839ADB7226B95E725A5EBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98C7CC29237070FD002AA781 /* SQLite.framework */,
 				199A8880EDCAE531F2B8827A /* Pods_BMG.framework */,
 				BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */,
 			);
@@ -402,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981B0D4B2369EE4C00D701D0 /* LogRockClimbViewModel.swift in Sources */,
+				98F6ACA623709C1F005DA077 /* DatabaseService.swift in Sources */,
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
 				981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */,
 				981B0D4D2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift in Sources */,
