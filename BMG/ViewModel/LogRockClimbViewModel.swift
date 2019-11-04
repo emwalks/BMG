@@ -43,7 +43,7 @@ class LogRockClimbViewModel{
         print(loggedClimbData.joined(separator: ",") )
         return loggedClimbData.joined(separator: ",")
         // call db service to handle data
-        
+
     }
     
 }
