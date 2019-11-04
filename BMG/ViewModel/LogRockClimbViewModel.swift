@@ -16,13 +16,13 @@ class LogRockClimbViewModel{
     
     private var selectedGradeText : String?
     
-    private func selectGrade(adjectivalGrade: String, technicalGrade: String) -> Void
+    func selectGrade(adjectivalGrade: String, technicalGrade: String) -> Void
     {
         // Concat grades
         selectedGradeText = adjectivalGrade + " " + technicalGrade
     }
     
-    private func gradeText() -> String
+    func gradeText() -> String
     {
         return selectedGradeText ?? "Please select a grade"
     }
@@ -34,11 +34,11 @@ class LogRockClimbViewModel{
     
     private var loggedRouteName: String?
     
-    private  func getLoggedData(routeName: String) {
+    func getLoggedData(routeName: String) {
         loggedRouteName = routeName
     }
     
-    private func outputWhenSubmitButtonClicked() -> String {
+    func outputWhenSubmitButtonClicked() -> String {
         print(loggedRouteName ?? "No route name given")
         return loggedRouteName ?? "No route name given"
         
