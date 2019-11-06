@@ -26,6 +26,7 @@ class BMGDB {
         
         do {
             db = try Connection("\(path)/BMGDB.sqlite3")
+            print("Database location: " + path)
         } catch {
             db = nil
             print ("Unable to open database")
@@ -37,7 +38,7 @@ class BMGDB {
     func createTable() {
         do {
             try db!.run(rockClimbs.create(ifNotExists: true) { table in
-                table.column(id, primaryKey: .autoincrement)
+                table.column(id, primaryKey: true)
                 table.column(routeName)
                 
             })
@@ -53,7 +54,7 @@ class BMGDB {
             print(insert.asSQL())
             
             for rockClimb in try db!.prepare(rockClimbs) {
-                print("id: \(rowid), routeName: \(String(describing: rockClimb[routeName]))")
+                print("id: \(rockClimb[id]), routeName: \(String(describing: rockClimb[routeName]))")
             }
             return rowid
 
