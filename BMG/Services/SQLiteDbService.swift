@@ -9,9 +9,9 @@
 import Foundation
 import SQLite
 
-class BMGDB {
+class SQLiteDbService {
     
-    static let dbInstance = BMGDB()
+    static let dbInstance = SQLiteDbService()
     
     private var db : Connection?
     

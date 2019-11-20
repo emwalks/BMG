@@ -33,7 +33,8 @@ class LogRockClimbViewController: UIViewController {
     @IBAction func clickedSubmitButton(_ sender: UIButton) {
         logRockClimbViewModel.getLoggedData(routeName: routeTextField.text ?? "No route name given")
         logRockClimbViewModel.outputWhenSubmitButtonClicked()
-        
+        logRockClimbViewModel.clearTextFieldWhenSubmitButtonClicked()
+        routeTextField.text = ""
         
     }
     
