@@ -44,7 +44,7 @@ class LogRockClimbViewModel{
     
     
     func logClimbData(routeName: String) {
-
+        databaseService.addRockClimbToDb(routeName: routeName)
     }
     
 }
