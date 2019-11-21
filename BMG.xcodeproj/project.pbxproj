@@ -28,6 +28,8 @@
 		985413FD2350B1C2003768CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985413FB2350B1C2003768CE /* Main.storyboard */; };
 		985413FF2350B1C3003768CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985413FE2350B1C3003768CE /* Assets.xcassets */; };
 		985414022350B1C3003768CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985414002350B1C3003768CE /* LaunchScreen.storyboard */; };
+		986A24642386D55B00BD43E7 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
+		986A24652386D55B00BD43E7 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
 		98F6ACA623709C1F005DA077 /* SQLiteDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */; };
 		CBAA2B4754A6D85C99892CBD /* Pods_BMGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,7 @@
 		985413FE2350B1C3003768CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		985414012350B1C3003768CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		985414032350B1C3003768CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		986A24632386D55B00BD43E7 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */,
+				986A24632386D55B00BD43E7 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -405,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986A24652386D55B00BD43E7 /* DatabaseService.swift in Sources */,
 				981B0D4B2369EE4C00D701D0 /* LogRockClimbViewModel.swift in Sources */,
 				98F6ACA623709C1F005DA077 /* SQLiteDbService.swift in Sources */,
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
@@ -423,6 +428,7 @@
 				985413FA2350B1C2003768CE /* LogRockClimbViewController.swift in Sources */,
 				985413F82350B1C2003768CE /* AppDelegate.swift in Sources */,
 				8D2C75F32359F8BB0081D22F /* RockClimb.swift in Sources */,
+				986A24642386D55B00BD43E7 /* DatabaseService.swift in Sources */,
 				8D56E813235F53670024CD50 /* Grades.swift in Sources */,
 				8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */,
 				8D2C75F7235A09F30081D22F /* ClimbingStylesTableView.swift in Sources */,

@@ -10,6 +10,16 @@ import Foundation
 
 class LogRockClimbViewModel{
     
+//    init() {
+//        
+//    }
+    
+    init(_ databaseService: DatabaseService) {
+        self.databaseService = databaseService
+    }
+    
+    var databaseService:DatabaseService
+    
     ///Grades
     
     let rockClimbGrades = Grades.rockClimbGrades
@@ -34,8 +44,7 @@ class LogRockClimbViewModel{
     
     
     func logClimbData(routeName: String) {
-        SQLiteDbService.dbInstance.addRockClimb(crouteName: routeName)
-        
+
     }
     
 }

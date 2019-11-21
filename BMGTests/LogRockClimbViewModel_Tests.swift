@@ -9,9 +9,9 @@
 import XCTest
 
 class LogRockClimbViewModel_Tests: XCTestCase {
-
+    
     func testDefaultGradeText() {
-        let logRockClimbViewModel = LogRockClimbViewModel()
+        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
         let actualResult = logRockClimbViewModel.gradeText()
         let expectedResult = "Please select a grade"
         XCTAssertEqual(actualResult, expectedResult)
@@ -19,7 +19,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testSelectedGradeText() {
         
-        let logRockClimbViewModel = LogRockClimbViewModel()
+        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
         
         let selectedAdjectivalGrade = "E1"
         let selectedTechnicalGrade = "5c"
@@ -33,7 +33,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testSelectedGradeTextTechnicalBlank() {
         
-        let logRockClimbViewModel = LogRockClimbViewModel()
+        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
         
         let selectedAdjectivalGrade = "E1"
         let selectedTechnicalGrade = ""
@@ -44,14 +44,26 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         let expectedResult = "E1 "
         XCTAssertEqual(actualResult, expectedResult)
     }
-
- 
-
+    
+    
+    
     func testWhenSubmitButtonClickedTheDataIsRemovedFromTheArray(){
-        let logRockClimbViewModel = LogRockClimbViewModel()
+        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
         let enteredRouteName = "The Bat"
         _ = logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
         
+    }
+    
+    func testWhenSubmitButtonClickedClimbDataPersists() {
+        
+        let databaseService = DatabaseService()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
+        
+        let routeNameEntered = "Jomo"
+        logRockClimbViewModel.logClimbData(routeName: routeNameEntered)
+        
+        let actualResult = databaseService.loggedRouteName
+        XCTAssertEqual(routeNameEntered, actualResult)
     }
     
 }
