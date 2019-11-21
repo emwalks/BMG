@@ -30,6 +30,8 @@
 		985414022350B1C3003768CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985414002350B1C3003768CE /* LaunchScreen.storyboard */; };
 		986A24642386D55B00BD43E7 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
 		986A24652386D55B00BD43E7 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
+		986A24672386DE2400BD43E7 /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
+		986A24682386DE2400BD43E7 /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
 		98F6ACA623709C1F005DA077 /* SQLiteDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */; };
 		CBAA2B4754A6D85C99892CBD /* Pods_BMGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,7 @@
 		985414012350B1C3003768CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		985414032350B1C3003768CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		986A24632386D55B00BD43E7 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		986A24662386DE2400BD43E7 /* MockDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseService.swift; sourceTree = "<group>"; };
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 			children = (
 				8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */,
 				986A24632386D55B00BD43E7 /* DatabaseService.swift */,
+				986A24662386DE2400BD43E7 /* MockDatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -414,6 +418,7 @@
 				98F6ACA623709C1F005DA077 /* SQLiteDbService.swift in Sources */,
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
 				981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */,
+				986A24682386DE2400BD43E7 /* MockDatabaseService.swift in Sources */,
 				981B0D4D2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986A24672386DE2400BD43E7 /* MockDatabaseService.swift in Sources */,
 				8D2C75F9235A0CDC0081D22F /* CustomDatePicker.swift in Sources */,
 				8D2C75EF2359F88D0081D22F /* SQLiteDbService.swift in Sources */,
 				8DF3EEF7235DF2FE00D5D0E2 /* GradePickerView.swift in Sources */,

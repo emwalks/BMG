@@ -14,11 +14,11 @@ class LogRockClimbViewModel{
 //        
 //    }
     
-    init(_ databaseService: DatabaseService) {
+    init(_ databaseService: MockDatabaseService) {
         self.databaseService = databaseService
     }
     
-    var databaseService:DatabaseService
+    var databaseService:MockDatabaseService
     
     ///Grades
     

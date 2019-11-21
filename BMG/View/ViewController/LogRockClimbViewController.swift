@@ -12,7 +12,7 @@ class LogRockClimbViewController: UIViewController {
     
     // MARK: Fields / Variables
     
-    let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
+    let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
     
     // TODO: Model initialised here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
     

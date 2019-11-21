@@ -11,7 +11,7 @@ import XCTest
 class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testDefaultGradeText() {
-        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
+        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
         let actualResult = logRockClimbViewModel.gradeText()
         let expectedResult = "Please select a grade"
         XCTAssertEqual(actualResult, expectedResult)
@@ -19,7 +19,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testSelectedGradeText() {
         
-        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
+        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
         
         let selectedAdjectivalGrade = "E1"
         let selectedTechnicalGrade = "5c"
@@ -33,7 +33,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testSelectedGradeTextTechnicalBlank() {
         
-        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
+        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
         
         let selectedAdjectivalGrade = "E1"
         let selectedTechnicalGrade = ""
@@ -48,7 +48,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     
     func testWhenSubmitButtonClickedTheDataIsRemovedFromTheArray(){
-        let logRockClimbViewModel = LogRockClimbViewModel(DatabaseService())
+        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
         let enteredRouteName = "The Bat"
         _ = logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
         
@@ -56,7 +56,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testWhenSubmitButtonClickedClimbDataPersists() {
         
-        let databaseService = DatabaseService()
+        let databaseService = MockDatabaseService()
         let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
         
         let routeNameEntered = "Jomo"
