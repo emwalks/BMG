@@ -10,15 +10,11 @@ import Foundation
 
 class LogRockClimbViewModel{
     
-//    init() {
-//        
-//    }
-    
     init(_ databaseService: MockDatabaseService) {
         self.databaseService = databaseService
     }
     
-    var databaseService:MockDatabaseService
+    var databaseService: MockDatabaseService
     
     ///Grades
     
@@ -41,7 +37,6 @@ class LogRockClimbViewModel{
     //need to move done date picker logic into here
     
     ///Submit button
-    
     
     func logClimbData(routeName: String) {
         databaseService.addRockClimbToDb(routeName: routeName)

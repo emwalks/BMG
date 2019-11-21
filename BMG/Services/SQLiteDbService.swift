@@ -32,10 +32,10 @@ class SQLiteDbService {
             print ("Unable to open database")
         }
         
-        createTable()
+        createRockClimbingTable()
     }
     
-    func createTable() {
+    func createRockClimbingTable() {
         do {
             try db!.run(rockClimbs.create(ifNotExists: true) { table in
                 table.column(id, primaryKey: true)
