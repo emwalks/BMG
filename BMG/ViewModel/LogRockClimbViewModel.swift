@@ -33,24 +33,9 @@ class LogRockClimbViewModel{
     ///Submit button
     
     
-    var loggedClimbData = [String]()
-    
-    func getLoggedData(routeName: String) {
-        loggedClimbData.append(routeName)
-    }
-    
-    func outputWhenSubmitButtonClicked() -> String {
+    func logClimbData(routeName: String) {
+        SQLiteDbService.dbInstance.addRockClimb(crouteName: routeName)
         
-        // call db service to handle data
-        
-        SQLiteDbService.dbInstance.addRockClimb(crouteName: loggedClimbData.joined())
-        
-        return loggedClimbData.joined(separator: ",")
-
-    }
-    
-    func clearTextFieldWhenSubmitButtonClicked() {
-       return loggedClimbData.removeAll()
     }
     
 }

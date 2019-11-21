@@ -45,23 +45,13 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
 
-    func testWhenSubmitButtonClickedTheLoggedDataIsCaptured() {
-        
-        let logRockClimbViewModel = LogRockClimbViewModel()
-        let enteredRouteName = "The Bat"
-        _ = logRockClimbViewModel.getLoggedData(routeName: enteredRouteName)
-        let actualResult = logRockClimbViewModel.outputWhenSubmitButtonClicked()
-        let expectedResult = "The Bat"
-        XCTAssertEqual(actualResult, expectedResult)
-    }
+ 
 
     func testWhenSubmitButtonClickedTheDataIsRemovedFromTheArray(){
         let logRockClimbViewModel = LogRockClimbViewModel()
         let enteredRouteName = "The Bat"
-        _ = logRockClimbViewModel.getLoggedData(routeName: enteredRouteName)
-        _ = logRockClimbViewModel.outputWhenSubmitButtonClicked()
-        _ = logRockClimbViewModel.clearTextFieldWhenSubmitButtonClicked()
-        XCTAssertEqual(logRockClimbViewModel.loggedClimbData.count , 0)
+        _ = logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
+        
     }
     
 }
