@@ -42,6 +42,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     //arrange
     
+    
     let path = NSSearchPathForDirectoriesInDomains(
         .documentDirectory, .userDomainMask, true
         ).first!
@@ -57,39 +58,48 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         return db
     }
     
+
     func testThatWhenCreateDBIsCalledADatabaseIsCreated() {
         
-        //act
         db = createDB()
         
-        //assert
         XCTAssertTrue(db != nil, "The database is not nil")
     }
     
+    var rockClimbTable:Table? = Table("rockClimbTable")
+    let id = Expression<Int64>("id")
+    let routeName = Expression<String?>("routeName")
+    
+    func createTable () -> Bool {
+        do {
+            try db!.run(rockClimbTable!.create {
+                table in
+                table.column(id, primaryKey: true)
+                table.column(routeName)
+            })
+            return true
+        } catch {
+            print("Unable to create table")
+            return false
+        }
+    }
     
     func testThatWhenCreateTableIsCalledATableIsCreated() {
-        
-        var rockClimbTable:Table? = Table("rockClimbTable")
-        let id = Expression<Int64>("id")
-        
-        func createTable () -> Bool {
-            db = createDB()
-            print("Database location: " + path)
-            do {
-                try db!.run(rockClimbTable!.create {
-                    table in
-                    table.column(id, primaryKey: true)
-                })
-                return true
-            } catch {
-                print("Unable to create table")
-                return false
-            }
-        }
         
         let resultOfCreateTableFunction = createTable()
         
         XCTAssertTrue(resultOfCreateTableFunction == true, "a rockClimbTable has been created in db" )
+    }
+    
+    func testThatWhenAddRockClimbIsCalledRouteNameGetsAdded() {
+        
+        func addRockClimb() -> Bool {
+            return false
+        }
+        
+        let resultOfAddRockClimb = addRockClimb()
+        
+        XCTAssertTrue(resultOfAddRockClimb == true, "a routeName row has been added" )
     }
     
     override func tearDown() {
@@ -108,6 +118,6 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         
         deleteDatabase(filePath: path)
     }
-    
 }
+
 
