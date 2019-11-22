@@ -10,11 +10,11 @@ import Foundation
 
 class LogRockClimbViewModel{
     
-    init(_ databaseService: MockDatabaseService) {
+    init(_ databaseService: DatabaseService) {
         self.databaseService = databaseService
     }
     
-    var databaseService: MockDatabaseService
+    var databaseService: DatabaseService
     
     ///Grades
     

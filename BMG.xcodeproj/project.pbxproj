@@ -32,6 +32,9 @@
 		986A24652386D55B00BD43E7 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
 		986A24672386DE2400BD43E7 /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
 		986A24682386DE2400BD43E7 /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
+		986A246C2387E8DE00BD43E7 /* SQLiteDatabaseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A246B2387E8DE00BD43E7 /* SQLiteDatabaseServiceTests.swift */; };
+		986A246E2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */; };
+		986A246F2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */; };
 		98F6ACA623709C1F005DA077 /* SQLiteDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */; };
 		CBAA2B4754A6D85C99892CBD /* Pods_BMGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,8 @@
 		985414032350B1C3003768CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		986A24632386D55B00BD43E7 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		986A24662386DE2400BD43E7 /* MockDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseService.swift; sourceTree = "<group>"; };
+		986A246B2387E8DE00BD43E7 /* SQLiteDatabaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseServiceTests.swift; sourceTree = "<group>"; };
+		986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseService.swift; sourceTree = "<group>"; };
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +134,7 @@
 				8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */,
 				986A24632386D55B00BD43E7 /* DatabaseService.swift */,
 				986A24662386DE2400BD43E7 /* MockDatabaseService.swift */,
+				986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 				981B0D432369EC0A00D701D0 /* BMGTests.swift */,
 				981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */,
 				981B0D452369EC0A00D701D0 /* Info.plist */,
+				986A246B2387E8DE00BD43E7 /* SQLiteDatabaseServiceTests.swift */,
 			);
 			path = BMGTests;
 			sourceTree = "<group>";
@@ -414,12 +421,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				986A24652386D55B00BD43E7 /* DatabaseService.swift in Sources */,
+				986A246C2387E8DE00BD43E7 /* SQLiteDatabaseServiceTests.swift in Sources */,
 				981B0D4B2369EE4C00D701D0 /* LogRockClimbViewModel.swift in Sources */,
 				98F6ACA623709C1F005DA077 /* SQLiteDbService.swift in Sources */,
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
 				981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */,
 				986A24682386DE2400BD43E7 /* MockDatabaseService.swift in Sources */,
 				981B0D4D2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift in Sources */,
+				986A246F2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +446,7 @@
 				986A24642386D55B00BD43E7 /* DatabaseService.swift in Sources */,
 				8D56E813235F53670024CD50 /* Grades.swift in Sources */,
 				8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */,
+				986A246E2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */,
 				8D2C75F7235A09F30081D22F /* ClimbingStylesTableView.swift in Sources */,
 				8D2C75F12359F8A60081D22F /* Model.swift in Sources */,
 				8D2C75FB235A0CEE0081D22F /* CustomPickerToolbar.swift in Sources */,

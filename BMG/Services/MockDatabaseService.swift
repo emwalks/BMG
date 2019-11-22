@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockDatabaseService {
+class MockDatabaseService: DatabaseService {
     
     public var loggedRouteName: String = ""
     
