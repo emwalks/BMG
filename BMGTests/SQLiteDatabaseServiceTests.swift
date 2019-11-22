@@ -66,16 +66,17 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         XCTAssertTrue(db != nil, "The database is not nil")
     }
     
-    var rockClimbTable:Table? = Table("rockClimbTable")
+    var rockClimbTable:Table = Table("rockClimbTable")
     let id = Expression<Int64>("id")
-    let routeName = Expression<String?>("routeName")
+    let loggedRouteName = Expression<String?>("loggedRouteName")
     
-    func createTable () -> Bool {
+    func createRockClimbTable () -> Bool {
         do {
-            try db!.run(rockClimbTable!.create {
+            db = createDB()
+            try db!.run(rockClimbTable.create {
                 table in
                 table.column(id, primaryKey: true)
-                table.column(routeName)
+                table.column(loggedRouteName)
             })
             return true
         } catch {
@@ -86,18 +87,28 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testThatWhenCreateTableIsCalledATableIsCreated() {
         
-        let resultOfCreateTableFunction = createTable()
+        let resultOfCreateTableFunction = createRockClimbTable()
         
         XCTAssertTrue(resultOfCreateTableFunction == true, "a rockClimbTable has been created in db" )
     }
     
     func testThatWhenAddRockClimbIsCalledRouteNameGetsAdded() {
         
-        func addRockClimb() -> Bool {
-            return false
+        let routeNameEntered = "Jean Jeanie"
+        createRockClimbTable ()
+        
+        func addRockClimbToDb(routeName: String) -> Bool {
+            do {
+                try db!.run(rockClimbTable.insert(loggedRouteName <- routeName))
+                return true
+            } catch {
+                print("Insert failed")
+                return false
+            }
         }
         
-        let resultOfAddRockClimb = addRockClimb()
+        
+        let resultOfAddRockClimb = addRockClimbToDb(routeName: routeNameEntered)
         
         XCTAssertTrue(resultOfAddRockClimb == true, "a routeName row has been added" )
     }
@@ -112,7 +123,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
                 try fileManager.removeItem(atPath: filePath)
                 print("Database Deleted!")
             } catch {
-                print("Error on Delete Database!!!")
+                print("Error on Delete Database!")
             }
         }
         
