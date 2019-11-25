@@ -59,57 +59,56 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         
         let resultOfCreateTableFunction = createRockClimbTable()
         
-        XCTAssertTrue(resultOfCreateTableFunction == true, "a rockClimbTable has been created in db" )
+        XCTAssertEqual(resultOfCreateTableFunction, true, "a rockClimbTable has been created in db" )
     }
     
+    let routeNameEntered = "Jean Jeanie"
+    
+    func addRockClimbToDb(routeName: String) -> Bool {
+        do {
+            db = createDB()
+            try db!.run(rockClimbTable.insert(loggedRouteName <- routeName))
+            return true
+        } catch {
+            print("Insert failed")
+            return false
+        }
+    }
     
     func testThatWhenAddRockClimbIsCalledRouteNameGetsAdded() {
-        
-        let routeNameEntered = "Jean Jeanie"
-        
-        func addRockClimbToDb(routeName: String) -> Bool {
-            do {
-                db = createDB()
-                
-                try db!.run(rockClimbTable.insert(loggedRouteName <- routeName))
-                return true
-            } catch {
-                print("Insert failed")
-                return false
-            }
-        }
         
         createRockClimbTable()
         
         let resultOfAddRockClimb = addRockClimbToDb(routeName: routeNameEntered)
         
-        XCTAssertTrue(resultOfAddRockClimb == true, "a routeName row has been added" )
+        XCTAssertEqual(resultOfAddRockClimb, true, "a routeName row has been added" )
     }
     
-//    func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
-//
-//        createRockClimbTable()
-//        addRockClimbToDb(routeName: routeNameEntered)
-//
-//        func returnRockClimb() -> String {
-//            do {
-//                db = createDB()
-//                for rockClimb in try db!.prepare(rockClimbTable) {
-//                    return "\(String(describing: rockClimb[loggedRouteName]))"
-//                }
-//
-//            } catch {
-//                print("Insert failed")
-//                return "Insert failed"
-//            }
-//            return "out of scope"
-//        }
-//
-//
-//        let actualResult = returnRockClimb()
-//        XCTAssertEqual(routeNameEntered, actualResult)
-//    }
-//
+    func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
+
+        createRockClimbTable()
+        addRockClimbToDb(routeName: routeNameEntered)
+
+        func returnRockClimb() -> String {
+            do {
+                db = createDB()
+                for rockClimb in try db!.prepare(rockClimbTable) {
+                    return "\(String(describing: rockClimb[loggedRouteName]))"
+                }
+                
+            } catch {
+                print("Insert failed")
+                return "Insert failed"
+            }
+            return "out of scope"
+        }
+
+
+        let actualResult = returnRockClimb()
+        
+        XCTAssertEqual(routeNameEntered, actualResult)
+    }
+
    
     
     override class func tearDown() {
