@@ -84,33 +84,30 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         XCTAssertEqual(resultOfAddRockClimb, true, "a routeName row has been added" )
     }
     
+    func returnRockClimb() -> String {
+        do {
+            db = createDB()
+            for rockClimb in try db!.prepare(rockClimbTable) {
+                return "\(String(describing: rockClimb[loggedRouteName]!))"
+            }
+            
+        } catch {
+            print("Insert failed")
+            return "Insert failed"
+        }
+        return "an error has occured during returnRockClimb function execution"
+    }
+    
     func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
 
         createRockClimbTable()
         addRockClimbToDb(routeName: routeNameEntered)
-
-        func returnRockClimb() -> String {
-            do {
-                db = createDB()
-                for rockClimb in try db!.prepare(rockClimbTable) {
-                    return "\(String(describing: rockClimb[loggedRouteName]))"
-                }
-                
-            } catch {
-                print("Insert failed")
-                return "Insert failed"
-            }
-            return "out of scope"
-        }
-
 
         let actualResult = returnRockClimb()
         
         XCTAssertEqual(routeNameEntered, actualResult)
     }
 
-   
-    
     override class func tearDown() {
 
         let path = NSSearchPathForDirectoriesInDomains(
@@ -123,9 +120,9 @@ class SQLiteDatabaseServiceTests: XCTestCase {
             do {
 
                 try fileManager.removeItem(atPath: filePath)
-                print("Database Deleted!")
+                print("Database Deleted")
             } catch {
-                print("Error on Delete Database!")
+                print("Error on Delete Database")
             }
         }
 
