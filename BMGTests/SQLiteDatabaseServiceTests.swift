@@ -49,50 +49,9 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     }
     
     var rockClimbTable:Table = Table("rockClimbTable")
-    let id = Expression<Int64>("id")
+  
     let loggedRouteName = Expression<String?>("loggedRouteName")
     
-    func createRockClimbTable () -> Bool {
-        do {
-            db = createDB()
-            try db!.run(rockClimbTable.create(ifNotExists: true){
-                table in
-                table.column(id, primaryKey: true)
-                table.column(loggedRouteName)
-            })
-            return true
-        } catch {
-            print("Unable to create table")
-            return false
-        }
-    }
-    
-    func testThatWhenCreateTableIsCalledATableIsCreated() {
-        
-        let resultOfCreateTableFunction = createRockClimbTable()
-        
-        XCTAssertEqual(resultOfCreateTableFunction, true, "a rockClimbTable has been created in db" )
-    }
-    
-    func addRockClimbToDb(routeName: String) -> Bool {
-        do {
-            try db!.run(rockClimbTable.insert(loggedRouteName <- routeName))
-            return true
-        } catch {
-            print("Insert failed")
-            return false
-        }
-    }
-    
-    func testThatWhenAddRockClimbIsCalledRouteNameGetsAdded() {
-        
-        createRockClimbTable()
-        
-        let routeNameEntered = "Jean Jeanie"
-        let resultOfAddRockClimb = addRockClimbToDb(routeName: routeNameEntered)
-        
-        XCTAssertEqual(resultOfAddRockClimb, true, "a routeName row has been added" )
-    }
     
     func returnRockClimb() -> String {
         do {
@@ -109,7 +68,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
         
-        createRockClimbTable()
+        db = createDB()
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         
         let routeNameEntered = "Jomo"

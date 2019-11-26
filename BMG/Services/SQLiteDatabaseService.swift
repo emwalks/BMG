@@ -18,10 +18,21 @@ class SQLiteDatabaseService: DatabaseService {
     }
     
     var rockClimbTable:Table = Table("rockClimbTable")
-    let id = Expression<Int64>("id")
+     let id = Expression<Int64>("id")
     let loggedRouteName = Expression<String?>("loggedRouteName")
     
     func addRockClimbToDb(routeName: String) {
+        
+        do {
+            try database.run(rockClimbTable.create(ifNotExists: true){
+                table in
+                table.column(id, primaryKey: true)
+                table.column(loggedRouteName)
+            })
+        } catch {
+            print("Unable to create table")
+        }
+        
         do {
             try database.run(rockClimbTable.insert(loggedRouteName <- routeName))
         } catch {
