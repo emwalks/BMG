@@ -11,23 +11,22 @@ import SQLite
 
 class SQLiteDatabaseServiceTests: XCTestCase {
     
-
-    
-    let path = NSSearchPathForDirectoriesInDomains(
+    let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
         .documentDirectory, .userDomainMask, true
         ).first!
+    
+    let randomNumber: Int = Int.random(in: 1..<100)
     
     var db: Connection?
     
     func createDB() -> Connection? {
         do {
-            db = try Connection("\(path)/BMGDB.sqlite3")
+            db = try Connection("\(appDocumetDirectory)/BMGDB.sqlite3")
         } catch {
             db = nil
         }
         return db
     }
-    
     
     func testThatWhenCreateDBIsCalledADatabaseIsCreated() {
         
@@ -57,12 +56,13 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testThatWhenCreateTableIsCalledATableIsCreated() {
         
+        db = createDB()
         let resultOfCreateTableFunction = createRockClimbTable()
         
         XCTAssertEqual(resultOfCreateTableFunction, true, "a rockClimbTable has been created in db" )
     }
     
-    let routeNameEntered = "Jean Jeanie"
+    lazy var routeNameEntered = "\(randomNumber) Jean Jeanie"
     
     func addRockClimbToDb(routeName: String) -> Bool {
         do {
@@ -99,37 +99,37 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     }
     
     func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
-
+        
         createRockClimbTable()
         addRockClimbToDb(routeName: routeNameEntered)
-
+        
         let actualResult = returnRockClimb()
         
         XCTAssertEqual(routeNameEntered, actualResult)
     }
-
+    
     override class func tearDown() {
-
-        let path = NSSearchPathForDirectoriesInDomains(
+        
+        let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
             ).first!
-
+        
         func deleteDatabase(filePath : String)
         {
             let fileManager = FileManager.default
             do {
-
+                
                 try fileManager.removeItem(atPath: filePath)
                 print("Database Deleted")
             } catch {
                 print("Error on Delete Database")
             }
         }
-
-        deleteDatabase(filePath: path)
+        
+        deleteDatabase(filePath: appDocumetDirectory)
         super.tearDown()
     }
-
+    
 }
 
 

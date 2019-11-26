@@ -1,5 +1,5 @@
 //
-//  DatabaseService.swift
+//  SQLiteDbService.swift
 //  BMG
 //
 //  Created by Andrew Wilson-Jones on 18/10/2019.
