@@ -76,7 +76,6 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func addRockClimbToDb(routeName: String) -> Bool {
         do {
-            //db = createDB()
             try db!.run(rockClimbTable.insert(loggedRouteName <- routeName))
             return true
         } catch {
@@ -87,9 +86,9 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testThatWhenAddRockClimbIsCalledRouteNameGetsAdded() {
         
-        let routeNameEntered = "Jean Jeanie"
         createRockClimbTable()
         
+        let routeNameEntered = "Jean Jeanie"
         let resultOfAddRockClimb = addRockClimbToDb(routeName: routeNameEntered)
         
         XCTAssertEqual(resultOfAddRockClimb, true, "a routeName row has been added" )
@@ -97,7 +96,6 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func returnRockClimb() -> String {
         do {
-            // db = createDB()
             for rockClimb in try db!.prepare(rockClimbTable) {
                 return "\(String(describing: rockClimb[loggedRouteName]!))"
             }
@@ -111,11 +109,12 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
         
-        db = createDB()
-        let routeNameEntered = "Jomo"
         createRockClimbTable()
-        addRockClimbToDb(routeName: routeNameEntered)
+        let sqliteDatabaseService = SQLiteDatabaseService(db!)
         
+        let routeNameEntered = "Jomo"
+        
+        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
         let actualResult = returnRockClimb()
         
         XCTAssertEqual(routeNameEntered, actualResult)
