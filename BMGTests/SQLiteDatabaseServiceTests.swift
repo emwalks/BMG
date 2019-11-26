@@ -18,7 +18,8 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         super.setUp()
         
         dbDirectoryString = createDbDirectory()
-        db = createDB(dbDirectoryString)
+        let defaultSQLiteDatabaseService = DefaultSQLiteDatabaseService()
+        db = defaultSQLiteDatabaseService.createDB(dbDirectoryString)
     }
     
     func createDbDirectory() -> String {
@@ -30,28 +31,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         return appDocumetDirectoryURL.appendingPathComponent("\(randomNumber)").absoluteString
         
     }
-    
-    func createDB(_ dbDirectoryString: String) -> Connection? {
-        var db:Connection?
-        
-        do {
-            if !FileManager.default.fileExists(atPath: dbDirectoryString) {
-                do {
-                    try FileManager.default.createDirectory(atPath: dbDirectoryString, withIntermediateDirectories: true, attributes: nil)
-                } catch {
-                    print(error.localizedDescription);
-                }
-            }
-            
-            db = try Connection("\(dbDirectoryString)/BMGDB.sqlite3")
-        } catch {
-            db = nil
-            print("Unable to create SQLite database")
-        }
-        return db
-    }
-    
-    
+
     func testThatWhenCreateDBIsCalledADatabaseIsCreated() {
        
         XCTAssertTrue(db != nil, "The database is not nil")
@@ -81,6 +61,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         
         
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
+        
         let randomNumber: Int = Int.random(in: 1..<100)
         let routeNameEntered = "\(randomNumber)Jomo"
         
