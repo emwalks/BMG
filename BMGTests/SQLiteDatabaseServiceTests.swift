@@ -66,12 +66,14 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         return "an error has occured during returnRockClimb function execution"
     }
     
+    
+    
     func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
         
         db = createDB()
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
-        
-        let routeNameEntered = "Jomo"
+        let randomNumber: Int = Int.random(in: 1..<100)
+        let routeNameEntered = "\(randomNumber)Jomo"
         
         sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
         let actualResult = returnRockClimb()
