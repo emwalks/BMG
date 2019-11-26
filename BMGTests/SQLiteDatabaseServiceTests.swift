@@ -11,17 +11,32 @@ import SQLite
 
 class SQLiteDatabaseServiceTests: XCTestCase {
     
-    let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
-        .documentDirectory, .userDomainMask, true
-        ).first!
+    var dbDirectoryString: String = ""
     
-    let randomNumber: Int = Int.random(in: 1..<100)
+    override func setUp() {
+        super.setUp()
+        let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true).first!
+        
+        let appDocumetDirectoryURL = URL(string: appDocumetDirectory)!
+        let randomNumber: Int = Int.random(in: 1..<100)
+        let dbDirectory = appDocumetDirectoryURL.appendingPathComponent("\(randomNumber)").absoluteString
+        dbDirectoryString = dbDirectory
+        
+        if !FileManager.default.fileExists(atPath: dbDirectory) {
+            do {
+                try FileManager.default.createDirectory(atPath: dbDirectory, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print(error.localizedDescription);
+            }
+        }
+    }
     
     var db: Connection?
     
     func createDB() -> Connection? {
         do {
-            db = try Connection("\(appDocumetDirectory)/BMGDB.sqlite3")
+            db = try Connection("\(dbDirectoryString)/BMGDB.sqlite3")
         } catch {
             db = nil
         }
@@ -29,9 +44,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     }
     
     func testThatWhenCreateDBIsCalledADatabaseIsCreated() {
-        
         db = createDB()
-        
         XCTAssertTrue(db != nil, "The database is not nil")
     }
     
@@ -56,17 +69,14 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testThatWhenCreateTableIsCalledATableIsCreated() {
         
-        db = createDB()
         let resultOfCreateTableFunction = createRockClimbTable()
         
         XCTAssertEqual(resultOfCreateTableFunction, true, "a rockClimbTable has been created in db" )
     }
     
-    lazy var routeNameEntered = "\(randomNumber) Jean Jeanie"
-    
     func addRockClimbToDb(routeName: String) -> Bool {
         do {
-            db = createDB()
+            //db = createDB()
             try db!.run(rockClimbTable.insert(loggedRouteName <- routeName))
             return true
         } catch {
@@ -77,6 +87,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testThatWhenAddRockClimbIsCalledRouteNameGetsAdded() {
         
+        let routeNameEntered = "Jean Jeanie"
         createRockClimbTable()
         
         let resultOfAddRockClimb = addRockClimbToDb(routeName: routeNameEntered)
@@ -86,7 +97,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func returnRockClimb() -> String {
         do {
-            db = createDB()
+            // db = createDB()
             for rockClimb in try db!.prepare(rockClimbTable) {
                 return "\(String(describing: rockClimb[loggedRouteName]!))"
             }
@@ -100,6 +111,8 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
         
+        db = createDB()
+        let routeNameEntered = "Jomo"
         createRockClimbTable()
         addRockClimbToDb(routeName: routeNameEntered)
         
@@ -108,17 +121,13 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         XCTAssertEqual(routeNameEntered, actualResult)
     }
     
-    override class func tearDown() {
-        
-        let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
-            .documentDirectory, .userDomainMask, true
-            ).first!
+    override func tearDown() {
         
         func deleteDatabase(filePath : String)
         {
             let fileManager = FileManager.default
             do {
-                
+                //close the db here?
                 try fileManager.removeItem(atPath: filePath)
                 print("Database Deleted")
             } catch {
@@ -126,7 +135,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
             }
         }
         
-        deleteDatabase(filePath: appDocumetDirectory)
+        deleteDatabase(filePath: "\(dbDirectoryString)")
         super.tearDown()
     }
     
