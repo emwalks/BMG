@@ -12,39 +12,48 @@ import SQLite
 class SQLiteDatabaseServiceTests: XCTestCase {
     
     var dbDirectoryString: String = ""
+    var db: Connection? = nil
     
     override func setUp() {
         super.setUp()
+        
+        dbDirectoryString = createDbDirectory()
+        db = createDB(dbDirectoryString)
+    }
+    
+    func createDbDirectory() -> String {
         let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true).first!
         
         let appDocumetDirectoryURL = URL(string: appDocumetDirectory)!
         let randomNumber: Int = Int.random(in: 1..<100)
-        let dbDirectory = appDocumetDirectoryURL.appendingPathComponent("\(randomNumber)").absoluteString
-        dbDirectoryString = dbDirectory
+        return appDocumetDirectoryURL.appendingPathComponent("\(randomNumber)").absoluteString
         
-        if !FileManager.default.fileExists(atPath: dbDirectory) {
-            do {
-                try FileManager.default.createDirectory(atPath: dbDirectory, withIntermediateDirectories: true, attributes: nil)
-            } catch {
-                print(error.localizedDescription);
-            }
-        }
     }
     
-    var db: Connection?
-    
-    func createDB() -> Connection? {
+    func createDB(_ dbDirectoryString: String) -> Connection? {
+        var db:Connection?
+        
         do {
+            if !FileManager.default.fileExists(atPath: dbDirectoryString) {
+                do {
+                    try FileManager.default.createDirectory(atPath: dbDirectoryString, withIntermediateDirectories: true, attributes: nil)
+                } catch {
+                    print(error.localizedDescription);
+                }
+            }
+            
             db = try Connection("\(dbDirectoryString)/BMGDB.sqlite3")
         } catch {
             db = nil
+            print("Unable to create SQLite database")
         }
         return db
     }
     
+    
     func testThatWhenCreateDBIsCalledADatabaseIsCreated() {
-        db = createDB()
+       
         XCTAssertTrue(db != nil, "The database is not nil")
     }
     
@@ -70,7 +79,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
         
-        db = createDB()
+        
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         let randomNumber: Int = Int.random(in: 1..<100)
         let routeNameEntered = "\(randomNumber)Jomo"
