@@ -38,6 +38,16 @@
                ReferencedContainer = "container:BMG.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "98951653238EA07900130140"
+               BuildableName = "BMGUITests.xctest"
+               BlueprintName = "BMGUITests"
+               ReferencedContainer = "container:BMG.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

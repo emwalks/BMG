@@ -66,4 +66,8 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(routeNameEntered, actualResult)
     }
     
+//    func testWhenSubmitButtonClickedANewScreenIsShown() {
+//          see UI tests
+//    }
+    
 }

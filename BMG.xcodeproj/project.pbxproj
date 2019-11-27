@@ -37,12 +37,21 @@
 		986A246F2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */; };
 		9895164E238D83E100130140 /* SQLiteDatabaseServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895164D238D83E100130140 /* SQLiteDatabaseServiceFactory.swift */; };
 		9895164F238D849F00130140 /* SQLiteDatabaseServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895164D238D83E100130140 /* SQLiteDatabaseServiceFactory.swift */; };
+		98951657238EA07900130140 /* BMGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98951656238EA07900130140 /* BMGUITests.swift */; };
+		98951660238EA1D100130140 /* LogARockClimbViewModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895165E238EA1D100130140 /* LogARockClimbViewModelUITests.swift */; };
 		98F6ACA623709C1F005DA077 /* SQLiteDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */; };
 		CBAA2B4754A6D85C99892CBD /* Pods_BMGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		981B0D462369EC0A00D701D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 985413EC2350B1C2003768CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 985413F32350B1C2003768CE;
+			remoteInfo = BMG;
+		};
+		98951659238EA07900130140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 985413EC2350B1C2003768CE /* Project object */;
 			proxyType = 1;
@@ -81,6 +90,10 @@
 		986A246B2387E8DE00BD43E7 /* SQLiteDatabaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseServiceTests.swift; sourceTree = "<group>"; };
 		986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseService.swift; sourceTree = "<group>"; };
 		9895164D238D83E100130140 /* SQLiteDatabaseServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseServiceFactory.swift; sourceTree = "<group>"; };
+		98951654238EA07900130140 /* BMGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98951656238EA07900130140 /* BMGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMGUITests.swift; sourceTree = "<group>"; };
+		98951658238EA07900130140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9895165E238EA1D100130140 /* LogARockClimbViewModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogARockClimbViewModelUITests.swift; sourceTree = "<group>"; };
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +116,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C680034775CF14F9F077AE2 /* Pods_BMG.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98951651238EA07900130140 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +226,7 @@
 				98C7CC2B2370714A002AA781 /* SQLite.framework */,
 				985413F62350B1C2003768CE /* BMG */,
 				981B0D422369EC0A00D701D0 /* BMGTests */,
+				98951655238EA07900130140 /* BMGUITests */,
 				985413F52350B1C2003768CE /* Products */,
 				D80630FCD1389231EF1D0B03 /* Pods */,
 				EF839ADB7226B95E725A5EBD /* Frameworks */,
@@ -217,6 +238,7 @@
 			children = (
 				985413F42350B1C2003768CE /* BMG.app */,
 				981B0D412369EC0A00D701D0 /* BMGTests.xctest */,
+				98951654238EA07900130140 /* BMGUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +253,16 @@
 				8D136F8B23549EF3003D117E /* Supporting Files */,
 			);
 			path = BMG;
+			sourceTree = "<group>";
+		};
+		98951655238EA07900130140 /* BMGUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9895165E238EA1D100130140 /* LogARockClimbViewModelUITests.swift */,
+				98951656238EA07900130140 /* BMGUITests.swift */,
+				98951658238EA07900130140 /* Info.plist */,
+			);
+			path = BMGUITests;
 			sourceTree = "<group>";
 		};
 		D80630FCD1389231EF1D0B03 /* Pods */ = {
@@ -295,6 +327,24 @@
 			productReference = 985413F42350B1C2003768CE /* BMG.app */;
 			productType = "com.apple.product-type.application";
 		};
+		98951653238EA07900130140 /* BMGUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9895165B238EA07900130140 /* Build configuration list for PBXNativeTarget "BMGUITests" */;
+			buildPhases = (
+				98951650238EA07900130140 /* Sources */,
+				98951651238EA07900130140 /* Frameworks */,
+				98951652238EA07900130140 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9895165A238EA07900130140 /* PBXTargetDependency */,
+			);
+			name = BMGUITests;
+			productName = BMGUITests;
+			productReference = 98951654238EA07900130140 /* BMGUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -311,6 +361,10 @@
 					};
 					985413F32350B1C2003768CE = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					98951653238EA07900130140 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 985413F32350B1C2003768CE;
 					};
 				};
 			};
@@ -329,6 +383,7 @@
 			targets = (
 				985413F32350B1C2003768CE /* BMG */,
 				981B0D402369EC0A00D701D0 /* BMGTests */,
+				98951653238EA07900130140 /* BMGUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -350,6 +405,13 @@
 				8D136F8923549E08003D117E /* Style Notes in Resources */,
 				985413FF2350B1C3003768CE /* Assets.xcassets in Resources */,
 				985413FD2350B1C2003768CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98951652238EA07900130140 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +521,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98951650238EA07900130140 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98951660238EA1D100130140 /* LogARockClimbViewModelUITests.swift in Sources */,
+				98951657238EA07900130140 /* BMGUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -466,6 +537,11 @@
 			isa = PBXTargetDependency;
 			target = 985413F32350B1C2003768CE /* BMG */;
 			targetProxy = 981B0D462369EC0A00D701D0 /* PBXContainerItemProxy */;
+		};
+		9895165A238EA07900130140 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 985413F32350B1C2003768CE /* BMG */;
+			targetProxy = 98951659238EA07900130140 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -685,6 +761,44 @@
 			};
 			name = Release;
 		};
+		9895165C238EA07900130140 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y983APTU2S;
+				INFOPLIST_FILE = BMGUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.bbc.emma.walker02.BMGUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BMG;
+			};
+			name = Debug;
+		};
+		9895165D238EA07900130140 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y983APTU2S;
+				INFOPLIST_FILE = BMGUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.bbc.emma.walker02.BMGUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BMG;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -711,6 +825,15 @@
 			buildConfigurations = (
 				985414072350B1C3003768CE /* Debug */,
 				985414082350B1C3003768CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9895165B238EA07900130140 /* Build configuration list for PBXNativeTarget "BMGUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9895165C238EA07900130140 /* Debug */,
+				9895165D238EA07900130140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
