@@ -9,9 +9,17 @@
 import Foundation
 import SQLite
 
-class DefaultSQLiteDatabaseService {
+class SQLiteDatabaseServiceFactory {
+
+    static func createDbService() -> DatabaseService {
+        let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true).first!
+        print("Database location: \(appDocumetDirectory)")
+        return SQLiteDatabaseService(createDB(appDocumetDirectory)!)
+    }
     
-    func createDB(_ dbDirectoryString: String) -> Connection? {
+    // prob shouldn't return an optional but for now needs to be for test
+    static func createDB(_ dbDirectoryString: String) -> Connection? {
         var db:Connection?
         
         do {
@@ -33,3 +41,4 @@ class DefaultSQLiteDatabaseService {
     
     
 }
+

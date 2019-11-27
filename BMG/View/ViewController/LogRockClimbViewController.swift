@@ -12,7 +12,7 @@ class LogRockClimbViewController: UIViewController {
     
     // MARK: Fields / Variables
     
-    let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
+    let logRockClimbViewModel = LogRockClimbViewModel(SQLiteDatabaseServiceFactory.createDbService())
     
     // TODO: Model initialised here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
     
@@ -34,7 +34,6 @@ class LogRockClimbViewController: UIViewController {
         logRockClimbViewModel.logClimbData(routeName: routeTextField.text ?? "No route name given")
        
         routeTextField.text = ""
-        
     }
     
     // MARK: Formatting the view

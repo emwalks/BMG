@@ -17,12 +17,11 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        dbDirectoryString = createDbDirectory()
-        let defaultSQLiteDatabaseService = DefaultSQLiteDatabaseService()
-        db = defaultSQLiteDatabaseService.createDB(dbDirectoryString)
+        dbDirectoryString = createDbDirectoryForTesting()
+        db = SQLiteDatabaseServiceFactory.createDB(dbDirectoryString)
     }
     
-    func createDbDirectory() -> String {
+    func createDbDirectoryForTesting() -> String {
         let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true).first!
         
