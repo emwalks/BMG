@@ -68,16 +68,46 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testWhenTheViewModelCallsReturnRockClimbDataAClimbIdisRecalled() {
 
+        //arrange
         let databaseService = MockDatabaseService()
         let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
-        
-        let rockClimbIdGivenWhenWrittenToDb = Int.random(in: 100...200)
-        
-        logRockClimbViewModel.returnRockClimbData(rockClimbId: rockClimbIdGivenWhenWrittenToDb)
-        
+        let rockClimbIdAssignedWhenWrittenToDb = Int.random(in: 100...200)
+        //act
+        logRockClimbViewModel.returnRockClimbData(rockClimbId: rockClimbIdAssignedWhenWrittenToDb)
+        //assert
         let actualResult = databaseService.loggedRockClimbId
-        XCTAssertEqual(rockClimbIdGivenWhenWrittenToDb, actualResult)
+        XCTAssertEqual(rockClimbIdAssignedWhenWrittenToDb, actualResult)
         
     }
     
+    func testWhenTheVMReturnsARockClimbANewScreenIsNavigatedTo() {
+        
+        class MockNavigationController:ScreenNavigationController {
+            
+            var returnedRockClimbId: Int = -2
+            
+            func showLoggedRockClimbOnScreen(rockClimbId: Int) -> Int {
+                returnedRockClimbId = rockClimbId
+                return returnedRockClimbId
+            }
+            
+            
+        }
+        
+        let mockNavigationController: ScreenNavigationController = MockNavigationController()
+        
+        let idOfRockClimbDisplayed = Int.random(in: 200...300)
+        
+        let actualResult = mockNavigationController.showLoggedRockClimbOnScreen(rockClimbId: idOfRockClimbDisplayed)
+        
+        XCTAssertEqual(idOfRockClimbDisplayed, actualResult)
+        
+        //next test should test that when the VM gets called it returns the
+        
+    }
+    
+}
+
+protocol ScreenNavigationController {
+    func  showLoggedRockClimbOnScreen(rockClimbId : Int) -> Int
 }
