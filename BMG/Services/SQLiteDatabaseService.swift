@@ -39,4 +39,8 @@ class SQLiteDatabaseService: DatabaseService {
         }
     }
     
+    func returnRockClimbFromDb(rockClimbId: Int) {
+        //empty func to conform to protocol
+    }
+    
 }

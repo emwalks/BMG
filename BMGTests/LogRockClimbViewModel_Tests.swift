@@ -66,8 +66,18 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(routeNameEntered, actualResult)
     }
     
-//    func testWhenSubmitButtonClickedANewScreenIsShown() {
-//          see UI tests
-//    }
+    func testWhenTheViewModelCallsReturnRockClimbDataAClimbIdisRecalled() {
+
+        let databaseService = MockDatabaseService()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
+        
+        let rockClimbIdGivenWhenWrittenToDb = Int.random(in: 100...200)
+        
+        logRockClimbViewModel.returnRockClimbData(rockClimbId: rockClimbIdGivenWhenWrittenToDb)
+        
+        let actualResult = databaseService.loggedRockClimbId
+        XCTAssertEqual(rockClimbIdGivenWhenWrittenToDb, actualResult)
+        
+    }
     
 }
