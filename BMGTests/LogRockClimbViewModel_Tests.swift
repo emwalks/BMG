@@ -11,7 +11,10 @@ import XCTest
 class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testDefaultGradeText() {
-        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
+        let databaseService = MockDatabaseService()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
+       
         let actualResult = logRockClimbViewModel.gradeText()
         let expectedResult = "Please select a grade"
         XCTAssertEqual(actualResult, expectedResult)
@@ -19,7 +22,9 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testSelectedGradeText() {
         
-        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
+        let databaseService = MockDatabaseService()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
         
         let selectedAdjectivalGrade = "E1"
         let selectedTechnicalGrade = "5c"
@@ -33,7 +38,9 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     
     func testSelectedGradeTextTechnicalBlank() {
         
-        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
+        let databaseService = MockDatabaseService()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
         
         let selectedAdjectivalGrade = "E1"
         let selectedTechnicalGrade = ""
@@ -46,18 +53,11 @@ class LogRockClimbViewModel_Tests: XCTestCase {
     }
     
     
-    
-    func testWhenSubmitButtonClickedTheDataIsRemovedFromTheArray(){
-        let logRockClimbViewModel = LogRockClimbViewModel(MockDatabaseService())
-        let enteredRouteName = "The Bat"
-        _ = logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
-        
-    }
-    
     func testWhenSubmitButtonClickedClimbDataPersists() {
         
         let databaseService = MockDatabaseService()
-        let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
         
         let routeNameEntered = "Jomo"
         logRockClimbViewModel.logClimbData(routeName: routeNameEntered)
@@ -66,41 +66,24 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(routeNameEntered, actualResult)
     }
     
-    func testShowTheLoggedRockClimbScreenAfterSubmission() {
+    func testThatTheLoggedRockClimbScreenIsShownAfterSubmission() {
+
         
-        class MockNavigationController:ScreenNavigationController {
-            
-            public var returnedRockClimbId: Int = -2
-            
-            func showLoggedRockClimbOnScreen(rockClimbId: Int) -> Int {
-                returnedRockClimbId = rockClimbId
-                return returnedRockClimbId
-            }
-            
-            
-        }
-        
-        let mockNavigationController: MockNavigationController = MockNavigationController()
-        let idOfRockClimbDisplayed = Int.random(in: 200...300)
-        
-        
-        //we need our mock database service to return an id (idOfRockClimbDisplayed) when its asked to save a route name ( "anyoldstring")
-        
-        //action
         let databaseService = MockDatabaseService()
-        let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
-        logRockClimbViewModel.logClimbData(routeName: "anyoldstring")
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
         
-        let actualResult = mockNavigationController.returnedRockClimbId
-        XCTAssertEqual(idOfRockClimbDisplayed, actualResult)
         
-        //next need to add functionality that the VM calls the mockNav controller
-        
+        let enteredRouteName = "Jean Jeanie"
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
+
+        XCTAssertEqual(loggedRockClimbDataScreenExists, true, "The function: displayLoggedRockClimbDataScreen has run")
     }
-    
 }
 
-protocol ScreenNavigationController {
-    func displayLoggedRockClimbDataScreen()
-    
-}
+
+
+
+
+
+

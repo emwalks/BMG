@@ -10,12 +10,14 @@ import Foundation
 
 class LogRockClimbViewModel{
     
-    init(_ databaseService: DatabaseService) {
-        self.databaseService = databaseService
-    }
-    
     var databaseService: DatabaseService
+    var screenNavigationController: ScreenNavigationController
     
+    init(_ databaseService: DatabaseService, screenNavigationController: ScreenNavigationController) {
+        self.databaseService = databaseService
+        self.screenNavigationController = screenNavigationController
+    }
+
     ///Grades
     
     let rockClimbGrades = Grades.rockClimbGrades
@@ -39,7 +41,11 @@ class LogRockClimbViewModel{
     ///Submit button
     
     func logClimbData(routeName: String) {
+        
         databaseService.addRockClimbToDb(routeName: routeName)
+        
+        screenNavigationController.displayLoggedRockClimbDataScreen()
+        
     }
     
     
