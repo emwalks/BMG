@@ -41,35 +41,6 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     let loggedRouteName = Expression<String?>("loggedRouteName")
     
     
-    func returnRockClimb() -> String {
-        do {
-            for rockClimb in try db!.prepare(rockClimbTable) {
-                return "\(String(describing: rockClimb[loggedRouteName]!))"
-            }
-            
-        } catch {
-            print("Insert failed")
-            return "Insert failed"
-        }
-        return "an error has occured during returnRockClimb function execution"
-    }
-    
-    
-    
-    func testWhenReturnARockClimbIsCalledRouteNameIsReturn() {
-        
-        
-        let sqliteDatabaseService = SQLiteDatabaseService(db!)
-        
-        let randomNumber: Int = Int.random(in: 1..<100)
-        let routeNameEntered = "\(randomNumber)Jomo"
-        
-        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
-        let actualResult = returnRockClimb()
-        
-        XCTAssertEqual(routeNameEntered, actualResult)
-    }
-    
     override func tearDown() {
         
         func deleteDatabase(filePath : String)
@@ -89,5 +60,6 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     }
     
 }
+
 
 

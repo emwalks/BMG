@@ -12,7 +12,6 @@ protocol DatabaseService {
     
     
     func addRockClimbToDb (routeName: String)
-    
-    func returnRockClimbFromDb (rockClimbId: Int)
+
     
 }

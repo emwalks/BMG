@@ -10,6 +10,7 @@ import Foundation
 import SQLite
 
 class SQLiteDatabaseService: DatabaseService {
+
     
     let database: Connection
     
@@ -38,9 +39,4 @@ class SQLiteDatabaseService: DatabaseService {
             print("Insert failed")
         }
     }
-    
-    func returnRockClimbFromDb(rockClimbId: Int) {
-        //empty func to conform to protocol
-    }
-    
 }

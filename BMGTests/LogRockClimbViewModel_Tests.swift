@@ -66,25 +66,11 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(routeNameEntered, actualResult)
     }
     
-    func testWhenTheViewModelCallsReturnRockClimbDataAClimbIdisRecalled() {
-
-        //arrange
-        let databaseService = MockDatabaseService()
-        let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
-        let rockClimbIdAssignedWhenWrittenToDb = Int.random(in: 100...200)
-        //act
-        logRockClimbViewModel.returnRockClimbData(rockClimbId: rockClimbIdAssignedWhenWrittenToDb)
-        //assert
-        let actualResult = databaseService.loggedRockClimbId
-        XCTAssertEqual(rockClimbIdAssignedWhenWrittenToDb, actualResult)
-        
-    }
-    
-    func testWhenTheVMReturnsARockClimbANewScreenIsNavigatedTo() {
+    func testShowTheLoggedRockClimbScreenAfterSubmission() {
         
         class MockNavigationController:ScreenNavigationController {
             
-            var returnedRockClimbId: Int = -2
+            public var returnedRockClimbId: Int = -2
             
             func showLoggedRockClimbOnScreen(rockClimbId: Int) -> Int {
                 returnedRockClimbId = rockClimbId
@@ -94,20 +80,27 @@ class LogRockClimbViewModel_Tests: XCTestCase {
             
         }
         
-        let mockNavigationController: ScreenNavigationController = MockNavigationController()
-        
+        let mockNavigationController: MockNavigationController = MockNavigationController()
         let idOfRockClimbDisplayed = Int.random(in: 200...300)
         
-        let actualResult = mockNavigationController.showLoggedRockClimbOnScreen(rockClimbId: idOfRockClimbDisplayed)
         
+        //we need our mock database service to return an id (idOfRockClimbDisplayed) when its asked to save a route name ( "anyoldstring")
+        
+        //action
+        let databaseService = MockDatabaseService()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService)
+        logRockClimbViewModel.logClimbData(routeName: "anyoldstring")
+        
+        let actualResult = mockNavigationController.returnedRockClimbId
         XCTAssertEqual(idOfRockClimbDisplayed, actualResult)
         
-        //next test should test that when the VM gets called it returns the
+        //next need to add functionality that the VM calls the mockNav controller
         
     }
     
 }
 
 protocol ScreenNavigationController {
-    func  showLoggedRockClimbOnScreen(rockClimbId : Int) -> Int
+    func displayLoggedRockClimbDataScreen()
+    
 }

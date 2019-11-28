@@ -42,8 +42,5 @@ class LogRockClimbViewModel{
         databaseService.addRockClimbToDb(routeName: routeName)
     }
     
-    func returnRockClimbData(rockClimbId: Int) {
-        databaseService.returnRockClimbFromDb(rockClimbId: rockClimbId)
-    }
     
 }
