@@ -9,10 +9,10 @@
 import UIKit
 
 class LogRockClimbViewController: UIViewController {
-    
+
     // MARK: Fields / Variables
     
-    let logRockClimbViewModel = LogRockClimbViewModel(SQLiteDatabaseServiceFactory.createDbService(), screenNavigationController: MockScreenNavigationController())
+    var logRockClimbViewModel: LogRockClimbViewModel? = nil
     
     // TODO: Model initialised here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
     
@@ -31,7 +31,7 @@ class LogRockClimbViewController: UIViewController {
     
     
     @IBAction func clickedSubmitButton(_ sender: UIButton) {
-        logRockClimbViewModel.logClimbData(routeName: routeTextField.text ?? "No route name given")
+        logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given")
        
         routeTextField.text = ""
     }
@@ -41,6 +41,7 @@ class LogRockClimbViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        logRockClimbViewModel = LogRockClimbViewModel(SQLiteDatabaseServiceFactory.createDbService(), screenNavigationController: SegueNavigationController(self))
         createGradePicker()
         createDatePicker()
         styleTableView.setup()
@@ -56,7 +57,7 @@ class LogRockClimbViewController: UIViewController {
         
         // TODO: Make picker uneditable / enforce validation
         
-        gradePicker.setup(withData: logRockClimbViewModel.rockClimbGrades)
+        gradePicker.setup(withData: logRockClimbViewModel!.rockClimbGrades)
         gradePickerToolbar.setup(doneSelector: #selector(doneGradePicker), cancelSelector: #selector(cancelGradePicker))
         gradeTextField.inputAccessoryView = gradePickerToolbar
         gradeTextField.inputView = gradePicker
@@ -74,9 +75,9 @@ class LogRockClimbViewController: UIViewController {
             }
         }
         
-        logRockClimbViewModel.selectGrade(adjectivalGrade: extractedGrades[0], technicalGrade: extractedGrades[1])
+        logRockClimbViewModel!.selectGrade(adjectivalGrade: extractedGrades[0], technicalGrade: extractedGrades[1])
         
-        gradeTextField.text = logRockClimbViewModel.gradeText()
+        gradeTextField.text = logRockClimbViewModel!.gradeText()
         self.view.endEditing(true)
     }
     
