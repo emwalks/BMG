@@ -80,7 +80,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(loggedRockClimbDataScreenExists, true, "The function: displayLoggedRockClimbDataScreen has run")
     }
     
-
+}
 
 
 

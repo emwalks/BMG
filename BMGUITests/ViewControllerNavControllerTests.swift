@@ -23,19 +23,19 @@ class ViewControllerTests: XCTestCase {
     
     }
     
-    func testTheInitialViewControllerIsLogRockClimbViewController(){
-        sleep(4)
-        
-        let test1 = UIApplication.shared
-        let appDelegate = test1.delegate as! AppDelegate
-        
-        let test2 = appDelegate.window
-        var logRockClimbViewController = test2?.rootViewController
-        
-        XCTAssertNotNil(logRockClimbViewController?.presentedViewController)
-    }
-}
-    
+//    func testTheInitialViewControllerIsLogRockClimbViewController(){
+//        sleep(4)
+//
+//        let test1 = UIApplication.shared
+//        let appDelegate = test1.delegate as! AppDelegate
+//
+//        let test2 = appDelegate.window
+//        var logRockClimbViewController = test2?.rootViewController
+//
+//        XCTAssertNotNil(logRockClimbViewController?.presentedViewController)
+//    }
+//}
+//
 //    func testNavigateToTheRockClimbLoggedScreen() {
 //
 //        var logRockClimbViewController = UIApplication.shared.
@@ -65,5 +65,6 @@ class ViewControllerTests: XCTestCase {
 //
 //
 //    }
-//}
+    
+}
 
