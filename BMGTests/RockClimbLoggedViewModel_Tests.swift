@@ -11,16 +11,17 @@ import XCTest
 class RockClimbLoggedViewModel_Tests: XCTestCase {
     
     func testWhenGivenAnIdTheVMRetrievesTheCorrectRockClimbData() {
-    
-    let databaseService = MockDatabaseService()
-
-    let loggedRockClimbId = Int.random(in: 200...300)
-    
-        let actualResult = databaseService.getRockClimbDataById(idOfRockClimb: loggedRockClimbId)
-    
-    XCTAssertEqual(loggedRockClimbId, actualResult)
-    
+        
+        let databaseService = MockDatabaseService()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService)
+        
+        let loggedRockClimbId = Int.random(in: 200...300)
+        
+        let actualResult = rockClimbLoggedViewModel.retrieveRockClimbDataFromDb(idOfRockClimb: loggedRockClimbId)
+        
+        XCTAssertEqual(loggedRockClimbId, actualResult)
+        
     }
-
+    
 }
 
