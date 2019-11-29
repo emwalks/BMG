@@ -17,9 +17,8 @@ class MockDatabaseService: DatabaseService {
         loggedRouteName = routeName
     }
     
-    func getRockClimbDataById(idOfRockClimb: Int) -> Int {
+    func getRockClimbDataFromDb(idOfRockClimb: Int) {
         loggedRockClimbId = idOfRockClimb
-        return loggedRockClimbId
     }
 
 }

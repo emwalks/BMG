@@ -10,6 +10,10 @@ import Foundation
 import SQLite
 
 class SQLiteDatabaseService: DatabaseService {
+    func getRockClimbDataFromDb(idOfRockClimb: Int) {
+        //to fulfil protocol requirement
+    }
+    
 
     
     let database: Connection
