@@ -14,11 +14,11 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         
         let databaseService = MockDatabaseService()
         let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService)
-        let loggedRockClimbId = Int.random(in: 200..<300)
+        let loggedRockClimbId = Int64.random(in: 200..<300)
         
         rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: loggedRockClimbId)
         
-        let actualResult = databaseService.loggedRockClimbId
+        let actualResult =  databaseService.loggedRockClimbId
         
         XCTAssertEqual(loggedRockClimbId, actualResult)
         

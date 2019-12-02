@@ -11,15 +11,16 @@ import Foundation
 class MockDatabaseService: DatabaseService {
 
     public var loggedRouteName: String = ""
-    public var loggedRockClimbId: Int = -5
+    public var loggedRockClimbId: Int64 = -5
     
-    func addRockClimbToDb (routeName: String) -> Int {
+    func addRockClimbToDb (routeName: String) -> Int64 {
         loggedRouteName = routeName
-        loggedRockClimbId = Int.random(in: 100..<200)
+        loggedRockClimbId = Int64.random(in: 100..<200)
         return loggedRockClimbId
+        
     }
     
-    func getRockClimbDataFromDb(idOfRockClimb: Int) {
+    func getRockClimbDataFromDb(idOfRockClimb: Int64) {
         loggedRockClimbId = idOfRockClimb
     }
 

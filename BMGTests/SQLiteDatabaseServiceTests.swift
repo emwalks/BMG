@@ -36,10 +36,18 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         XCTAssertTrue(db != nil, "The database is not nil")
     }
     
-    var rockClimbTable:Table = Table("rockClimbTable")
-  
-    let loggedRouteName = Expression<String?>("loggedRouteName")
-    
+    func testWhenARockClimbIsAddedTheIdIsReturned(){
+        
+        let routeNameEntered = "Highflyer"
+        let sqliteDatabaseService = SQLiteDatabaseService(db!)
+        
+        let actualResult = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
+        
+        let expectedResult = sqliteDatabaseService.rowid
+        
+        XCTAssertEqual(expectedResult, actualResult)
+
+    }
     
     override func tearDown() {
         

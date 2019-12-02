@@ -11,17 +11,18 @@ import SQLite
 
 class SQLiteDatabaseService: DatabaseService {
     
-    func getRockClimbDataFromDb(idOfRockClimb: Int) {
+    func getRockClimbDataFromDb(idOfRockClimb: Int64) {
         //to fulfil protocol requirement
     }
     
-
+    
     
     let database: Connection
     
     var rockClimbTable:Table = Table("rockClimbTable")
     let loggedRockClimbId = Expression<Int64>("loggedRockClimbId")
     let loggedRouteName = Expression<String?>("loggedRouteName")
+    var rowid:Int64 = -4000
     
     init(_ db: Connection) {
         database = db
@@ -37,13 +38,16 @@ class SQLiteDatabaseService: DatabaseService {
         }
     }
     
-    func addRockClimbToDb(routeName: String) -> Int {
+    func addRockClimbToDb(routeName: String) -> Int64 {
         do {
-            try database.run(rockClimbTable.insert(loggedRouteName <- routeName))
+            let insert = rockClimbTable.insert(loggedRouteName <- routeName)
+            rowid = try database.run(insert)
+            return rowid
         } catch {
             print("Insert failed")
+            return -1000
         }
-        //to conform to protocol
-        return -1000
+        
     }
+    
 }

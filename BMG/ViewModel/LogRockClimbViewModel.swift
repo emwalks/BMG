@@ -40,8 +40,7 @@ class LogRockClimbViewModel{
     
     ///Submit button
     
-    var idGivenToRockClimb:Int = -1
-    
+    var idGivenToRockClimb:Int64 = -1
     func logClimbData(routeName: String) {
         
         idGivenToRockClimb = databaseService.addRockClimbToDb(routeName: routeName)
