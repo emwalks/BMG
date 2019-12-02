@@ -80,6 +80,21 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(loggedRockClimbDataScreenExists, true, "The function: displayLoggedRockClimbDataScreen has run")
     }
     
+    func testWhenARockClimbIsLoggedTheIdIsReturned() {
+        let databaseService = MockDatabaseService()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
+        
+        
+        let enteredRouteName = "Just for Fun"
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
+        
+        let expectedResult = databaseService.loggedRockClimbId
+        let actualResult = logRockClimbViewModel.idGivenToRockClimb
+        
+        XCTAssertEqual(expectedResult, actualResult)
+    }
+    
 }
 
 

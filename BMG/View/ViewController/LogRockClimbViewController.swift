@@ -10,13 +10,8 @@ import UIKit
 
 class LogRockClimbViewController: UIViewController {
 
-    // MARK: Fields / Variables
-    
     var logRockClimbViewModel: LogRockClimbViewModel? = nil
     
-    // TODO: Model initialised here too - probably need a check to see if we're logging a new climb or whether we're passing in a model already with data ready to present
-    
-    // MARK: IBOutlets and custom views
     private let datePicker = CustomDatePicker()
     private let datePickerToolbar = CustomPickerToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     private let gradePicker = GradePickerView()
@@ -51,8 +46,6 @@ class LogRockClimbViewController: UIViewController {
         
     }
     
-    // MARK: Grade PickerView
-    
     func createGradePicker(){
         
         // TODO: Make picker uneditable / enforce validation
@@ -65,7 +58,7 @@ class LogRockClimbViewController: UIViewController {
     
     @objc func doneGradePicker(){
         let numberOfGrades = gradePicker.numberOfComponents
-        // Extract grades
+        
         // can you work out the index of the array from the picker?
         var extractedGrades:[String] = []
         for componentIndex in 0..<numberOfGrades{
@@ -86,7 +79,6 @@ class LogRockClimbViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    // MARK: DatePicker
     
     func createDatePicker(){
         
@@ -121,7 +113,6 @@ class LogRockClimbViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
     }
     
-    // Need to understand why we need to expose to objc
     @objc func dismissKeyboard(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.endEditing(true)

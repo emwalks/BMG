@@ -9,9 +9,8 @@
 import Foundation
 
 protocol DatabaseService {
-    
-    
-    func addRockClimbToDb (routeName: String)
+        
+    func addRockClimbToDb (routeName: String)  -> Int
     
     func getRockClimbDataFromDb(idOfRockClimb: Int)
     

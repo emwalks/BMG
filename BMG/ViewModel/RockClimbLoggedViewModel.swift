@@ -16,6 +16,8 @@ class RockClimbLoggedViewModel {
     }
     
     func retrieveRockClimb(idOfRockClimb: Int) {
-        databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)    }
+        databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
+        
+    }
     
 }

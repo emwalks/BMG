@@ -10,6 +10,7 @@ import Foundation
 import SQLite
 
 class SQLiteDatabaseService: DatabaseService {
+    
     func getRockClimbDataFromDb(idOfRockClimb: Int) {
         //to fulfil protocol requirement
     }
@@ -19,7 +20,7 @@ class SQLiteDatabaseService: DatabaseService {
     let database: Connection
     
     var rockClimbTable:Table = Table("rockClimbTable")
-    let id = Expression<Int64>("id")
+    let loggedRockClimbId = Expression<Int64>("loggedRockClimbId")
     let loggedRouteName = Expression<String?>("loggedRouteName")
     
     init(_ db: Connection) {
@@ -28,7 +29,7 @@ class SQLiteDatabaseService: DatabaseService {
         do {
             try database.run(rockClimbTable.create(ifNotExists: true){
                 table in
-                table.column(id, primaryKey: true)
+                table.column(loggedRockClimbId, primaryKey: true)
                 table.column(loggedRouteName)
             })
         } catch {
@@ -36,11 +37,13 @@ class SQLiteDatabaseService: DatabaseService {
         }
     }
     
-    func addRockClimbToDb(routeName: String) {
+    func addRockClimbToDb(routeName: String) -> Int {
         do {
             try database.run(rockClimbTable.insert(loggedRouteName <- routeName))
         } catch {
             print("Insert failed")
         }
+        //to conform to protocol
+        return -1000
     }
 }
