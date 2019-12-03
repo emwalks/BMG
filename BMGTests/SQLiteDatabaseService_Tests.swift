@@ -49,6 +49,24 @@ class SQLiteDatabaseServiceTests: XCTestCase {
 
     }
     
+    func testWhenMockScreenNavigationControllerIsCalledTheRockClimbIdGetsPassedToItFromRealDb() {
+        
+        let sqliteDatabaseService = SQLiteDatabaseService(db!)
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(sqliteDatabaseService, screenNavigationController: mockScreenNavigationController)
+        
+        let enteredRouteName = "Bergweg"
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
+        
+        let idAssignedInLogRockClimbViewModel = logRockClimbViewModel.idGivenToRockClimb
+        
+        let expectedResult = sqliteDatabaseService.rowid
+        let actualResult = mockScreenNavigationController.displayLoggedRockClimbDataScreen(idAssignedInLogRockClimbViewModel)
+        
+        XCTAssertEqual(expectedResult, actualResult, "id has been passed to Mock Screen Navigation Controller from SQLiteDBService")
+    }
+    
+    
     override func tearDown() {
         
         func deleteDatabase(filePath : String)

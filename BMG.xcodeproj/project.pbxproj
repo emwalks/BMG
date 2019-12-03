@@ -27,7 +27,10 @@
 		981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B0D432369EC0A00D701D0 /* BMGTests.swift */; };
 		981B0D4D2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */; };
 		981B0D4E236B069D00D701D0 /* Grades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56E812235F53670024CD50 /* Grades.swift */; };
-		9826264C23910BD5003054B8 /* ViewControllerNavControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826264B23910BD5003054B8 /* ViewControllerNavControllerTests.swift */; };
+		98252AC8239680EA00C71EAC /* SegueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98067C79239140E5000AF417 /* SegueNavigationController.swift */; };
+		98252AC9239680EA00C71EAC /* SegueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98067C79239140E5000AF417 /* SegueNavigationController.swift */; };
+		98252ACC2396847700C71EAC /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
+		98252ACD2396847A00C71EAC /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
 		9826265023912B90003054B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F72350B1C2003768CE /* AppDelegate.swift */; };
 		983C4FA123901056009384BA /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
 		983C4FA3239010B0009384BA /* MockScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */; };
@@ -41,7 +44,6 @@
 		986A246C2387E8DE00BD43E7 /* SQLiteDatabaseService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A246B2387E8DE00BD43E7 /* SQLiteDatabaseService_Tests.swift */; };
 		986A246E2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */; };
 		9895164E238D83E100130140 /* SQLiteDatabaseServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895164D238D83E100130140 /* SQLiteDatabaseServiceFactory.swift */; };
-		98951657238EA07900130140 /* BMGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98951656238EA07900130140 /* BMGUITests.swift */; };
 		98951660238EA1D100130140 /* LogARockClimbViewModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895165E238EA1D100130140 /* LogARockClimbViewModelUITests.swift */; };
 		98E8ED2523902ED700DAFF6A /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
 		98E8ED2623902ED800DAFF6A /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
@@ -95,7 +97,6 @@
 		981B0D432369EC0A00D701D0 /* BMGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMGTests.swift; sourceTree = "<group>"; };
 		981B0D452369EC0A00D701D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewModel_Tests.swift; sourceTree = "<group>"; };
-		9826264B23910BD5003054B8 /* ViewControllerNavControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNavControllerTests.swift; sourceTree = "<group>"; };
 		983C4FA023901056009384BA /* ScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenNavigationController.swift; sourceTree = "<group>"; };
 		983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScreenNavigationController.swift; sourceTree = "<group>"; };
 		985413F42350B1C2003768CE /* BMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +112,6 @@
 		986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseService.swift; sourceTree = "<group>"; };
 		9895164D238D83E100130140 /* SQLiteDatabaseServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseServiceFactory.swift; sourceTree = "<group>"; };
 		98951654238EA07900130140 /* BMGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		98951656238EA07900130140 /* BMGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMGUITests.swift; sourceTree = "<group>"; };
 		98951658238EA07900130140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9895165E238EA1D100130140 /* LogARockClimbViewModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogARockClimbViewModelUITests.swift; sourceTree = "<group>"; };
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,8 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				9895165E238EA1D100130140 /* LogARockClimbViewModelUITests.swift */,
-				9826264B23910BD5003054B8 /* ViewControllerNavControllerTests.swift */,
-				98951656238EA07900130140 /* BMGUITests.swift */,
 				98951658238EA07900130140 /* Info.plist */,
 			);
 			path = BMGUITests;
@@ -528,6 +526,7 @@
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
 				981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */,
 				98E8ED2723902EDC00DAFF6A /* MockScreenNavigationController.swift in Sources */,
+				98252AC8239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
 				98E8ED2E23902F0000DAFF6A /* MockDatabaseService.swift in Sources */,
 				98067C7C23914915000AF417 /* RockClimbLoggedViewModel_Tests.swift in Sources */,
 				98E8ED2A23902EE900DAFF6A /* LogRockClimbViewModel.swift in Sources */,
@@ -569,12 +568,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98252AC9239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
 				9826265023912B90003054B8 /* AppDelegate.swift in Sources */,
 				98951660238EA1D100130140 /* LogARockClimbViewModelUITests.swift in Sources */,
 				98E8ED2823902EDE00DAFF6A /* MockScreenNavigationController.swift in Sources */,
-				9826264C23910BD5003054B8 /* ViewControllerNavControllerTests.swift in Sources */,
+				98252ACD2396847A00C71EAC /* MockDatabaseService.swift in Sources */,
+				98252ACC2396847700C71EAC /* DatabaseService.swift in Sources */,
 				98E8ED2623902ED800DAFF6A /* ScreenNavigationController.swift in Sources */,
-				98951657238EA07900130140 /* BMGUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

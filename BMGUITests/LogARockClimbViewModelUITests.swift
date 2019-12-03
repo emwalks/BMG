@@ -29,9 +29,10 @@ class LogARockClimbViewModelUITests: XCTestCase {
         
         XCUIApplication().scrollViews.otherElements.buttons["Submit"].tap()
         sleep(4)
-
+        
         XCTAssertTrue(app.isDisplayingRockClimbLoggedView, "rockClimbLoggedView is being displayed")
     }
+    
 }
 
 extension XCUIApplication {
@@ -40,30 +41,3 @@ extension XCUIApplication {
     }
 }
 
-//class SegueScreenNavigationController: ScreenNavigationController
-//{
-//    func displayLoggedRockClimbDataScreen() {
-//        //to conform to protocol
-//    }
-//
-//    func displayLoggedRockClimbDataScreenInTest(_ delegate: UIApplicationDelegate) {
-//
-//        let logRockClimbViewController = UIApplication.shared.keyWindow?.rootViewController
-//        //get a hold of the currently presented view controller
-//
-//        //then tell it to performSegue
-//        class rockClimbLoggedViewController: UIViewController {
-//            var rockClimbRouteName:String = "I am the rockClimbLoggedView"
-//        }
-//
-//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if segue.identifier == "LoggedRockClimbSegue"
-//            {
-//                let loggedRockClimbVC = segue.destination as? rockClimbLoggedViewController
-//            }      }
-//
-//        logRockClimbViewController?.performSegue(withIdentifier: "LoggedRockClimbSegue", sender: nil)
-//    }
-//}
-//
-//

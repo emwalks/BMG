@@ -10,7 +10,7 @@ import XCTest
 
 class ScreenNavigationController_Tests: XCTestCase {
     
-    func testWhenScreenNavigationControllerIsCalledTheRockClimbIdGetsPassedToIt() {
+    func testWhenMockScreenNavigationControllerIsCalledTheRockClimbIdGetsPassedToIt() {
         
         let databaseService = MockDatabaseService()
         let mockScreenNavigationController = MockScreenNavigationController()
@@ -24,7 +24,26 @@ class ScreenNavigationController_Tests: XCTestCase {
         let expectedResult = databaseService.loggedRockClimbId
         let actualResult = mockScreenNavigationController.displayLoggedRockClimbDataScreen(idAssignedInLogRockClimbViewModel)
         
-        XCTAssertEqual(expectedResult, actualResult, "id has been passed to Screen Navigation Controller")
+        XCTAssertEqual(expectedResult, actualResult, "id has been passed to Mock Screen Navigation Controller")
     }
+    
+    ///Can't make this work - UIViewController...
+    
+//    func testWhenSegueNavigationControllerIsCalledTheRockClimbIdGetsPassedToIt() {
+//        let databaseService = MockDatabaseService()
+//        let segueNavigationController = SegueNavigationController(<#UIViewController#>)
+//        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: segueNavigationController)
+//
+//        let enteredRouteName = "Mango"
+//        logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
+//
+//        let idAssignedInLogRockClimbViewModel = logRockClimbViewModel.idGivenToRockClimb
+//
+//        let expectedResult = databaseService.loggedRockClimbId
+//        let actualResult = segueNavigationController.displayLoggedRockClimbDataScreen(idAssignedInLogRockClimbViewModel)
+//
+//        XCTAssertEqual(expectedResult, actualResult, "id has been passed to Segue Navigation Controller")
+//
+//    }
 }
 
