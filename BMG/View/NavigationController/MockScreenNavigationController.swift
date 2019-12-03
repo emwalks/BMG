@@ -11,6 +11,9 @@ import Foundation
 public var loggedRockClimbDataScreenExists: Bool = false
 
 class MockScreenNavigationController: ScreenNavigationController {
+    
+    public var loggedRockClimbId: Int64 = -2000
+    
     func displayLoggedRockClimbDataScreen() {
         loggedRockClimbDataScreenExists = true
         

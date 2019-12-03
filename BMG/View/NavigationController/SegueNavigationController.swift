@@ -17,7 +17,6 @@ class SegueNavigationController: ScreenNavigationController {
         self.viewController = viewController
     }
 
-    
     func displayLoggedRockClimbDataScreen() {
          viewController.performSegue(withIdentifier: "RockClimbSubmittedSegue", sender: viewController)
     }

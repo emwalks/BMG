@@ -41,9 +41,12 @@ class LogRockClimbViewModel{
     ///Submit button
     
     var idGivenToRockClimb:Int64 = -1
+    
     func logClimbData(routeName: String) {
         
         idGivenToRockClimb = databaseService.addRockClimbToDb(routeName: routeName)
+        
+        // now need to hand id to screenNavigationController and verify it's correct
             
         screenNavigationController.displayLoggedRockClimbDataScreen()
         
