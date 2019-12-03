@@ -10,11 +10,11 @@ import XCTest
 
 class RockClimbLoggedViewModel_Tests: XCTestCase {
     
-    func testWhenGivenAnIdTheVMRetrievesTheCorrectRockClimbData() {
+    func testWhenGivenAnIdRockClimbLoggedViewModelRetrievesTheCorrectRockClimbData() {
         
         let databaseService = MockDatabaseService()
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService)
         let loggedRockClimbId = Int64.random(in: 200..<300)
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: loggedRockClimbId)
         
         rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: loggedRockClimbId)
         
@@ -23,6 +23,22 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         XCTAssertEqual(loggedRockClimbId, actualResult)
         
     }
+    
+    func testWhenTheScreenIsNavigatedToTheIdIsHandedToTheRockClimbLoggedViewModel() {
+        
+        let databaseService = MockDatabaseService()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: mockScreenNavigationController.loggedRockClimbId)
+        
+        let expectedResult = mockScreenNavigationController.loggedRockClimbId
+        let actualResult = rockClimbLoggedViewModel.idOfRockClimbReceived
+        
+        XCTAssertEqual(actualResult, expectedResult, "the id has been passed from the Mock ScreenNavController to the RockClimbLoggedViewModel")
+        
+    }
+    
+    //next test the whole pathway
+    
     
 }
 

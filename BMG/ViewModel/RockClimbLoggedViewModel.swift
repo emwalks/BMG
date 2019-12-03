@@ -9,15 +9,25 @@
 import Foundation
 
 class RockClimbLoggedViewModel {
-    var databaseService: DatabaseService
     
-    init(_ databaseService: DatabaseService) {
+    var idOfRockClimbReceived: Int64 = -1
+    var databaseService: DatabaseService
+
+    
+    init(_ databaseService: DatabaseService, idOfRockClimbReceived: Int64) {
         self.databaseService = databaseService
+        self.idOfRockClimbReceived = idOfRockClimbReceived
+        
     }
     
     func retrieveRockClimb(idOfRockClimb: Int64) {
-        databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
         
+        if idOfRockClimbReceived == idOfRockClimb {
+            databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
+            print("id matched in RockClimbLoggedViewModel" )
+        } else {
+            print("Error: Id of rock climb received does match id of rock climb logged")
+        }
     }
     
 }

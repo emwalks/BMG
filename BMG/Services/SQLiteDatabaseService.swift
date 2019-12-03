@@ -11,12 +11,6 @@ import SQLite
 
 class SQLiteDatabaseService: DatabaseService {
     
-    func getRockClimbDataFromDb(idOfRockClimb: Int64) {
-        //to fulfil protocol requirement
-    }
-    
-    
-    
     let database: Connection
     
     var rockClimbTable:Table = Table("rockClimbTable")
@@ -53,5 +47,10 @@ class SQLiteDatabaseService: DatabaseService {
         }
         
     }
+    
+    func getRockClimbDataFromDb(idOfRockClimb: Int64) {
+        //to fulfil protocol requirement
+    }
+
     
 }
