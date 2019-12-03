@@ -48,7 +48,7 @@ class LogRockClimbViewModel{
         
         // now need to hand id to screenNavigationController and verify it's correct
             
-        screenNavigationController.displayLoggedRockClimbDataScreen()
+        screenNavigationController.displayLoggedRockClimbDataScreen(idGivenToRockClimb)
         
     }
     

@@ -17,8 +17,10 @@ class SegueNavigationController: ScreenNavigationController {
         self.viewController = viewController
     }
 
-    func displayLoggedRockClimbDataScreen() {
+    func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) -> Int64 {
          viewController.performSegue(withIdentifier: "RockClimbSubmittedSegue", sender: viewController)
+        //just to conform to protocol
+        return loggedRockClimbId
     }
     
     

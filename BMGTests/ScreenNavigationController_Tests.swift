@@ -15,11 +15,16 @@ class ScreenNavigationController_Tests: XCTestCase {
         let databaseService = MockDatabaseService()
         let mockScreenNavigationController = MockScreenNavigationController()
         let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
+       
+        let enteredRouteName = "Knolle"
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
         
-        let actualResult = mockScreenNavigationController.loggedRockClimbId
-        let expectedResult =  databaseService.loggedRockClimbId
+        let idAssignedInLogRockClimbViewModel = logRockClimbViewModel.idGivenToRockClimb
         
-        XCTAssertEqual(expectedResult, actualResult, "id hass been passed to Screen Navigation Controller")
+        let expectedResult = databaseService.loggedRockClimbId
+        let actualResult = mockScreenNavigationController.displayLoggedRockClimbDataScreen(idAssignedInLogRockClimbViewModel)
+        
+        XCTAssertEqual(expectedResult, actualResult, "id has been passed to Screen Navigation Controller")
     }
 }
 
