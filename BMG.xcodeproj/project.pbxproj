@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C680034775CF14F9F077AE2 /* Pods_BMG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199A8880EDCAE531F2B8827A /* Pods_BMG.framework */; };
 		8D136F8923549E08003D117E /* Style Notes in Resources */ = {isa = PBXBuildFile; fileRef = 8D136F8823549E08003D117E /* Style Notes */; };
-		8D2C75EF2359F88D0081D22F /* SQLiteDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */; };
 		8D2C75F12359F8A60081D22F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F02359F8A60081D22F /* Model.swift */; };
 		8D2C75F32359F8BB0081D22F /* RockClimb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F22359F8BB0081D22F /* RockClimb.swift */; };
 		8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */; };
@@ -50,7 +49,6 @@
 		98E8ED2723902EDC00DAFF6A /* MockScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */; };
 		98E8ED2823902EDE00DAFF6A /* MockScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */; };
 		98E8ED2A23902EE900DAFF6A /* LogRockClimbViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */; };
-		98E8ED2C23902EF900DAFF6A /* SQLiteDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */; };
 		98E8ED2D23902EFD00DAFF6A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
 		98E8ED2E23902F0000DAFF6A /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
 		98E8ED2F23902F0400DAFF6A /* SQLiteDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */; };
@@ -79,7 +77,6 @@
 		0DFBDDAF591EF5A8773D2797 /* Pods-BMG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMG.debug.xcconfig"; path = "Target Support Files/Pods-BMG/Pods-BMG.debug.xcconfig"; sourceTree = "<group>"; };
 		199A8880EDCAE531F2B8827A /* Pods_BMG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D136F8823549E08003D117E /* Style Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Style Notes"; sourceTree = "<group>"; };
-		8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDbService.swift; sourceTree = "<group>"; };
 		8D2C75F02359F8A60081D22F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8D2C75F22359F8BB0081D22F /* RockClimb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimb.swift; sourceTree = "<group>"; };
 		8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewModel.swift; sourceTree = "<group>"; };
@@ -175,7 +172,6 @@
 		8D2C75ED2359F86C0081D22F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8D2C75EE2359F88C0081D22F /* SQLiteDbService.swift */,
 				986A24632386D55B00BD43E7 /* DatabaseService.swift */,
 				986A24662386DE2400BD43E7 /* MockDatabaseService.swift */,
 				986A246D2387E9CF00BD43E7 /* SQLiteDatabaseService.swift */,
@@ -522,7 +518,6 @@
 				98E8ED2D23902EFD00DAFF6A /* DatabaseService.swift in Sources */,
 				98E8ED2F23902F0400DAFF6A /* SQLiteDatabaseService.swift in Sources */,
 				986A246C2387E8DE00BD43E7 /* SQLiteDatabaseService_Tests.swift in Sources */,
-				98E8ED2C23902EF900DAFF6A /* SQLiteDbService.swift in Sources */,
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
 				981B0D442369EC0A00D701D0 /* BMGTests.swift in Sources */,
 				98E8ED2723902EDC00DAFF6A /* MockScreenNavigationController.swift in Sources */,
@@ -544,7 +539,6 @@
 			files = (
 				986A24672386DE2400BD43E7 /* MockDatabaseService.swift in Sources */,
 				8D2C75F9235A0CDC0081D22F /* CustomDatePicker.swift in Sources */,
-				8D2C75EF2359F88D0081D22F /* SQLiteDbService.swift in Sources */,
 				8DF3EEF7235DF2FE00D5D0E2 /* GradePickerView.swift in Sources */,
 				985413FA2350B1C2003768CE /* LogRockClimbViewController.swift in Sources */,
 				9895164E238D83E100130140 /* SQLiteDatabaseServiceFactory.swift in Sources */,
