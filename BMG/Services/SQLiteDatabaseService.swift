@@ -42,6 +42,10 @@ class SQLiteDatabaseService: DatabaseService {
         do {
             let insert = rockClimbTable.insert(loggedRouteName <- routeName)
             rowid = try database.run(insert)
+            
+            for rockClimb in try database.prepare(rockClimbTable) {
+                print("id: \(rockClimb[loggedRockClimbId]), routeName: \(String(describing: rockClimb[loggedRouteName]))")
+            }
             return rowid
         } catch {
             print("Insert failed")
