@@ -12,7 +12,6 @@ class RockClimbLoggedViewModel {
     
     var idOfRockClimbReceived: Int64 = -1
     var databaseService: DatabaseService
-
     
     init(_ databaseService: DatabaseService, idOfRockClimbReceived: Int64) {
         self.databaseService = databaseService

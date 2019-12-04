@@ -35,6 +35,20 @@ class SQLiteDatabaseServiceTests: XCTestCase {
        
         XCTAssertTrue(db != nil, "The database is not nil")
     }
+
+    func testThatWhenAddRockClimbFucntionIsCalledRouteNameGetsAdded() {
+        
+        let routeNameEntered = "Blue-Eyes"
+        let sqliteDatabaseService = SQLiteDatabaseService(db!)
+        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
+        
+        let routeNameReturned = sqliteDatabaseService.returnRockClimbRouteName()
+
+        let actualResult = routeNameReturned
+        let expectedResult = routeNameEntered
+        
+        XCTAssertEqual(expectedResult, actualResult)
+    }
     
     func testWhenARockClimbIsAddedTheIdIsReturned(){
         
@@ -52,16 +66,12 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     func testWhenMockScreenNavigationControllerIsCalledTheRockClimbIdGetsPassedToItFromRealDb() {
         
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
-        let mockScreenNavigationController = MockScreenNavigationController()
-        let logRockClimbViewModel = LogRockClimbViewModel(sqliteDatabaseService, screenNavigationController: mockScreenNavigationController)
         
         let enteredRouteName = "Bergweg"
-        logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
+        let idAssignedInLogRockClimbViewModel = sqliteDatabaseService.addRockClimbToDb(routeName: enteredRouteName)
         
-        let idAssignedInLogRockClimbViewModel = logRockClimbViewModel.idGivenToRockClimb
-        
-        let expectedResult = sqliteDatabaseService.rowid
-        let actualResult = mockScreenNavigationController.displayLoggedRockClimbDataScreen(idAssignedInLogRockClimbViewModel)
+        let expectedResult = sqliteDatabaseService.returnRockClimbIdPK()
+        let actualResult = idAssignedInLogRockClimbViewModel
         
         XCTAssertEqual(expectedResult, actualResult, "id has been passed to Mock Screen Navigation Controller from SQLiteDBService")
     }
@@ -85,6 +95,37 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         super.tearDown()
     }
     
+}
+
+extension SQLiteDatabaseService {
+    
+    func returnRockClimbRouteName() -> String {
+        do {
+            for rockClimb in try database.prepare(rockClimbTable) {
+                return "\(String(describing: rockClimb[loggedRouteName]))"
+            }
+            
+        } catch {
+            print("Query failed")
+            return "Query failed"
+        }
+        return "an error has occured during returnRockClimbRouteName function execution"
+    }
+    
+    func returnRockClimbIdPK() -> Int64 {
+        do {
+            for rockClimb in try database.prepare(rockClimbTable) {
+              return rockClimb[loggedRockClimbId]
+            }
+            
+        } catch {
+            print("Query failed")
+            return -1000
+            
+        }
+        print("An error has occured during returnRockClimbIdPK function execution")
+        return -4000
+    }
 }
 
 

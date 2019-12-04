@@ -95,6 +95,23 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         XCTAssertEqual(expectedResult, actualResult)
     }
     
+    func testWhenMockScreenNavigationControllerIsCalledTheRockClimbIdGetsPassedToIt() {
+        
+        let databaseService = MockDatabaseService()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
+        
+        let enteredRouteName = "Knolle"
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName)
+        
+        let idAssignedInLogRockClimbViewModel = logRockClimbViewModel.idGivenToRockClimb
+        
+        let expectedResult = databaseService.loggedRockClimbId
+        let actualResult = mockScreenNavigationController.loggedRockClimbId
+        
+        XCTAssertEqual(expectedResult, actualResult, "id has been passed to Mock Screen Navigation Controller")
+    }
+    
 }
 
 

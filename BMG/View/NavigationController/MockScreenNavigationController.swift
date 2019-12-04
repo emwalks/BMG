@@ -14,9 +14,8 @@ class MockScreenNavigationController: ScreenNavigationController {
     
     public var loggedRockClimbId: Int64 = -2000
     
-    func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) -> Int64 {
+    func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
         loggedRockClimbDataScreenExists = true
         self.loggedRockClimbId = loggedRockClimbId
-        return loggedRockClimbId
     }
 }

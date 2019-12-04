@@ -10,7 +10,7 @@ import Foundation
 
 protocol ScreenNavigationController {
     
-    func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) -> Int64
+    func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64)
     
 }
 

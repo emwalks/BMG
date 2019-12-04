@@ -40,6 +40,7 @@ class SQLiteDatabaseService: DatabaseService {
             for rockClimb in try database.prepare(rockClimbTable) {
                 print("id: \(rockClimb[loggedRockClimbId]), routeName: \(String(describing: rockClimb[loggedRouteName]))")
             }
+            
             return rowid
         } catch {
             print("Insert failed")
