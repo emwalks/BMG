@@ -102,7 +102,7 @@ extension SQLiteDatabaseService {
     func returnRockClimbRouteName() -> String {
         do {
             for rockClimb in try database.prepare(rockClimbTable) {
-                return "\(String(describing: rockClimb[loggedRouteName]))"
+                return "\(String(describing: rockClimb[loggedRouteName]!))"
             }
             
         } catch {

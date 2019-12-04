@@ -9,7 +9,7 @@
 import Foundation
 
 class MockDatabaseService: DatabaseService {
-
+    
     public var loggedRouteName: String = ""
     public var loggedRockClimbId: Int64 = -5
     
@@ -20,8 +20,19 @@ class MockDatabaseService: DatabaseService {
         
     }
     
-    func getRockClimbDataFromDb(idOfRockClimb: Int64) {
+    public var mockRockClimbTable: [Int64:String] =
+        [-10:"I am a mockDBService climb whose id is -10"]
+    
+    func getRockClimbDataFromDb(idOfRockClimb: Int64) -> String {
         loggedRockClimbId = idOfRockClimb
-    }
 
+        for (climbId, routeName) in mockRockClimbTable {
+            if climbId == idOfRockClimb {
+                loggedRouteName = routeName
+                return loggedRouteName
+            } else {
+                return "Climb id not in mockRockClimbTable"}
+        }
+        return "Error on getRockClimbDataFromDb in mockdbservice"
+    }
 }
