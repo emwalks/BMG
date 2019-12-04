@@ -15,7 +15,8 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         
         let databaseService = MockDatabaseService()
         let loggedRockClimbId = Int64.random(in: 200..<300)
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: loggedRockClimbId)
+        let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: loggedRockClimbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
         rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: loggedRockClimbId)
         
@@ -29,7 +30,8 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         
         let queryId: Int64 = -10
         let databaseService = MockDatabaseService()
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: queryId)
+        let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: queryId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
         rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: queryId)
 
@@ -40,6 +42,20 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         
     }
     
+    func testWhenRouteNameIsReturnedFromDBToVmItIsPresentedOnScreen() {
+        
+        let queryId: Int64 = -10
+        let databaseService = MockDatabaseService()
+        let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: queryId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        
+        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: queryId)
+        
+        let expectedResult = databaseService.loggedRouteName
+        let actualResult = mockRockClimbLoggedScreen.routeNameOnScreen
+        
+        XCTAssertEqual(actualResult, expectedResult)
+    }
     
 }
 

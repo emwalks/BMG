@@ -1,5 +1,5 @@
 //
-//  MockRockClimbLoggedView.swift
+//  RockClimbLoggedScreenProtocol.swift
 //  BMG
 //
 //  Created by Emma Walker - TVandMobile Platforms - Core Engineering on 04/12/2019.
@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol RockClimbLoggedScreen {
+    
+     func rockClimbDataPresented(loggedRouteName: String) -> String
+    
+}

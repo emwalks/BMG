@@ -12,18 +12,22 @@ class RockClimbLoggedViewModel {
     
     var idOfRockClimbReceived: Int64 = -1
     var databaseService: DatabaseService
+    var rockClimbLoggedScreen: RockClimbLoggedScreen
     
-    init(_ databaseService: DatabaseService, idOfRockClimbReceived: Int64) {
+    init(_ databaseService: DatabaseService, idOfRockClimbReceived: Int64, rockClimbLoggedScreen: RockClimbLoggedScreen) {
         self.databaseService = databaseService
         self.idOfRockClimbReceived = idOfRockClimbReceived
-        
+        self.rockClimbLoggedScreen = rockClimbLoggedScreen
     }
     
     func retrieveRockClimb(idOfRockClimb: Int64) {
         
         if idOfRockClimbReceived == idOfRockClimb {
-            databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
-            print("id matched in RockClimbLoggedViewModel" )
+           let rockClimbDataReceived = databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
+            
+            rockClimbLoggedScreen.rockClimbDataPresented(loggedRouteName: rockClimbDataReceived)
+            print("id matched in RockClimbLoggedViewModel")
+
         } else {
             print("Error: Id of rock climb received does match id of rock climb logged")
         }
