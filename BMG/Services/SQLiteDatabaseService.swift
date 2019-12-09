@@ -52,6 +52,8 @@ class SQLiteDatabaseService: DatabaseService {
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> String {
         return "adhering to protocol"
     }
+    
+    
 
     
 }

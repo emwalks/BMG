@@ -30,10 +30,16 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //this is for the UI Test to be able to identify the correct view is segued to
+        view.accessibilityIdentifier = "rockClimbLoggedView"
+        
         routeNameLabel.layer.masksToBounds = true
         routeNameLabel.layer.cornerRadius = 5
         rockClimbLoggedViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: rockClimbIdFromSegue, rockClimbLoggedScreen: self)
 //        routeNameFromDb = rockClimbLoggedViewModel?.retrieveRockClimb(idOfRockClimb: rockClimbIdFromSegue)
+    
+    
     }
     
     }
