@@ -77,14 +77,14 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     }
     
     func testWhenIdIsPassedToDBServiceTheRouteNameIsReturned() {
-        let routeNameEntered = "Blue-Eyes"
+        let routeNameEntered = "Huebere"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         let idCorrespondingToRouteNameEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
         
         let actualResult = sqliteDatabaseService.getRockClimbDataFromDb(idOfRockClimb: idCorrespondingToRouteNameEntered)
         let expectedResult = routeNameEntered
         
-        XCTAssertEqual(expectedResult, actualResult, "Route neam has been returned based on id")
+        XCTAssertEqual(expectedResult, actualResult, "Route name has been returned based on id")
         
     }
     

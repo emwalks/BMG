@@ -40,7 +40,6 @@ class SQLiteDatabaseService: DatabaseService {
             for rockClimb in try database.prepare(rockClimbTable) {
                 print("id: \(rockClimb[loggedRockClimbId]), routeName: \(String(describing: rockClimb[loggedRouteName]))")
             }
-            
             return rowid
         } catch {
             print("Insert failed")
@@ -50,10 +49,15 @@ class SQLiteDatabaseService: DatabaseService {
     }
     
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> String {
-        return "adhering to protocol"
+        do {
+            let query = rockClimbTable.filter(loggedRockClimbId == idOfRockClimb)
+            for rockClimb in try database.prepare(query) {
+                return String(describing: (rockClimb[loggedRouteName]!)) }
+        } catch {
+            return "getRockClimbDataFromDb query failed"
+        }
+        return "an error has occured in getRockClimbDataFromDb function "
     }
     
-    
-
     
 }
