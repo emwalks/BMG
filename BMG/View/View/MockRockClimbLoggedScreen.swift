@@ -12,8 +12,7 @@ class MockRockClimbLoggedScreen: RockClimbLoggedScreen {
     
     public var routeNameOnScreen: String = ""
     
-    func rockClimbDataPresented(loggedRouteName: String) -> String {
+    func rockClimbDataPresented(loggedRouteName: String) {
         routeNameOnScreen = loggedRouteName
-        return routeNameOnScreen
     }
 }

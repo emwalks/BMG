@@ -10,15 +10,17 @@ import Foundation
 import UIKit
 
 class SegueNavigationController: ScreenNavigationController {
-    
+
     var viewController: UIViewController
-    
+
     init(_ viewController:UIViewController) {
         self.viewController = viewController
     }
-
+    
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
-         viewController.performSegue(withIdentifier: "RockClimbSubmittedSegue", sender: viewController)
-        let loggedRockClimbId = loggedRockClimbId
+        viewController.performSegue(withIdentifier: "RockClimbSubmittedSegue", sender: viewController)
+        //viewController.rockClimbIdFromSegue = loggedRockClimbId
     }
+
 }
+

@@ -43,7 +43,14 @@ class LogRockClimbViewController: UIViewController {
         submitButton.layer.cornerRadius = 5
         addKeyboardDismissRecogniser()
         
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RockClimbSubmittedSegue" {
+            if let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
+                rockClimbLoggedViewController.rockClimbIdFromSegue = logRockClimbViewModel!.idGivenToRockClimb
+            }
+        }
     }
     
     func createGradePicker(){

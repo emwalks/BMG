@@ -9,6 +9,33 @@
 import Foundation
 import UIKit
 
-class RockClimbLoggedViewController: UIViewController, RockClimbLoggedVCProtocol {
+class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     
-}
+    var routeNameFromDb: String = ""
+    var rockClimbIdFromSegue: Int64 = -5000
+    var rockClimbLoggedViewModel: RockClimbLoggedViewModel? = nil
+    
+    func rockClimbDataPresented(loggedRouteName: String) {
+        routeNameFromDb = loggedRouteName
+        let attributedString = NSAttributedString(string: "Route: \(routeNameFromDb), id: \(rockClimbIdFromSegue)")
+        routeNameLabel.attributedText = attributedString
+        //printing id for now to show it gets updated
+    }
+
+    @IBOutlet weak var routeNameLabel: UILabel! {
+        didSet {
+            rockClimbDataPresented(loggedRouteName: routeNameFromDb)
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        routeNameLabel.layer.masksToBounds = true
+        routeNameLabel.layer.cornerRadius = 5
+        rockClimbLoggedViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: rockClimbIdFromSegue, rockClimbLoggedScreen: self)
+//        routeNameFromDb = rockClimbLoggedViewModel?.retrieveRockClimb(idOfRockClimb: rockClimbIdFromSegue)
+    }
+    
+    }
+    
+

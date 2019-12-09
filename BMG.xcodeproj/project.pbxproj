@@ -48,7 +48,6 @@
 		9895164E238D83E100130140 /* SQLiteDatabaseServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895164D238D83E100130140 /* SQLiteDatabaseServiceFactory.swift */; };
 		98951660238EA1D100130140 /* LogARockClimbViewModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895165E238EA1D100130140 /* LogARockClimbViewModelUITests.swift */; };
 		98D223D32397B12A00D3D76A /* RockClimbLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */; };
-		98D223D52397B18200D3D76A /* RockClimbLoggedVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D223D42397B18200D3D76A /* RockClimbLoggedVCProtocol.swift */; };
 		98E8ED2523902ED700DAFF6A /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
 		98E8ED2623902ED800DAFF6A /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
 		98E8ED2723902EDC00DAFF6A /* MockScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */; };
@@ -120,7 +119,6 @@
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbLoggedViewController.swift; sourceTree = "<group>"; };
-		98D223D42397B18200D3D76A /* RockClimbLoggedVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbLoggedVCProtocol.swift; sourceTree = "<group>"; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1514B021EC8723C1EBED1D5 /* Pods-BMG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMG.release.xcconfig"; path = "Target Support Files/Pods-BMG/Pods-BMG.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			children = (
 				985413F92350B1C2003768CE /* LogRockClimbViewController.swift */,
 				98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */,
-				98D223D42397B18200D3D76A /* RockClimbLoggedVCProtocol.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -555,7 +552,6 @@
 				987367D02398031300416C57 /* MockRockClimbLoggedScreen.swift in Sources */,
 				985413FA2350B1C2003768CE /* LogRockClimbViewController.swift in Sources */,
 				9895164E238D83E100130140 /* SQLiteDatabaseServiceFactory.swift in Sources */,
-				98D223D52397B18200D3D76A /* RockClimbLoggedVCProtocol.swift in Sources */,
 				985413F82350B1C2003768CE /* AppDelegate.swift in Sources */,
 				98067C7A239140E5000AF417 /* SegueNavigationController.swift in Sources */,
 				98D223D32397B12A00D3D76A /* RockClimbLoggedViewController.swift in Sources */,
