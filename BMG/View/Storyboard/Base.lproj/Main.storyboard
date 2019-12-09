@@ -236,22 +236,39 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFN-fV-Uwv" userLabel="rockClimbLoggedView">
                                                 <rect key="frame" x="20" y="20" width="414" height="774"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZe-Z4-s6d">
-                                                        <rect key="frame" x="26" y="35" width="361" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZe-Z4-s6d">
+                                                        <rect key="frame" x="20" y="47" width="374" height="76"/>
                                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="76" id="Vhs-7r-2qQ"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="wZe-Z4-s6d" secondAttribute="trailing" constant="20" id="M1h-IE-Fce"/>
+                                                    <constraint firstItem="wZe-Z4-s6d" firstAttribute="top" secondItem="QFN-fV-Uwv" secondAttribute="top" constant="47" id="RRl-wI-o5c"/>
+                                                    <constraint firstItem="wZe-Z4-s6d" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="pPz-u5-TLX"/>
+                                                </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your climb has been logged!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDp-YF-bFo">
+                                                <rect key="frame" x="40" y="30" width="258" height="25"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" red="0.82884467959999997" green="0.79044581709999995" blue="0.98328930140000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="QFN-fV-Uwv" firstAttribute="top" secondItem="m3S-j0-RSn" secondAttribute="top" constant="20" id="EK5-hD-ix3"/>
                                             <constraint firstItem="QFN-fV-Uwv" firstAttribute="centerY" secondItem="m3S-j0-RSn" secondAttribute="centerY" id="FQf-iB-IFG"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NDp-YF-bFo" secondAttribute="trailing" constant="20" symbolic="YES" id="HWE-iV-OZo"/>
+                                            <constraint firstItem="NDp-YF-bFo" firstAttribute="top" secondItem="m3S-j0-RSn" secondAttribute="top" constant="30" id="QR5-UL-hfP"/>
                                             <constraint firstAttribute="bottom" secondItem="QFN-fV-Uwv" secondAttribute="bottom" constant="20" id="S3q-Df-LAe"/>
                                             <constraint firstAttribute="trailing" secondItem="QFN-fV-Uwv" secondAttribute="trailing" constant="20" id="WYz-nb-K5h"/>
+                                            <constraint firstItem="NDp-YF-bFo" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="idd-NE-qD3"/>
                                             <constraint firstItem="QFN-fV-Uwv" firstAttribute="leading" secondItem="m3S-j0-RSn" secondAttribute="leading" constant="20" id="mho-gx-4DB"/>
                                             <constraint firstItem="QFN-fV-Uwv" firstAttribute="centerX" secondItem="m3S-j0-RSn" secondAttribute="centerX" id="o31-Ae-yVD"/>
                                         </constraints>
