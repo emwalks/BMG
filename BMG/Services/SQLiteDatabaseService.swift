@@ -26,7 +26,7 @@ class SQLiteDatabaseService: DatabaseService {
                 table in
                 table.column(loggedRockClimbId, primaryKey: true)
                 table.column(loggedRouteName)
-            })
+           })
         } catch {
             print("Unable to create table")
         }

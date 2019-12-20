@@ -48,7 +48,8 @@ class LogRockClimbViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RockClimbSubmittedSegue" {
             if let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
-                rockClimbLoggedViewController.rockClimbIdFromSegue = logRockClimbViewModel!.idGivenToRockClimb
+                //use UITest to check if changeing the sender here and in perform segue has worked
+                rockClimbLoggedViewController.rockClimbIdFromSegue = (sender as? Int64)!
             }
         }
     }

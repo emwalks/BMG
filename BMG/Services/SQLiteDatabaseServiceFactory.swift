@@ -24,6 +24,7 @@ class SQLiteDatabaseServiceFactory {
         
         do {
             if !FileManager.default.fileExists(atPath: dbDirectoryString) {
+                
                 do {
                     try FileManager.default.createDirectory(atPath: dbDirectoryString, withIntermediateDirectories: true, attributes: nil)
                 } catch {

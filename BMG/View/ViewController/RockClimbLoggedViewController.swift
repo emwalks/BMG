@@ -36,6 +36,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         
         routeNameLabel.layer.masksToBounds = true
         routeNameLabel.layer.cornerRadius = 5
+        //let's review this
         rockClimbLoggedViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: rockClimbIdFromSegue, rockClimbLoggedScreen: self)
         rockClimbLoggedViewModel?.retrieveRockClimb(idOfRockClimb: rockClimbIdFromSegue)
     
