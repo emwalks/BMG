@@ -17,7 +17,7 @@ class LogRockClimbViewModel{
         self.databaseService = databaseService
         self.screenNavigationController = screenNavigationController
     }
-
+    
     ///Grades
     
     let rockClimbGrades = Grades.rockClimbGrades
@@ -36,7 +36,12 @@ class LogRockClimbViewModel{
     }
     
     ///Date
-    //need to move done date picker logic into here
+    @objc func dateFormatter(date: Date) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let selectedDateString = dateFormatter.string(from: date)
+        return selectedDateString
+    }
     
     ///Submit button
     
@@ -45,7 +50,7 @@ class LogRockClimbViewModel{
     func logClimbData(routeName: String) {
         
         idGivenToRockClimb = databaseService.addRockClimbToDb(routeName: routeName)
-                
+        
         screenNavigationController.displayLoggedRockClimbDataScreen(idGivenToRockClimb)
         
     }

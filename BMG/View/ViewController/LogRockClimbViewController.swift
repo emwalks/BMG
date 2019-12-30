@@ -29,6 +29,7 @@ class LogRockClimbViewController: UIViewController {
         logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given")
         
         routeTextField.text = ""
+        dateTextField.text = ""
     }
     
     // MARK: Formatting the view
@@ -66,7 +67,6 @@ class LogRockClimbViewController: UIViewController {
     @objc func doneGradePicker(){
         let numberOfGrades = gradePicker.numberOfComponents
         
-        // can you work out the index of the array from the picker?
         var extractedGrades:[String] = []
         for componentIndex in 0..<numberOfGrades{
             if let rowTitle = gradePicker.delegate?.pickerView?(gradePicker, titleForRow: gradePicker.selectedRow(inComponent: componentIndex), forComponent: componentIndex)
@@ -98,13 +98,7 @@ class LogRockClimbViewController: UIViewController {
     @objc func doneDatePicker(){
         let selectedDate =   datePicker.date
         
-        //VM
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let selectedDateString = dateFormatter.string(from: selectedDate)
-        //VM
-        
-        dateTextField.text = selectedDateString
+        dateTextField.text = logRockClimbViewModel!.dateFormatter(date: selectedDate)
         self.view.endEditing(true)
     }
     
