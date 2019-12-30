@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C680034775CF14F9F077AE2 /* Pods_BMG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199A8880EDCAE531F2B8827A /* Pods_BMG.framework */; };
 		8D136F8923549E08003D117E /* Style Notes in Resources */ = {isa = PBXBuildFile; fileRef = 8D136F8823549E08003D117E /* Style Notes */; };
-		8D2C75F12359F8A60081D22F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F02359F8A60081D22F /* Model.swift */; };
-		8D2C75F32359F8BB0081D22F /* RockClimb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F22359F8BB0081D22F /* RockClimb.swift */; };
 		8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */; };
 		8D2C75F7235A09F30081D22F /* ClimbingStylesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F6235A09F30081D22F /* ClimbingStylesTableView.swift */; };
 		8D2C75F9235A0CDC0081D22F /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */; };
@@ -82,8 +80,6 @@
 		0DFBDDAF591EF5A8773D2797 /* Pods-BMG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMG.debug.xcconfig"; path = "Target Support Files/Pods-BMG/Pods-BMG.debug.xcconfig"; sourceTree = "<group>"; };
 		199A8880EDCAE531F2B8827A /* Pods_BMG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D136F8823549E08003D117E /* Style Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Style Notes"; sourceTree = "<group>"; };
-		8D2C75F02359F8A60081D22F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		8D2C75F22359F8BB0081D22F /* RockClimb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimb.swift; sourceTree = "<group>"; };
 		8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewModel.swift; sourceTree = "<group>"; };
 		8D2C75F6235A09F30081D22F /* ClimbingStylesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbingStylesTableView.swift; sourceTree = "<group>"; };
 		8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
@@ -231,8 +227,6 @@
 		8DA4AA992357374300A543AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8D2C75F02359F8A60081D22F /* Model.swift */,
-				8D2C75F22359F8BB0081D22F /* RockClimb.swift */,
 				8D56E812235F53670024CD50 /* Grades.swift */,
 			);
 			path = Model;
@@ -558,7 +552,6 @@
 				985413F82350B1C2003768CE /* AppDelegate.swift in Sources */,
 				98067C7A239140E5000AF417 /* SegueNavigationController.swift in Sources */,
 				98D223D32397B12A00D3D76A /* RockClimbLoggedViewController.swift in Sources */,
-				8D2C75F32359F8BB0081D22F /* RockClimb.swift in Sources */,
 				983C4FA3239010B0009384BA /* MockScreenNavigationController.swift in Sources */,
 				986A24642386D55B00BD43E7 /* DatabaseService.swift in Sources */,
 				8D56E813235F53670024CD50 /* Grades.swift in Sources */,
@@ -567,7 +560,6 @@
 				98067C7E239173A6000AF417 /* RockClimbLoggedViewModel.swift in Sources */,
 				8D2C75F7235A09F30081D22F /* ClimbingStylesTableView.swift in Sources */,
 				987367D32398042700416C57 /* RockClimbLoggedScreenProtocol.swift in Sources */,
-				8D2C75F12359F8A60081D22F /* Model.swift in Sources */,
 				983C4FA123901056009384BA /* ScreenNavigationController.swift in Sources */,
 				8D2C75FB235A0CEE0081D22F /* CustomPickerToolbar.swift in Sources */,
 			);

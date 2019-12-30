@@ -9,7 +9,7 @@
 import UIKit
 
 class LogRockClimbViewController: UIViewController {
-
+    
     var logRockClimbViewModel: LogRockClimbViewModel? = nil
     
     private let datePicker = CustomDatePicker()
@@ -27,7 +27,7 @@ class LogRockClimbViewController: UIViewController {
     
     @IBAction func clickedSubmitButton(_ sender: UIButton) {
         logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given")
-       
+        
         routeTextField.text = ""
     }
     
@@ -48,7 +48,6 @@ class LogRockClimbViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RockClimbSubmittedSegue" {
             if let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
-                //use UITest to check if changeing the sender here and in perform segue has worked
                 rockClimbLoggedViewController.rockClimbIdFromSegue = (sender as? Int64)!
             }
         }
