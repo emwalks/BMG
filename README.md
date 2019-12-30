@@ -2,4 +2,4 @@
 
 An app to track your progress to becoming a British Mountain Guide Trainee. 
 
-Created in Xcode 10.2 with Swift 5. MVVP architecture.
+Created in Xcode 11.2 with Swift 5. MVVP architecture.
