@@ -17,13 +17,8 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     
     func rockClimbDataPresented(loggedRouteName: String) {
         routeNameFromDb = loggedRouteName
-        let attributedString = NSAttributedString(string: """
-             Route Name: \(routeNameFromDb)
-            
-             Climb id: \(rockClimbIdFromSegue)
-            """)
+        let attributedString = NSAttributedString(string: " Route Name: \(routeNameFromDb)")
         routeNameLabel.attributedText = attributedString
-        //printing id for now to show it gets updated
     }
 
     @IBOutlet weak var routeNameLabel: UILabel!
@@ -33,6 +28,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         
         //this is for the UI Test to be able to identify the correct view is segued to
         view.accessibilityIdentifier = "rockClimbLoggedView"
+        routeNameLabel.accessibilityIdentifier = "rockClimbDataPresented"
         
         routeNameLabel.layer.masksToBounds = true
         routeNameLabel.layer.cornerRadius = 5

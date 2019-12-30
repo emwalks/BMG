@@ -38,10 +38,8 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         routeElement.swipeUp()
         elementsQuery.buttons["Submit"].tap()
         
-        let actualResult = app/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"rockClimbLoggedView\"].scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.staticTexts[" Route Name: \(routeNameEntered)"]
-        
-        XCTAssertEqual(app/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"rockClimbLoggedView\"].scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.staticTexts[" Route Name: \(routeNameEntered)"] , actualResult )
-        
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "rockClimbDataPresented").label, " Route Name: \(routeNameEntered)")
+
     }
 
     
