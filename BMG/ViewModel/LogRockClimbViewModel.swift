@@ -36,11 +36,11 @@ class LogRockClimbViewModel{
     }
     
     ///Date
-    @objc func dateFormatter(date: Date) -> String? {
+    @objc func dateFormatter(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let selectedDateString = dateFormatter.string(from: date)
-        return selectedDateString
+        return selectedDateString 
     }
     
     ///Submit button
