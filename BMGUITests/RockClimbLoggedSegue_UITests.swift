@@ -32,14 +32,14 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         let textField = elementsQuery.textFields["e.g. The Bat"]
         textField.tap()
         textField.typeText(routeNameEntered)
-
-        let routeElement = app.scrollViews.otherElements.containing(.staticText, identifier:"Route:").element
-        routeElement.tap()
-        routeElement.swipeUp()
-        elementsQuery.buttons["Submit"].tap()
+        
+        let routeQuery = app.scrollViews.otherElements
+        routeQuery.staticTexts["Route:"].tap()
+        routeQuery.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "rockClimbDataPresented").label, " Route Name: \(routeNameEntered)")
-
+        
+        
     }
 
     
