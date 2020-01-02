@@ -43,25 +43,13 @@ class LogRockClimbViewController: UIViewController {
         styleTableView.setup()
         submitButton.layer.cornerRadius = 5
         addKeyboardDismissRecogniser()
+        routeTextField.backgroundColor = ColorCompatibility.systemGray4
+        gradeTextField.backgroundColor = ColorCompatibility.systemGray4
+        venueTextField.backgroundColor = ColorCompatibility.systemGray4
+        dateTextField.backgroundColor = ColorCompatibility.systemGray4
+        partnersTextField.backgroundColor = ColorCompatibility.systemGray4
+        styleTableView.backgroundColor = ColorCompatibility.systemGray4
         
-        if #available(iOS 13.0, *) {
-            routeTextField.backgroundColor = UIColor.systemGray4
-            gradeTextField.backgroundColor = UIColor.systemGray4
-            venueTextField.backgroundColor = UIColor.systemGray4
-            dateTextField.backgroundColor = UIColor.systemGray4
-            partnersTextField.backgroundColor = UIColor.systemGray4
-            styleTableView.backgroundColor = UIColor.systemGray4
-            
-        } else {
-            routeTextField.backgroundColor = UIColor.init(red: 214, green: 214, blue: 214, alpha: 1.0)
-            gradeTextField.backgroundColor = UIColor.init(red: 214, green: 214, blue: 214, alpha: 1.0)
-            venueTextField.backgroundColor = UIColor.init(red: 214, green: 214, blue: 214, alpha: 1.0)
-            dateTextField.backgroundColor = UIColor.init(red: 214, green: 214, blue: 214, alpha: 1.0)
-            partnersTextField.backgroundColor = UIColor.init(red: 214, green: 214, blue: 214, alpha: 1.0)
-            styleTableView.backgroundColor = UIColor.init(red: 214, green: 214, blue: 214, alpha: 1.0)
-            
-        }
-      
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

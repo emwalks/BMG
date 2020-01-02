@@ -36,12 +36,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         //let's review this
         rockClimbLoggedViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: rockClimbIdFromSegue, rockClimbLoggedScreen: self)
         rockClimbLoggedViewModel?.retrieveRockClimb(idOfRockClimb: rockClimbIdFromSegue)
-       
-        if #available(iOS 13.0, *) {
-            routeNameLabel.backgroundColor = UIColor.systemGray4
-        } else {
-            routeNameLabel.backgroundColor = UIColor.init(red: 214, green: 214, blue: 214, alpha: 1.0)
-        }
+        routeNameLabel.backgroundColor = ColorCompatibility.systemGray4
                
     }
     

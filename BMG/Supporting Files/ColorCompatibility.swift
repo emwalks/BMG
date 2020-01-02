@@ -10,9 +10,6 @@
 //  Alternatively check if the following pod is up to date and install https://github.com/noahsark769/ColorCompatibility/blob/master/ColorCompatibility.swift
 
 ///  Use:
-///
-///  import ColorCompatibility
-///
 ///  myView.backgroundColor = ColorCompatibility.label
 ///  myView.backgroundColor = ColorCompatibility.systemIndigo
 ///  etc. 
