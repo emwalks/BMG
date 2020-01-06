@@ -54,12 +54,11 @@ class SQLiteDatabaseService: DatabaseService {
         do {
             let query = rockClimbTable.filter(loggedRockClimbId == idOfRockClimb)
             for rockClimb in try database.prepare(query) {
-                return String(describing: (rockClimb[loggedRouteName]!)) }
+                return String(describing: rockClimb[loggedRouteName]!)  }
         } catch {
             return "getRockClimbDataFromDb query failed"
         }
         return "an error has occured in getRockClimbDataFromDb function "
     }
-    
-    
+        
 }

@@ -50,7 +50,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
     func testThatWhenAddRockClimbFunctionIsCalledGradeGetsAdded() {
 
-        let routeNameEntered: String = "randomRouteName" + String(describing: Int.random(in: 0..<200))
+        let routeNameEntered: String = "randomRouteName" + String(describing: Int.random(in: 100..<200))
         let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
 
@@ -98,6 +98,22 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         XCTAssertEqual(expectedResult, actualResult, "Route name has been returned based on id")
         
     }
+    
+    func testWhenIdIsPassedToDBServiceTheGradeIsReturned() {
+
+        let routeNameEntered: String = "randomRouteName" + String(describing: Int.random(in: 100..<200))
+        
+        let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
+        let sqliteDatabaseService = SQLiteDatabaseService(db!)
+
+        let idCorrespondingToRockClimbEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
+
+        let actualResult = sqliteDatabaseService.getGradeDataFromDb(idOfRockClimb: idCorrespondingToRockClimbEntered)
+        let expectedResult =  gradeEntered
+
+        XCTAssertEqual(expectedResult, actualResult, "Grade of climb has been returned based on id")
+           
+       }
     
     override func tearDown() {
         
@@ -162,6 +178,18 @@ extension SQLiteDatabaseService {
         print("An error has occured during returnRockClimbIdPK function execution")
         return -4000
     }
+    
+    func getGradeDataFromDb(idOfRockClimb: Int64) -> String {
+        do {
+            let query = rockClimbTable.filter(loggedRockClimbId == idOfRockClimb)
+            for rockClimb in try database.prepare(query) {
+                return String(describing: rockClimb[loggedGrade]!)  }
+        } catch {
+            return "getRockClimbDataFromDb query failed"
+        }
+        return "an error has occured in getRockClimbDataFromDb function "
+    }
+    
 }
 
 
