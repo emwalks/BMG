@@ -36,18 +36,29 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         XCTAssertTrue(db != nil, "The database is not nil")
     }
 
-    func testThatWhenAddRockClimbFucntionIsCalledRouteNameGetsAdded() {
+    func testThatWhenAddRockClimbFunctionIsCalledRouteNameGetsAdded() {
         
         let routeNameEntered = "Blue-Eyes"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
+        
         sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
         
         let routeNameReturned = sqliteDatabaseService.returnRockClimbRouteName()
-
-        let actualResult = routeNameReturned
-        let expectedResult = routeNameEntered
         
-        XCTAssertEqual(expectedResult, actualResult)
+        XCTAssertEqual(routeNameEntered, routeNameReturned)
+    }
+    
+    func testThatWhenAddRockClimbFunctionIsCalledGradeGetsAdded() {
+
+        let routeNameEntered: String = "randomRouteName" + String(describing: Int.random(in: 0..<200))
+        let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
+        let sqliteDatabaseService = SQLiteDatabaseService(db!)
+
+        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
+
+        let gradeReturned = sqliteDatabaseService.returnRockClimbGrade()
+
+        XCTAssertEqual(gradeEntered, gradeReturned)
     }
     
     func testWhenARockClimbIsAddedTheIdIsReturned(){
@@ -108,12 +119,26 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     
 }
 
+//left as an extension for testing of db service, as actual implementation is by querying id (func getRockClimbDataFromDb)
 extension SQLiteDatabaseService {
     
     func returnRockClimbRouteName() -> String {
         do {
             for rockClimb in try database.prepare(rockClimbTable) {
                 return "\(String(describing: rockClimb[loggedRouteName]!))"
+            }
+            
+        } catch {
+            print("Query failed")
+            return "Query failed"
+        }
+        return "an error has occured during returnRockClimbRouteName function execution"
+    }
+    
+    func returnRockClimbGrade() -> String {
+        do {
+            for rockClimb in try database.prepare(rockClimbTable) {
+                return "\(String(describing: rockClimb[loggedGrade]!))"
             }
             
         } catch {

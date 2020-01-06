@@ -16,6 +16,7 @@ class SQLiteDatabaseService: DatabaseService {
     var rockClimbTable:Table = Table("rockClimbTable")
     let loggedRockClimbId = Expression<Int64>("loggedRockClimbId")
     let loggedRouteName = Expression<String?>("loggedRouteName")
+    let loggedGrade = Expression<String?>("loggedGrade")
     var rowid:Int64 = -4000
     
     init(_ db: Connection) {
@@ -26,6 +27,7 @@ class SQLiteDatabaseService: DatabaseService {
                 table in
                 table.column(loggedRockClimbId, primaryKey: true)
                 table.column(loggedRouteName)
+                table.column(loggedGrade)
            })
         } catch {
             print("Unable to create table")
@@ -34,11 +36,11 @@ class SQLiteDatabaseService: DatabaseService {
     
     func addRockClimbToDb(routeName: String, grade: String) -> Int64 {
         do {
-            let insert = rockClimbTable.insert(loggedRouteName <- routeName)
+            let insert = rockClimbTable.insert(loggedRouteName <- routeName, loggedGrade <- grade)
             rowid = try database.run(insert)
             
             for rockClimb in try database.prepare(rockClimbTable) {
-                print("id: \(rockClimb[loggedRockClimbId]), routeName: \(String(describing: rockClimb[loggedRouteName]))")
+                print("id: \(rockClimb[loggedRockClimbId]), routeName: \(String(describing: rockClimb[loggedRouteName])), grade: \(String(describing: rockClimb[loggedGrade]))")
             }
             return rowid
         } catch {
