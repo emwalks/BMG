@@ -40,7 +40,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         
         let routeNameEntered = "Blue-Eyes"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
-        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
+        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
         
         let routeNameReturned = sqliteDatabaseService.returnRockClimbRouteName()
 
@@ -55,7 +55,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let routeNameEntered = "Highflyer"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         
-        let actualResult = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
+        let actualResult = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
         
         let expectedResult = sqliteDatabaseService.rowid
         
@@ -68,7 +68,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         
         let enteredRouteName = "Bergweg"
-        let idAssignedInLogRockClimbViewModel = sqliteDatabaseService.addRockClimbToDb(routeName: enteredRouteName)
+        let idAssignedInLogRockClimbViewModel = sqliteDatabaseService.addRockClimbToDb(routeName: enteredRouteName, grade: "")
         
         let expectedResult = sqliteDatabaseService.returnRockClimbIdPK()
         let actualResult = idAssignedInLogRockClimbViewModel
@@ -79,7 +79,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     func testWhenIdIsPassedToDBServiceTheRouteNameIsReturned() {
         let routeNameEntered = "Huebere"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
-        let idCorrespondingToRouteNameEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered)
+        let idCorrespondingToRouteNameEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
         
         let actualResult = sqliteDatabaseService.getRockClimbDataFromDb(idOfRockClimb: idCorrespondingToRouteNameEntered)
         let expectedResult = routeNameEntered
