@@ -23,7 +23,7 @@ class SQLiteDatabaseService: DatabaseService {
         database = db
         
         do {
-            try database.run(rockClimbTable.create(){
+                try database.run(rockClimbTable.create(ifNotExists: true){
                 table in
                 table.column(loggedRockClimbId, primaryKey: true)
                 table.column(loggedRouteName)
