@@ -10,7 +10,7 @@ import XCTest
 
 class RockClimbLoggedViewModel_Tests: XCTestCase {
     
-    
+  
     func testWhenGivenAnIdRockClimbLoggedViewModelRetrievesTheRockClimbDataId() {
        
         let mockDatabaseService = MockDatabaseService()

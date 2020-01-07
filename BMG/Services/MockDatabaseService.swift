@@ -9,10 +9,26 @@
 import Foundation
 
 class MockDatabaseService: DatabaseService {
+    
+    public struct RockClimbEntry {
+        
+        let routeName:String
+        let grade:String
+        let venueName:String
+        let date: String
+        let partnersName:String
+        let climbingStyle:String
+        
+    }
 
     public var loggedRouteName: String = ""
     public var loggedRockClimbId: Int64 = -5
     public var loggedClimbGrade: String = ""
+    public var loggedVenueName: String = ""
+    public var loggedDate: String = "01/01/1970"
+    public var loggedPartnersName: String = ""
+    public var loggedClimbingStyle: String = ""
+    
     
     func addRockClimbToDb (routeName: String, grade: String) -> Int64 {
         loggedRouteName = routeName
@@ -25,6 +41,7 @@ class MockDatabaseService: DatabaseService {
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> String {
 
             if loggedRockClimbId == idOfRockClimb {
+                RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partnersName: loggedPartnersName, climbingStyle: loggedClimbingStyle)
                 return loggedRouteName
             } else {
                 return "Climb id not found"}
