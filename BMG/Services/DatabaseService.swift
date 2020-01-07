@@ -12,6 +12,6 @@ protocol DatabaseService {
         
     func addRockClimbToDb (routeName: String, grade: String)  -> Int64
     
-    func getRockClimbDataFromDb(idOfRockClimb: Int64) -> String
+    func getRockClimbDataFromDb(idOfRockClimb: Int64) -> RockClimbEntry
     
 }

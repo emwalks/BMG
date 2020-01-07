@@ -68,5 +68,24 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
     
+    func testWhenRockClimbEntryIsReturnedFromDBToVmRouteNameIsPresentedOnScreen() {
+        let mockDatabaseService = MockDatabaseService()
+        let routeNameEntered: String = "I am a mockDatabaseService randomRouteName" + String(describing: Int.random(in: 200..<300))
+               
+        let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
+        
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
+        let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        
+        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: climbId)
+        
+        let expectedResult = routeNameEntered
+        let actualResult = mockRockClimbLoggedScreen.routeNameOnScreen
+        
+        XCTAssertEqual(actualResult, expectedResult)
+    }
+    
+    
 }
 

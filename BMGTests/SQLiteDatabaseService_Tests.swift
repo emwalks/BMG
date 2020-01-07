@@ -92,7 +92,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         let idCorrespondingToRouteNameEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
         
-        let actualResult = sqliteDatabaseService.getRockClimbDataFromDb(idOfRockClimb: idCorrespondingToRouteNameEntered)
+        let actualResult = sqliteDatabaseService.getRockClimbDataFromDb(idOfRockClimb: idCorrespondingToRouteNameEntered).routeName
         let expectedResult = routeNameEntered
         
         XCTAssertEqual(expectedResult, actualResult, "Route name has been returned based on id")
