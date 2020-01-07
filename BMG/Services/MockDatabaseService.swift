@@ -19,22 +19,14 @@ class MockDatabaseService: DatabaseService {
         loggedClimbGrade = grade
         loggedRockClimbId = Int64.random(in: 100..<200)
         return loggedRockClimbId
-        
+
     }
     
-    public var mockRockClimbTable: [Int64:String] =
-        [-10:"I am a mockDBService climb whose id is -10"]
-    
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> String {
-        loggedRockClimbId = idOfRockClimb
 
-        for (climbId, routeName) in mockRockClimbTable {
-            if climbId == idOfRockClimb {
-                loggedRouteName = routeName
+            if loggedRockClimbId == idOfRockClimb {
                 return loggedRouteName
             } else {
-                return "Climb id not in mockRockClimbTable"}
-        }
-        return "Error on getRockClimbDataFromDb in mockdbservice"
+                return "Climb id not found"}
     }
 }

@@ -12,46 +12,62 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
     
     
     func testWhenGivenAnIdRockClimbLoggedViewModelRetrievesTheRockClimbDataId() {
+       
+        let mockDatabaseService = MockDatabaseService()
+        let routeNameEntered: String = "I am a mockDatabaseService randomRouteName" + String(describing: Int.random(in: 0..<100))
+               
+        let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
         
-        let databaseService = MockDatabaseService()
-        let loggedRockClimbId = Int64.random(in: 200..<300)
+        
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
+        
+       
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: loggedRockClimbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
-        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: loggedRockClimbId)
+        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: climbId)
         
-        let actualResult =  databaseService.loggedRockClimbId
+        let actualResult =  mockDatabaseService.loggedRockClimbId
         
-        XCTAssertEqual(loggedRockClimbId, actualResult)
+        XCTAssertEqual(climbId, actualResult)
         
     }
     
     func testWhenGivenAnIdRockClimbLoggedViewModelRetrievesTheRockClimbRouteName() {
         
-        let queryId: Int64 = -10
-        let databaseService = MockDatabaseService()
-        let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: queryId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        let mockDatabaseService = MockDatabaseService()
+        let routeNameEntered: String = "I am a mockDatabaseService randomRouteName" + String(describing: Int.random(in: 100..<200))
+               
+        let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
         
-        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: queryId)
+        
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
+        
+        let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        
+        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: climbId)
 
-        let expectedResult = "I am a mockDBService climb whose id is -10"
-        let actualResult =  databaseService.loggedRouteName
+        let expectedResult = routeNameEntered
+        let actualResult =  mockDatabaseService.loggedRouteName
         
         XCTAssertEqual(expectedResult, actualResult)
         
     }
     
     func testWhenRouteNameIsReturnedFromDBToVmItIsPresentedOnScreen() {
+        let mockDatabaseService = MockDatabaseService()
+        let routeNameEntered: String = "I am a mockDatabaseService randomRouteName" + String(describing: Int.random(in: 200..<300))
+               
+        let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
         
-        let queryId: Int64 = -10
-        let databaseService = MockDatabaseService()
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(databaseService, idOfRockClimbReceived: queryId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
-        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: queryId)
+        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: climbId)
         
-        let expectedResult = databaseService.loggedRouteName
+        let expectedResult = routeNameEntered
         let actualResult = mockRockClimbLoggedScreen.routeNameOnScreen
         
         XCTAssertEqual(actualResult, expectedResult)
