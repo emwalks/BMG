@@ -15,6 +15,7 @@ class MockRockClimbLoggedScreen: RockClimbLoggedScreen {
     public var venueNameOnScreen: String = ""
     public var dateOnScreen: String = "01/01/1970"
     public var partnersOnScreen: String = ""
+    public var climbingStyleOnScreen : String = ""
     
     func rockClimbDataPresented(rockClimbEntry: RockClimbEntry) {
         routeNameOnScreen = rockClimbEntry.routeName
@@ -22,5 +23,6 @@ class MockRockClimbLoggedScreen: RockClimbLoggedScreen {
         venueNameOnScreen = rockClimbEntry.venueName
         dateOnScreen = rockClimbEntry.date
         partnersOnScreen = rockClimbEntry.partners
+        climbingStyleOnScreen = rockClimbEntry.climbingStyle
     }
 }

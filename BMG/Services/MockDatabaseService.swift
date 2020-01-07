@@ -19,13 +19,14 @@ class MockDatabaseService: DatabaseService {
     public var loggedClimbingStyle: String = ""
     
     
-    func addRockClimbToDb (routeName: String, grade: String, venueName: String, date: String, partners: String) -> Int64 {
+    func addRockClimbToDb (routeName: String, grade: String, venueName: String, date: String, partners: String, climbingStyle: String) -> Int64 {
         loggedRouteName = routeName
         loggedClimbGrade = grade
         loggedRockClimbId = Int64.random(in: 100..<200)
         loggedVenueName = venueName
         loggedDate = date
         loggedPartnersName = partners
+        loggedClimbingStyle = climbingStyle
         return loggedRockClimbId
     }
     

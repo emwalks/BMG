@@ -14,7 +14,7 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         let mockDatabaseService = MockDatabaseService()
         let routeNameEntered: String = "I am a mockDatabaseService randomRouteName" + String(describing: Int.random(in: 200..<300))
                
-        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "", venueName: "", date: "", partners: "")
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "", venueName: "", date: "", partners: "", climbingStyle: "")
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
         let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
@@ -32,7 +32,7 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
                
         let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
         
-        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered, venueName: "", date: "", partners: "")
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered, venueName: "", date: "", partners: "", climbingStyle: "")
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
         let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
@@ -49,7 +49,7 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
     
         let venueNameEntered: String = "I am a mockDatabaseService randomVenueName" + String(describing: Int.random(in: 100..<200))
         
-        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: venueNameEntered, date: "", partners: "")
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: venueNameEntered, date: "", partners: "", climbingStyle: "")
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
         let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
@@ -67,7 +67,7 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         
         let dateEntered: String = "07/01/2020"
         
-        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: "", date: dateEntered, partners: "")
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: "", date: dateEntered, partners: "", climbingStyle: "")
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
         let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
@@ -82,9 +82,9 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
     func testWhenRockClimbEntryIsReturnedFromDBToVmPartnersIsPresentedOnScreen() {
         let mockDatabaseService = MockDatabaseService()
         
-        let partnersEntered: String = "I am a mockDatabaseService randomVenueName" + String(describing: Int.random(in: 100..<200))
+        let partnersEntered: String = "I am a mockDatabaseService partners" + String(describing: Int.random(in: 100..<200))
         
-        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: "", date: "", partners: partnersEntered)
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: "", date: "", partners: partnersEntered, climbingStyle: "")
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
         let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
@@ -92,6 +92,23 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         
         let expectedResult = partnersEntered
         let actualResult = mockRockClimbLoggedScreen.partnersOnScreen
+        
+        XCTAssertEqual(actualResult, expectedResult)
+    }
+    
+    func testWhenRockClimbEntryIsReturnedFromDBToVmClimbingStyleIsPresentedOnScreen() {
+        let mockDatabaseService = MockDatabaseService()
+        
+        let climbingStyleEntered: String = "I am a mockDatabaseService climbStyle" + String(describing: Int.random(in: 100..<200))
+        
+        let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: "", date: "", partners: "", climbingStyle: climbingStyleEntered)
+        let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        
+        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: climbId)
+        
+        let expectedResult = climbingStyleEntered
+        let actualResult = mockRockClimbLoggedScreen.climbingStyleOnScreen
         
         XCTAssertEqual(actualResult, expectedResult)
     }

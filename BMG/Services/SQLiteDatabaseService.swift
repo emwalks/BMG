@@ -34,7 +34,7 @@ class SQLiteDatabaseService: DatabaseService {
         }
     }
     
-    func addRockClimbToDb(routeName: String, grade: String, venueName: String, date: String, partners: String) -> Int64 {
+    func addRockClimbToDb(routeName: String, grade: String, venueName: String, date: String, partners: String, climbingStyle: String) -> Int64 {
         do {
             let insert = rockClimbTable.insert(loggedRouteName <- routeName, loggedGrade <- grade)
             rowid = try database.run(insert)

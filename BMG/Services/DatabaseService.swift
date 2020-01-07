@@ -10,7 +10,7 @@ import Foundation
 
 protocol DatabaseService {
         
-    func addRockClimbToDb (routeName: String, grade: String, venueName: String, date: String, partners: String)  -> Int64
+    func addRockClimbToDb (routeName: String, grade: String, venueName: String, date: String, partners: String, climbingStyle: String)  -> Int64
     
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> RockClimbEntry
     
