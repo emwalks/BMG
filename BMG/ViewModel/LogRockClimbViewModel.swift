@@ -49,7 +49,7 @@ class LogRockClimbViewModel{
     
     func logClimbData(routeName: String, grade: String) {
         
-        idGivenToRockClimb = databaseService.addRockClimbToDb(routeName: routeName, grade: grade, venueName: "")
+        idGivenToRockClimb = databaseService.addRockClimbToDb(routeName: routeName, grade: grade, venueName: "", date: "")
         
         screenNavigationController.displayLoggedRockClimbDataScreen(idGivenToRockClimb)
         
