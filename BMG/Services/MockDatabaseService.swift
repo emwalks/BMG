@@ -15,7 +15,7 @@ class MockDatabaseService: DatabaseService {
     public var loggedClimbGrade: String = ""
     public var loggedVenueName: String = ""
     public var loggedDate: String = "01/01/1970"
-    public var loggedPartnersName: String = ""
+    public var loggedPartners: String = ""
     public var loggedClimbingStyle: String = ""
     
     
@@ -25,7 +25,7 @@ class MockDatabaseService: DatabaseService {
         loggedRockClimbId = Int64.random(in: 100..<200)
         loggedVenueName = venueName
         loggedDate = date
-        loggedPartnersName = partners
+        loggedPartners = partners
         loggedClimbingStyle = climbingStyle
         return loggedRockClimbId
     }
@@ -33,7 +33,7 @@ class MockDatabaseService: DatabaseService {
     
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> RockClimbEntry {
          if loggedRockClimbId == idOfRockClimb {
-                   let rockClimbEntry = RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partners: loggedPartnersName, climbingStyle: loggedClimbingStyle)
+                   let rockClimbEntry = RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partners: loggedPartners, climbingStyle: loggedClimbingStyle)
                    return rockClimbEntry
                } else {
                    let errorString = "Climb id not found"

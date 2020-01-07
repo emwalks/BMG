@@ -47,9 +47,9 @@ class LogRockClimbViewModel{
     
     var idGivenToRockClimb:Int64 = -1
     
-    func logClimbData(routeName: String, grade: String, venueName: String, date: String) {
+    func logClimbData(routeName: String, grade: String, venueName: String, date: String, partners: String) {
         
-        idGivenToRockClimb = databaseService.addRockClimbToDb(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: "", climbingStyle: "")
+        idGivenToRockClimb = databaseService.addRockClimbToDb(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: partners, climbingStyle: "")
         
         screenNavigationController.displayLoggedRockClimbDataScreen(idGivenToRockClimb)
         
