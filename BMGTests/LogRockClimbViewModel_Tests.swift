@@ -60,7 +60,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
         
         let routeNameEntered = "Jomo"
-        logRockClimbViewModel.logClimbData(routeName: routeNameEntered, grade: "", venueName: "")
+        logRockClimbViewModel.logClimbData(routeName: routeNameEntered, grade: "", venueName: "", date: "")
         
         let actualResult = databaseService.loggedRouteName
         XCTAssertEqual(routeNameEntered, actualResult)
@@ -79,7 +79,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         logRockClimbViewModel.selectGrade(adjectivalGrade: selectedAdjectivalGrade, technicalGrade: selectedTechnicalGrade)
         let gradeEntered = logRockClimbViewModel.gradeText()
         
-        logRockClimbViewModel.logClimbData(routeName: "", grade: gradeEntered, venueName: "")
+        logRockClimbViewModel.logClimbData(routeName: "", grade: gradeEntered, venueName: "", date: "")
 
         //assert
         let actualResult = databaseService.loggedClimbGrade
@@ -95,13 +95,30 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         let venueNameEntered: String = "randomVenueName" + String(describing: Int.random(in: 0..<100))
         
         //act
-        logRockClimbViewModel.logClimbData(routeName: "", grade: "", venueName: venueNameEntered)
+        logRockClimbViewModel.logClimbData(routeName: "", grade: "", venueName: venueNameEntered, date: "")
         
         //assert
         let actualResult = databaseService.loggedVenueName
         XCTAssertEqual(venueNameEntered, actualResult)
        }
        
+    
+    func testWhenSubmitButtonClickedDatePersists() {
+        
+        let databaseService = MockDatabaseService()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
+        
+        let dateEntered: String = "07/01/2020"
+        
+        
+        logRockClimbViewModel.logClimbData(routeName: "", grade: "", venueName: "", date: dateEntered)
+        
+        
+        let actualResult = databaseService.loggedDate
+        XCTAssertEqual(dateEntered, actualResult)
+    }
+    
     
     func testThatTheLoggedRockClimbScreenIsShownAfterSubmission() {
         
@@ -111,7 +128,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         
         
         let enteredRouteName = "Jean Jeanie"
-        logRockClimbViewModel.logClimbData(routeName: enteredRouteName, grade: "", venueName: "")
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName, grade: "", venueName: "", date: "")
         
         XCTAssertEqual(loggedRockClimbDataScreenExists, true, "The function: displayLoggedRockClimbDataScreen has run")
     }
@@ -123,7 +140,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         
         
         let enteredRouteName = "Just for Fun"
-        logRockClimbViewModel.logClimbData(routeName: enteredRouteName, grade: "", venueName: "")
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName, grade: "", venueName: "", date: "")
         
         let expectedResult = databaseService.loggedRockClimbId
         let actualResult = logRockClimbViewModel.idGivenToRockClimb
@@ -138,7 +155,7 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         let logRockClimbViewModel = LogRockClimbViewModel(databaseService, screenNavigationController: mockScreenNavigationController)
         
         let enteredRouteName = "Knolle"
-        logRockClimbViewModel.logClimbData(routeName: enteredRouteName, grade: "", venueName: "")
+        logRockClimbViewModel.logClimbData(routeName: enteredRouteName, grade: "", venueName: "", date: "")
         
         let idAssignedInLogRockClimbViewModel = logRockClimbViewModel.idGivenToRockClimb
         

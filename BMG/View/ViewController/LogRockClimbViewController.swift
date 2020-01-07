@@ -26,12 +26,13 @@ class LogRockClimbViewController: UIViewController {
     
     
     @IBAction func clickedSubmitButton(_ sender: UIButton) {
-        logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given", grade: gradeTextField.text ?? "No grade entered", venueName: venueTextField.text ?? "No venue given")
+        logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given", grade: gradeTextField.text ?? "No grade selected", venueName: venueTextField.text ?? "No venue given", date: dateTextField.text ?? "No date selected" )
         
         routeTextField.text = ""
         gradeTextField.text = ""
         dateTextField.text = ""
         venueTextField.text = ""
+        dateTextField.text = ""
     }
     
     // MARK: Formatting the view
