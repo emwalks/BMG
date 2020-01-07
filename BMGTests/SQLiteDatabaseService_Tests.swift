@@ -41,7 +41,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let routeNameEntered = "Blue-Eyes"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         
-        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
+        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "", venueName: "")
         
         let routeNameReturned = sqliteDatabaseService.returnRockClimbRouteName()
         
@@ -54,7 +54,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
 
-        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
+        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered, venueName: "")
 
         let gradeReturned = sqliteDatabaseService.returnRockClimbGrade()
 
@@ -66,7 +66,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let routeNameEntered = "Highflyer"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         
-        let actualResult = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
+        let actualResult = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "", venueName: "")
         
         let expectedResult = sqliteDatabaseService.rowid
         
@@ -79,7 +79,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
         
         let enteredRouteName = "Bergweg"
-        let idAssignedInLogRockClimbViewModel = sqliteDatabaseService.addRockClimbToDb(routeName: enteredRouteName, grade: "")
+        let idAssignedInLogRockClimbViewModel = sqliteDatabaseService.addRockClimbToDb(routeName: enteredRouteName, grade: "", venueName: "")
         
         let expectedResult = sqliteDatabaseService.returnRockClimbIdPK()
         let actualResult = idAssignedInLogRockClimbViewModel
@@ -90,7 +90,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
     func testWhenIdIsPassedToDBServiceTheRouteNameIsReturned() {
         let routeNameEntered = "Huebere"
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
-        let idCorrespondingToRouteNameEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "")
+        let idCorrespondingToRouteNameEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "", venueName: "")
         
         let actualResult = sqliteDatabaseService.getRockClimbDataFromDb(idOfRockClimb: idCorrespondingToRouteNameEntered).routeName
         let expectedResult = routeNameEntered
@@ -106,7 +106,7 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
         let sqliteDatabaseService = SQLiteDatabaseService(db!)
 
-        let idCorrespondingToRockClimbEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
+        let idCorrespondingToRockClimbEntered = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered, venueName: "")
 
         let actualResult = sqliteDatabaseService.getGradeDataFromDb(idOfRockClimb: idCorrespondingToRockClimbEntered)
         let expectedResult =  gradeEntered
