@@ -18,6 +18,7 @@ class SQLiteDatabaseService: DatabaseService {
     let loggedRouteName = Expression<String?>("loggedRouteName")
     let loggedGrade = Expression<String?>("loggedGrade")
     let loggedVenueName = Expression<String?>("loggedVenueName")
+    let loggedDate = Expression<String?>("loggedDate")
 
     var rowid:Int64 = -4000
     
@@ -31,6 +32,7 @@ class SQLiteDatabaseService: DatabaseService {
                 table.column(loggedRouteName)
                 table.column(loggedGrade)
                 table.column(loggedVenueName)
+                table.column(loggedDate)
             })
         } catch {
             print("Unable to create table")
@@ -39,7 +41,11 @@ class SQLiteDatabaseService: DatabaseService {
     
     func addRockClimbToDb(routeName: String, grade: String, venueName: String, date: String, partners: String, climbingStyle: String) -> Int64 {
         do {
-            let insert = rockClimbTable.insert(loggedRouteName <- routeName, loggedGrade <- grade, loggedVenueName <- venueName)
+            let insert = rockClimbTable.insert(
+                loggedRouteName <- routeName,
+                loggedGrade <- grade,
+                loggedVenueName <- venueName,
+                loggedDate <- date)
             rowid = try database.run(insert)
             return rowid
         } catch {
@@ -56,7 +62,8 @@ class SQLiteDatabaseService: DatabaseService {
                 let routeName = String(describing: rockClimb[loggedRouteName]!)
                 let grade = String(describing: rockClimb[loggedGrade]!)
                 let venueName = String(describing: rockClimb[loggedVenueName]!)
-                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: "", partners: "", climbingStyle: "")
+                let date = String(describing: rockClimb[loggedDate]!)
+                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: "", climbingStyle: "")
                 return rockClimbEntryFromDB
             }
             
