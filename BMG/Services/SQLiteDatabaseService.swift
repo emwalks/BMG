@@ -19,6 +19,8 @@ class SQLiteDatabaseService: DatabaseService {
     let loggedGrade = Expression<String?>("loggedGrade")
     let loggedVenueName = Expression<String?>("loggedVenueName")
     let loggedDate = Expression<String?>("loggedDate")
+    let loggedPartners = Expression<String?>("loggedPartners")
+
 
     var rowid:Int64 = -4000
     
@@ -33,6 +35,7 @@ class SQLiteDatabaseService: DatabaseService {
                 table.column(loggedGrade)
                 table.column(loggedVenueName)
                 table.column(loggedDate)
+                table.column(loggedPartners)
             })
         } catch {
             print("Unable to create table")
@@ -45,7 +48,9 @@ class SQLiteDatabaseService: DatabaseService {
                 loggedRouteName <- routeName,
                 loggedGrade <- grade,
                 loggedVenueName <- venueName,
-                loggedDate <- date)
+                loggedDate <- date,
+                loggedPartners <- partners
+            )
             rowid = try database.run(insert)
             return rowid
         } catch {
@@ -63,7 +68,8 @@ class SQLiteDatabaseService: DatabaseService {
                 let grade = String(describing: rockClimb[loggedGrade]!)
                 let venueName = String(describing: rockClimb[loggedVenueName]!)
                 let date = String(describing: rockClimb[loggedDate]!)
-                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: "", climbingStyle: "")
+                let partners = String(describing: rockClimb[loggedPartners]!)
+                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: partners, climbingStyle: "")
                 return rockClimbEntryFromDB
             }
             
