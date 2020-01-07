@@ -15,8 +15,8 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     var rockClimbIdFromSegue: Int64 = -5000
     var rockClimbLoggedViewModel: RockClimbLoggedViewModel? = nil
     
-    func rockClimbDataPresented(loggedRouteName: String) {
-        routeNameFromDb = loggedRouteName
+    func rockClimbDataPresented(rockClimbEntry: RockClimbEntry) {
+        routeNameFromDb = rockClimbEntry.routeName
         let attributedString = NSAttributedString(string: " Route Name: \(routeNameFromDb)")
         routeNameLabel.attributedText = attributedString
     }

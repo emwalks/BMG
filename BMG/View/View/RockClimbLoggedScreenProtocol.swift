@@ -10,6 +10,6 @@ import Foundation
 
 protocol RockClimbLoggedScreen {
     
-     func rockClimbDataPresented(loggedRouteName: String)
+     func rockClimbDataPresented(rockClimbEntry: RockClimbEntry)
     
 }
