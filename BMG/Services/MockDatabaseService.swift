@@ -41,8 +41,8 @@ class MockDatabaseService: DatabaseService {
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> String {
 
             if loggedRockClimbId == idOfRockClimb {
-                RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partnersName: loggedPartnersName, climbingStyle: loggedClimbingStyle)
-                return loggedRouteName
+               let rockClimbEntry = RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partnersName: loggedPartnersName, climbingStyle: loggedClimbingStyle)
+                return rockClimbEntry.routeName
             } else {
                 return "Climb id not found"}
     }

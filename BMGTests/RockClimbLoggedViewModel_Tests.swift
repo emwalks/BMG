@@ -10,18 +10,13 @@ import XCTest
 
 class RockClimbLoggedViewModel_Tests: XCTestCase {
     
-  
     func testWhenGivenAnIdRockClimbLoggedViewModelRetrievesTheRockClimbDataId() {
        
         let mockDatabaseService = MockDatabaseService()
         let routeNameEntered: String = "I am a mockDatabaseService randomRouteName" + String(describing: Int.random(in: 0..<100))
-               
         let gradeEntered: String = Grades.adjectivalGrades.randomElement()! + " " + Grades.technicalGrades.randomElement()!
-        
-        
         let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered)
         
-       
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
         let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
         
