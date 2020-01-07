@@ -127,6 +127,20 @@ class SQLiteDatabaseServiceTests: XCTestCase {
      XCTAssertEqual(partnersEntered, actualResult, "Climbing partner has been returned based on id")
         
     }
+    
+    func testWhenIdIsPassedToDBServiceTheClimbingStyleIsReturned() {
+
+    let climbingStyleEntered: String = "I am a mockDatabaseService climbStyle" + String(describing: Int.random(in: 300..<400))
+        
+     let sqliteDatabaseService = SQLiteDatabaseService(db!)
+
+     let idCorrespondingToRockClimbEntered = sqliteDatabaseService.addRockClimbToDb(routeName: "", grade: "", venueName: "", date: "", partners: "", climbingStyle: climbingStyleEntered)
+
+     let actualResult = sqliteDatabaseService.getRockClimbDataFromDb(idOfRockClimb: idCorrespondingToRockClimbEntered).climbingStyle
+     
+     XCTAssertEqual(climbingStyleEntered, actualResult, "Climbing style has been returned based on id")
+        
+    }
 
     
     override func tearDown() {
