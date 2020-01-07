@@ -19,23 +19,24 @@ class MockDatabaseService: DatabaseService {
     public var loggedClimbingStyle: String = ""
     
     
-    func addRockClimbToDb (routeName: String, grade: String, venueName: String, date: String) -> Int64 {
+    func addRockClimbToDb (routeName: String, grade: String, venueName: String, date: String, partners: String) -> Int64 {
         loggedRouteName = routeName
         loggedClimbGrade = grade
         loggedRockClimbId = Int64.random(in: 100..<200)
         loggedVenueName = venueName
         loggedDate = date
+        loggedPartnersName = partners
         return loggedRockClimbId
     }
     
     
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> RockClimbEntry {
          if loggedRockClimbId == idOfRockClimb {
-                   let rockClimbEntry = RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partnersName: loggedPartnersName, climbingStyle: loggedClimbingStyle)
+                   let rockClimbEntry = RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partners: loggedPartnersName, climbingStyle: loggedClimbingStyle)
                    return rockClimbEntry
                } else {
                    let errorString = "Climb id not found"
-                   let errorStruct = RockClimbEntry.init(routeName: errorString, grade: errorString, venueName: errorString, date: errorString, partnersName: errorString, climbingStyle: errorString)
+                   let errorStruct = RockClimbEntry.init(routeName: errorString, grade: errorString, venueName: errorString, date: errorString, partners: errorString, climbingStyle: errorString)
                    return  errorStruct
                }
     }

@@ -34,7 +34,7 @@ class SQLiteDatabaseService: DatabaseService {
         }
     }
     
-    func addRockClimbToDb(routeName: String, grade: String, venueName: String, date: String) -> Int64 {
+    func addRockClimbToDb(routeName: String, grade: String, venueName: String, date: String, partners: String) -> Int64 {
         do {
             let insert = rockClimbTable.insert(loggedRouteName <- routeName, loggedGrade <- grade)
             rowid = try database.run(insert)
@@ -55,7 +55,7 @@ class SQLiteDatabaseService: DatabaseService {
             let query = rockClimbTable.filter(loggedRockClimbId == idOfRockClimb)
             for rockClimb in try database.prepare(query) {
                 let routeName = String(describing: rockClimb[loggedRouteName]!)
-                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: "", venueName: "", date: "", partnersName: "", climbingStyle: "")
+                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: "", venueName: "", date: "", partners: "", climbingStyle: "")
                 return rockClimbEntryFromDB
             }
             
@@ -65,7 +65,7 @@ class SQLiteDatabaseService: DatabaseService {
                 grade: "getRockClimbDataFromDb query failed",
                 venueName: "getRockClimbDataFromDb query failed",
                 date: "getRockClimbDataFromDb query failed",
-                partnersName: "getRockClimbDataFromDb query failed",
+                partners: "getRockClimbDataFromDb query failed",
                 climbingStyle: "getRockClimbDataFromDb query failed")
         }
         return RockClimbEntry.init(
@@ -73,7 +73,7 @@ class SQLiteDatabaseService: DatabaseService {
             grade: "an error has occured in getRockClimbDataFromDb function",
             venueName: "an error has occured in getRockClimbDataFromDb function",
             date: "an error has occured in getRockClimbDataFromDb function",
-            partnersName: "an error has occured in getRockClimbDataFromDb function",
+            partners: "an error has occured in getRockClimbDataFromDb function",
             climbingStyle: "an error has occured in getRockClimbDataFromDb function")
     }
         

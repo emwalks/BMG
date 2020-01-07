@@ -14,15 +14,15 @@ struct RockClimbEntry {
     let grade: String
     let venueName: String
     let date: String
-    let partnersName: String
+    let partners: String
     let climbingStyle: String
     
-    init(routeName:String, grade:String, venueName:String, date: String, partnersName:String, climbingStyle:String) {
+    init(routeName:String, grade:String, venueName:String, date: String, partners:String, climbingStyle:String) {
         self.routeName = routeName
         self.grade = grade
-        self.venueName  = venueName
-        self.date   = date
-        self.partnersName = partnersName
+        self.venueName = venueName
+        self.date = date
+        self.partners = partners
         self.climbingStyle = climbingStyle
     }
     

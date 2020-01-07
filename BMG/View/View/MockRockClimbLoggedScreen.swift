@@ -14,11 +14,13 @@ class MockRockClimbLoggedScreen: RockClimbLoggedScreen {
     public var gradeOnScreen: String = ""
     public var venueNameOnScreen: String = ""
     public var dateOnScreen: String = "01/01/1970"
+    public var partnersOnScreen: String = ""
     
     func rockClimbDataPresented(rockClimbEntry: RockClimbEntry) {
         routeNameOnScreen = rockClimbEntry.routeName
         gradeOnScreen = rockClimbEntry.grade
         venueNameOnScreen = rockClimbEntry.venueName
         dateOnScreen = rockClimbEntry.date
+        partnersOnScreen = rockClimbEntry.partners
     }
 }
