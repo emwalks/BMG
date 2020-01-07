@@ -55,7 +55,8 @@ class SQLiteDatabaseService: DatabaseService {
             let query = rockClimbTable.filter(loggedRockClimbId == idOfRockClimb)
             for rockClimb in try database.prepare(query) {
                 let routeName = String(describing: rockClimb[loggedRouteName]!)
-                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: "", venueName: "", date: "", partners: "", climbingStyle: "")
+                let grade = String(describing: rockClimb[loggedGrade]!)
+                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: "", date: "", partners: "", climbingStyle: "")
                 return rockClimbEntryFromDB
             }
             

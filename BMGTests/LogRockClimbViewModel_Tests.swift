@@ -113,7 +113,6 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         
         logRockClimbViewModel.logClimbData(routeName: "", grade: "", venueName: "", date: dateEntered, partners: "", climbingStyle: "")
         
-        
         let actualResult = databaseService.loggedDate
         XCTAssertEqual(dateEntered, actualResult)
     }
@@ -129,7 +128,6 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         
         logRockClimbViewModel.logClimbData(routeName: "", grade: "", venueName: "", date: "", partners: partnersEntered, climbingStyle: "")
         
-        
         let actualResult = databaseService.loggedPartners
         XCTAssertEqual(partnersEntered, actualResult)
     }
@@ -144,7 +142,6 @@ class LogRockClimbViewModel_Tests: XCTestCase {
         let climbingStyleEntered: String = "random climbingStyle" + String(describing: Int.random(in: 0..<100))
         
         logRockClimbViewModel.logClimbData(routeName: "", grade: "", venueName: "", date: "", partners: "", climbingStyle: climbingStyleEntered)
-        
         
         let actualResult = databaseService.loggedClimbingStyle
         XCTAssertEqual(climbingStyleEntered, actualResult)

@@ -106,12 +106,12 @@ class SQLiteDatabaseServiceTests: XCTestCase {
 
         let idCorrespondingToRockClimbEntered = sqliteDatabaseService.addRockClimbToDb(routeName: "", grade: gradeEntered, venueName: "", date: "", partners: "", climbingStyle: "")
 
-        let actualResult = sqliteDatabaseService.getGradeDataFromDb(idOfRockClimb: idCorrespondingToRockClimbEntered)
-        let expectedResult =  gradeEntered
-
-        XCTAssertEqual(expectedResult, actualResult, "Grade of climb has been returned based on id")
+        let actualResult = sqliteDatabaseService.getRockClimbDataFromDb(idOfRockClimb: idCorrespondingToRockClimbEntered).grade
+        
+        XCTAssertEqual(gradeEntered, actualResult, "Grade of climb has been returned based on id")
            
        }
+
     
     override func tearDown() {
         
@@ -175,17 +175,6 @@ extension SQLiteDatabaseService {
         }
         print("An error has occured during returnRockClimbIdPK function execution")
         return -4000
-    }
-    
-    func getGradeDataFromDb(idOfRockClimb: Int64) -> String {
-        do {
-            let query = rockClimbTable.filter(loggedRockClimbId == idOfRockClimb)
-            for rockClimb in try database.prepare(query) {
-                return String(describing: rockClimb[loggedGrade]!)  }
-        } catch {
-            return "getRockClimbDataFromDb query failed"
-        }
-        return "an error has occured in getRockClimbDataFromDb function "
     }
     
 }
