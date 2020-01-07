@@ -17,18 +17,21 @@ class SQLiteDatabaseService: DatabaseService {
     let loggedRockClimbId = Expression<Int64>("loggedRockClimbId")
     let loggedRouteName = Expression<String?>("loggedRouteName")
     let loggedGrade = Expression<String?>("loggedGrade")
+    let loggedVenueName = Expression<String?>("loggedVenueName")
+
     var rowid:Int64 = -4000
     
     init(_ db: Connection) {
         database = db
         
         do {
-                try database.run(rockClimbTable.create(ifNotExists: true){
+            try database.run(rockClimbTable.create(ifNotExists: true){
                 table in
                 table.column(loggedRockClimbId, primaryKey: true)
                 table.column(loggedRouteName)
                 table.column(loggedGrade)
-           })
+                table.column(loggedVenueName)
+            })
         } catch {
             print("Unable to create table")
         }
@@ -36,12 +39,8 @@ class SQLiteDatabaseService: DatabaseService {
     
     func addRockClimbToDb(routeName: String, grade: String, venueName: String, date: String, partners: String, climbingStyle: String) -> Int64 {
         do {
-            let insert = rockClimbTable.insert(loggedRouteName <- routeName, loggedGrade <- grade)
+            let insert = rockClimbTable.insert(loggedRouteName <- routeName, loggedGrade <- grade, loggedVenueName <- venueName)
             rowid = try database.run(insert)
-            
-            for rockClimb in try database.prepare(rockClimbTable) {
-                print("id: \(rockClimb[loggedRockClimbId]), routeName: \(String(describing: rockClimb[loggedRouteName])), grade: \(String(describing: rockClimb[loggedGrade]))")
-            }
             return rowid
         } catch {
             print("Insert failed")
@@ -56,7 +55,8 @@ class SQLiteDatabaseService: DatabaseService {
             for rockClimb in try database.prepare(query) {
                 let routeName = String(describing: rockClimb[loggedRouteName]!)
                 let grade = String(describing: rockClimb[loggedGrade]!)
-                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: "", date: "", partners: "", climbingStyle: "")
+                let venueName = String(describing: rockClimb[loggedVenueName]!)
+                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: "", partners: "", climbingStyle: "")
                 return rockClimbEntryFromDB
             }
             
