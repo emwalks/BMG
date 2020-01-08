@@ -36,6 +36,7 @@ class MockDatabaseService: DatabaseService {
                    let rockClimbEntry = RockClimbEntry.init(routeName: loggedRouteName, grade: loggedClimbGrade, venueName: loggedVenueName, date: loggedDate, partners: loggedPartners, climbingStyle: loggedClimbingStyle)
                    return rockClimbEntry
                } else {
+            //Untested path, need to considered what to do when an "exception" happens
                    let errorString = "Climb id not found"
                    let errorStruct = RockClimbEntry.init(routeName: errorString, grade: errorString, venueName: errorString, date: errorString, partners: errorString, climbingStyle: errorString)
                    return  errorStruct

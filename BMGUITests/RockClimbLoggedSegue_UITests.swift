@@ -37,8 +37,21 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         routeQuery.staticTexts["Route:"].tap()
         routeQuery.buttons["Submit"].tap()
         
-        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "rockClimbDataPresented").label, " Route Name: \(routeNameEntered)")
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "routeNamePresented").label, " Route Name: \(routeNameEntered)")
         
+    }
+    
+    func testWhenAGradeIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
+        let gradeSelected = "M 7b"
+        let app = XCUIApplication()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.textFields["E1 5b, E1 5c, etc."].tap()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["M"].swipeRight()/*[[".pickers.pickerWheels[\"M\"]",".swipeUp()",".swipeRight()",".pickerWheels[\"M\"]"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/
+        app.pickers.children(matching: .pickerWheel).element(boundBy: 1).swipeUp()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        elementsQuery.buttons["Submit"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "gradePresented").label, " Grade: \(gradeSelected)")
         
     }
 
