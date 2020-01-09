@@ -262,7 +262,9 @@
                                                 <constraints>
                                                     <constraint firstItem="ipQ-Sz-kPc" firstAttribute="trailing" secondItem="wZe-Z4-s6d" secondAttribute="trailing" id="3yq-If-duw"/>
                                                     <constraint firstItem="dag-Na-MPJ" firstAttribute="top" secondItem="ipQ-Sz-kPc" secondAttribute="bottom" constant="15" id="4bU-bz-9OO"/>
+                                                    <constraint firstItem="ipQ-Sz-kPc" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="CHo-A7-LPc"/>
                                                     <constraint firstAttribute="trailing" secondItem="dag-Na-MPJ" secondAttribute="trailing" constant="20" id="FYx-if-oSf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ipQ-Sz-kPc" secondAttribute="trailing" constant="20" id="KwV-SR-Csx"/>
                                                     <constraint firstAttribute="trailing" secondItem="wZe-Z4-s6d" secondAttribute="trailing" constant="20" id="M1h-IE-Fce"/>
                                                     <constraint firstItem="wZe-Z4-s6d" firstAttribute="top" secondItem="QFN-fV-Uwv" secondAttribute="top" constant="47" id="RRl-wI-o5c"/>
                                                     <constraint firstItem="ipQ-Sz-kPc" firstAttribute="top" secondItem="wZe-Z4-s6d" secondAttribute="bottom" constant="15" id="Uhm-YG-Uiq"/>
