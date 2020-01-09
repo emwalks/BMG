@@ -55,6 +55,20 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         
     }
 
-    
+    func testWhenARandomVenueNameIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
+        let venueNameEntered:String = "randomVenueName" + String(describing: Int.random(in: 500..<600))
+        
+        let elementsQuery = app.scrollViews.otherElements
+        let textField = elementsQuery.textFields["e.g. Ben Nevis"]
+        textField.tap()
+        textField.typeText(venueNameEntered)
+        
+        let routeQuery = app.scrollViews.otherElements
+        routeQuery.staticTexts["Route:"].tap()
+        routeQuery.buttons["Submit"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").label, " Venue: \(venueNameEntered)")
+        
+    }
     
 }
