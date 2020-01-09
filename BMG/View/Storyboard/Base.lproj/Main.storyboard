@@ -239,7 +239,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipQ-Sz-kPc">
-                                                        <rect key="frame" x="20" y="82" width="374" height="34"/>
+                                                        <rect key="frame" x="20" y="96" width="374" height="34"/>
                                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="i10-oJ-Qsb"/>
@@ -253,7 +253,7 @@
                                                     <constraint firstItem="ipQ-Sz-kPc" firstAttribute="trailing" secondItem="wZe-Z4-s6d" secondAttribute="trailing" id="3yq-If-duw"/>
                                                     <constraint firstAttribute="trailing" secondItem="wZe-Z4-s6d" secondAttribute="trailing" constant="20" id="M1h-IE-Fce"/>
                                                     <constraint firstItem="wZe-Z4-s6d" firstAttribute="top" secondItem="QFN-fV-Uwv" secondAttribute="top" constant="47" id="RRl-wI-o5c"/>
-                                                    <constraint firstItem="ipQ-Sz-kPc" firstAttribute="top" secondItem="wZe-Z4-s6d" secondAttribute="bottom" constant="1" id="Uhm-YG-Uiq"/>
+                                                    <constraint firstItem="ipQ-Sz-kPc" firstAttribute="top" secondItem="wZe-Z4-s6d" secondAttribute="bottom" constant="15" id="Uhm-YG-Uiq"/>
                                                     <constraint firstItem="ipQ-Sz-kPc" firstAttribute="leading" secondItem="wZe-Z4-s6d" secondAttribute="leading" id="Up4-gi-dUE"/>
                                                     <constraint firstItem="wZe-Z4-s6d" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="pPz-u5-TLX"/>
                                                 </constraints>
