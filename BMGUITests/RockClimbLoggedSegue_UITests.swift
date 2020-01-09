@@ -98,9 +98,16 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         routeQuery.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "partnersPresented").label, " Partners: \(partnersEntered)")
-        
-        
     }
 
+    func testWhenAClimbingStyleIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
+        let climbingStyleSelected:String = "Alternate"
+        
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.tables.staticTexts[climbingStyleSelected].tap()
+        elementsQuery.buttons["Submit"].tap()
+    
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "climbingStylePresented").label, " Style: \(climbingStyleSelected)")
+    }
     
 }

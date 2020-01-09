@@ -16,6 +16,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     var venueNameFromDb: String = ""
     var dateFromDb: String = ""
     var partnersFromDb: String = ""
+    var climbingStyleFromDb: String = ""
     var rockClimbIdFromSegue: Int64 = -5000
     var rockClimbLoggedViewModel: RockClimbLoggedViewModel? = nil
     
@@ -25,16 +26,19 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         venueNameFromDb = rockClimbEntry.venueName
         dateFromDb = rockClimbEntry.date
         partnersFromDb = rockClimbEntry.partners
+        climbingStyleFromDb = rockClimbEntry.climbingStyle
         let routeNamePresented = NSAttributedString(string: " Route Name: \(routeNameFromDb)")
         let gradePresented = NSAttributedString(string: " Grade: \(gradeFromDb)")
         let venueNamePresented = NSAttributedString(string: " Venue: \(venueNameFromDb)")
         let datePresented = NSAttributedString(string: " Date: \(dateFromDb)")
         let partnersPresented = NSAttributedString(string: " Partners: \(partnersFromDb)")
+        let climbingStylePresented = NSAttributedString(string: " Style: \(climbingStyleFromDb)")
         routeNameLabel.attributedText = routeNamePresented
         gradeLabel.attributedText = gradePresented
         venueNameLabel.attributedText = venueNamePresented
         dateLabel.attributedText = datePresented
         partnersLabel.attributedText = partnersPresented
+        climbingStyleLabel.attributedText = climbingStylePresented
 
     }
     
@@ -43,6 +47,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var partnersLabel: UILabel!
+    @IBOutlet weak var climbingStyleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +59,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         venueNameLabel.accessibilityIdentifier = "venueNamePresented"
         dateLabel.accessibilityIdentifier = "datePresented"
         partnersLabel.accessibilityIdentifier = "partnersPresented"
+        climbingStyleLabel.accessibilityIdentifier = "climbingStylePresented"
         
         routeNameLabel.layer.masksToBounds = true
         routeNameLabel.layer.cornerRadius = 5
@@ -65,6 +71,8 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         dateLabel.layer.cornerRadius = 5
         partnersLabel.layer.masksToBounds = true
         partnersLabel.layer.cornerRadius = 5
+        climbingStyleLabel.layer.masksToBounds = true
+        climbingStyleLabel.layer.cornerRadius = 5
         
         
         //let's review this
@@ -76,6 +84,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         venueNameLabel.backgroundColor = ColorCompatibility.systemGray4
         dateLabel.backgroundColor = ColorCompatibility.systemGray4
         partnersLabel.backgroundColor = ColorCompatibility.systemGray4
+        climbingStyleLabel.backgroundColor = ColorCompatibility.systemGray4
     }
     
 }

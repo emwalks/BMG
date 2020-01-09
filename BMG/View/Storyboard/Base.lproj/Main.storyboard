@@ -278,8 +278,20 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V80-Tc-u5n">
+                                                        <rect key="frame" x="20" y="292" width="374" height="34"/>
+                                                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="cW7-MG-fby"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="V80-Tc-u5n" secondAttribute="trailing" constant="20" id="1jd-2K-0ry"/>
+                                                    <constraint firstItem="V80-Tc-u5n" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="3Q8-tE-dnW"/>
                                                     <constraint firstItem="ipQ-Sz-kPc" firstAttribute="trailing" secondItem="wZe-Z4-s6d" secondAttribute="trailing" id="3yq-If-duw"/>
                                                     <constraint firstItem="dag-Na-MPJ" firstAttribute="top" secondItem="ipQ-Sz-kPc" secondAttribute="bottom" constant="15" id="4bU-bz-9OO"/>
                                                     <constraint firstItem="ipQ-Sz-kPc" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="CHo-A7-LPc"/>
@@ -292,6 +304,7 @@
                                                     <constraint firstItem="dag-Na-MPJ" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="ZV2-si-6bl"/>
                                                     <constraint firstItem="FXg-Jp-Maz" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="ZdG-Bn-4ga"/>
                                                     <constraint firstItem="FXg-Jp-Maz" firstAttribute="top" secondItem="dag-Na-MPJ" secondAttribute="bottom" constant="15" id="g1x-WA-Z4h"/>
+                                                    <constraint firstItem="V80-Tc-u5n" firstAttribute="top" secondItem="3t2-Y3-oUu" secondAttribute="bottom" constant="15" id="hLn-1V-vBV"/>
                                                     <constraint firstItem="3t2-Y3-oUu" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="hOZ-un-RcW"/>
                                                     <constraint firstAttribute="trailing" secondItem="3t2-Y3-oUu" secondAttribute="trailing" constant="20" id="m9O-bg-U3J"/>
                                                     <constraint firstItem="wZe-Z4-s6d" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="pPz-u5-TLX"/>
@@ -340,6 +353,7 @@
                         <viewLayoutGuide key="safeArea" id="uvS-J0-rv1"/>
                     </view>
                     <connections>
+                        <outlet property="climbingStyleLabel" destination="V80-Tc-u5n" id="EoN-dG-Igf"/>
                         <outlet property="dateLabel" destination="FXg-Jp-Maz" id="uM0-7e-qHD"/>
                         <outlet property="gradeLabel" destination="ipQ-Sz-kPc" id="qKv-OX-Rrr"/>
                         <outlet property="partnersLabel" destination="3t2-Y3-oUu" id="TpW-Ud-mGG"/>
