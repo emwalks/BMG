@@ -268,6 +268,16 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t2-Y3-oUu">
+                                                        <rect key="frame" x="20" y="243" width="374" height="34"/>
+                                                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="Pd7-ak-UVf"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="ipQ-Sz-kPc" firstAttribute="trailing" secondItem="wZe-Z4-s6d" secondAttribute="trailing" id="3yq-If-duw"/>
@@ -282,8 +292,11 @@
                                                     <constraint firstItem="dag-Na-MPJ" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="ZV2-si-6bl"/>
                                                     <constraint firstItem="FXg-Jp-Maz" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="ZdG-Bn-4ga"/>
                                                     <constraint firstItem="FXg-Jp-Maz" firstAttribute="top" secondItem="dag-Na-MPJ" secondAttribute="bottom" constant="15" id="g1x-WA-Z4h"/>
+                                                    <constraint firstItem="3t2-Y3-oUu" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="hOZ-un-RcW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3t2-Y3-oUu" secondAttribute="trailing" constant="20" id="m9O-bg-U3J"/>
                                                     <constraint firstItem="wZe-Z4-s6d" firstAttribute="leading" secondItem="QFN-fV-Uwv" secondAttribute="leading" constant="20" id="pPz-u5-TLX"/>
                                                     <constraint firstAttribute="trailing" secondItem="FXg-Jp-Maz" secondAttribute="trailing" constant="20" id="w9o-7M-XV9"/>
+                                                    <constraint firstItem="3t2-Y3-oUu" firstAttribute="top" secondItem="FXg-Jp-Maz" secondAttribute="bottom" constant="15" id="xVu-1p-cfy"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your climb has been logged!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDp-YF-bFo">
@@ -329,6 +342,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="FXg-Jp-Maz" id="uM0-7e-qHD"/>
                         <outlet property="gradeLabel" destination="ipQ-Sz-kPc" id="qKv-OX-Rrr"/>
+                        <outlet property="partnersLabel" destination="3t2-Y3-oUu" id="TpW-Ud-mGG"/>
                         <outlet property="routeNameLabel" destination="wZe-Z4-s6d" id="5i0-71-XsO"/>
                         <outlet property="venueNameLabel" destination="dag-Na-MPJ" id="8Zm-hQ-3PR"/>
                     </connections>

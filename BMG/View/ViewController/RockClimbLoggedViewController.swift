@@ -15,6 +15,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     var gradeFromDb: String = ""
     var venueNameFromDb: String = ""
     var dateFromDb: String = ""
+    var partnersFromDb: String = ""
     var rockClimbIdFromSegue: Int64 = -5000
     var rockClimbLoggedViewModel: RockClimbLoggedViewModel? = nil
     
@@ -23,14 +24,17 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         gradeFromDb = rockClimbEntry.grade
         venueNameFromDb = rockClimbEntry.venueName
         dateFromDb = rockClimbEntry.date
+        partnersFromDb = rockClimbEntry.partners
         let routeNamePresented = NSAttributedString(string: " Route Name: \(routeNameFromDb)")
         let gradePresented = NSAttributedString(string: " Grade: \(gradeFromDb)")
         let venueNamePresented = NSAttributedString(string: " Venue: \(venueNameFromDb)")
         let datePresented = NSAttributedString(string: " Date: \(dateFromDb)")
+        let partnersPresented = NSAttributedString(string: " Partners: \(partnersFromDb)")
         routeNameLabel.attributedText = routeNamePresented
         gradeLabel.attributedText = gradePresented
         venueNameLabel.attributedText = venueNamePresented
         dateLabel.attributedText = datePresented
+        partnersLabel.attributedText = partnersPresented
 
     }
     
@@ -38,6 +42,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var partnersLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +53,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         gradeLabel.accessibilityIdentifier = "gradePresented"
         venueNameLabel.accessibilityIdentifier = "venueNamePresented"
         dateLabel.accessibilityIdentifier = "datePresented"
-
+        partnersLabel.accessibilityIdentifier = "partnersPresented"
         
         routeNameLabel.layer.masksToBounds = true
         routeNameLabel.layer.cornerRadius = 5
@@ -58,6 +63,8 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         venueNameLabel.layer.cornerRadius = 5
         dateLabel.layer.masksToBounds = true
         dateLabel.layer.cornerRadius = 5
+        partnersLabel.layer.masksToBounds = true
+        partnersLabel.layer.cornerRadius = 5
         
         
         //let's review this
@@ -68,6 +75,7 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         gradeLabel.backgroundColor = ColorCompatibility.systemGray4
         venueNameLabel.backgroundColor = ColorCompatibility.systemGray4
         dateLabel.backgroundColor = ColorCompatibility.systemGray4
+        partnersLabel.backgroundColor = ColorCompatibility.systemGray4
     }
     
 }

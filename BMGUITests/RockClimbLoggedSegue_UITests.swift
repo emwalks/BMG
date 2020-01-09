@@ -68,7 +68,6 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         routeQuery.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").label, " Venue: \(venueNameEntered)")
-        
     }
     
     func testWhenDateIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
@@ -83,6 +82,23 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         elementsQuery.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "datePresented").label, " Date: \(dateSelected)")
+        
+    }
+    
+    func testWhenARandomPartnersIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
+        let partnersEntered:String = "randomPartner" + String(describing: Int.random(in: 500..<600))
+        
+        let elementsQuery = app.scrollViews.otherElements
+        let textField = elementsQuery.containing(.staticText, identifier:"Route:").children(matching: .textField).element(boundBy: 4)
+        textField.tap()
+        textField.typeText(partnersEntered)
+        
+        let routeQuery = app.scrollViews.otherElements
+        routeQuery.staticTexts["Route:"].tap()
+        routeQuery.buttons["Submit"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "partnersPresented").label, " Partners: \(partnersEntered)")
+        
         
     }
 
