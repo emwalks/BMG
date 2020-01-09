@@ -24,10 +24,7 @@ class RockClimbLoggedViewModel {
         
         if idOfRockClimbReceived == idOfRockClimb {
            let rockClimbDataReceived = databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
-            
             rockClimbLoggedScreen.rockClimbDataPresented(rockClimbEntry: rockClimbDataReceived)
-            print("id matched in RockClimbLoggedViewModel")
-
         } else {
             print("Error: Id of rock climb received does match id of rock climb logged")
         }
