@@ -71,4 +71,20 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         
     }
     
+    func testWhenDateIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
+        let dateSelected = "30/01/2020"
+        
+        let app = XCUIApplication()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.textFields["DD/MM/YYYY"].tap()
+        
+        app.pickers.children(matching: .pickerWheel).element(boundBy: 1).swipeUp()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        elementsQuery.buttons["Submit"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "datePresented").label, " Date: \(dateSelected)")
+        
+    }
+
+    
 }
