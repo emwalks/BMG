@@ -52,6 +52,10 @@ class LogRockClimbViewController: UIViewController {
         dateTextField.backgroundColor = ColorCompatibility.systemGray4
         partnersTextField.backgroundColor = ColorCompatibility.systemGray4
         styleTableView.backgroundColor = ColorCompatibility.systemGray4
+        if #available(iOS 13, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -14,7 +14,6 @@ class SQLiteDatabaseServiceFactory {
     static func createDbService() -> DatabaseService {
         let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true).first!
-        print("Database location: \(appDocumetDirectory)")
         return SQLiteDatabaseService(createDB(appDocumetDirectory)!)
     }
     

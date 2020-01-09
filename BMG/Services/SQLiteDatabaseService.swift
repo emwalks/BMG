@@ -79,21 +79,13 @@ class SQLiteDatabaseService: DatabaseService {
             }
             
         } catch {
+            let queryExceptionString = "getRockClimbDataFromDb query failed"
             return RockClimbEntry.init(
-                routeName: "getRockClimbDataFromDb query failed",
-                grade: "getRockClimbDataFromDb query failed",
-                venueName: "getRockClimbDataFromDb query failed",
-                date: "getRockClimbDataFromDb query failed",
-                partners: "getRockClimbDataFromDb query failed",
-                climbingStyle: "getRockClimbDataFromDb query failed")
+                routeName: queryExceptionString, grade: queryExceptionString, venueName: queryExceptionString, date: queryExceptionString, partners: queryExceptionString, climbingStyle: queryExceptionString)
         }
+        let databaseExcpetionString = "an error has occured in getRockClimbDataFromDb function"
         return RockClimbEntry.init(
-            routeName: "an error has occured in getRockClimbDataFromDb function",
-            grade: "an error has occured in getRockClimbDataFromDb function",
-            venueName: "an error has occured in getRockClimbDataFromDb function",
-            date: "an error has occured in getRockClimbDataFromDb function",
-            partners: "an error has occured in getRockClimbDataFromDb function",
-            climbingStyle: "an error has occured in getRockClimbDataFromDb function")
+            routeName: databaseExcpetionString, grade: databaseExcpetionString, venueName: databaseExcpetionString, date: databaseExcpetionString, partners: databaseExcpetionString, climbingStyle: databaseExcpetionString)
     }
         
 }
