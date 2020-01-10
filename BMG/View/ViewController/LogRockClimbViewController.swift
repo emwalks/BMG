@@ -54,8 +54,10 @@ class LogRockClimbViewController: UIViewController {
         styleTableView.backgroundColor = ColorCompatibility.systemGray4
         if #available(iOS 13, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
+            navigationItem.largeTitleDisplayMode = .always
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }
+        navigationController?.hidesBarsOnTap = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
