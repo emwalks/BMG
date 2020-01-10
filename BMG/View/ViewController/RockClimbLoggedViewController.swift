@@ -52,7 +52,6 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //this is for the UI Test to be able to identify the correct view is segued to
         view.accessibilityIdentifier = "rockClimbLoggedView"
         routeNameLabel.accessibilityIdentifier = "routeNamePresented"
         gradeLabel.accessibilityIdentifier = "gradePresented"

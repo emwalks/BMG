@@ -9,6 +9,7 @@
 import XCTest
 
 class RockClimbLandingPage_Tests: XCTestCase {
+    
     class MockRockClimbLandingPage {
         func goToLogRockClimbScreen() -> MockLogRockClimbScreen? {
             let resultOfGoToLogRockClimbScreenFunction = MockLogRockClimbScreen()
