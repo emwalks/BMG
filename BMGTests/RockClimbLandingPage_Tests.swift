@@ -13,13 +13,13 @@ class RockClimbLandingPage_Tests: XCTestCase {
     func testThatWhenLogRockClimbIsSelectedFromLandingPageUserGoesToLogRockClimb() {
         
         //arrange
-        
         let mockRockClimbLandingPage = MockRockClimbLandingPage()
-        let mockLogRockClimbScreen: MockLogRockClimbScreen? = nil
+        var mockLogRockClimbScreen: MockLogRockClimbScreen? = nil
 
         class MockRockClimbLandingPage {
             func goToLogRockClimbScreen() -> MockLogRockClimbScreen? {
-                return nil
+                let resultOfGoToLogRockClimbScreenFunction = MockLogRockClimbScreen()
+                return resultOfGoToLogRockClimbScreenFunction
             }
         }
     
@@ -28,8 +28,8 @@ class RockClimbLandingPage_Tests: XCTestCase {
         }
 
         //act
-        mockRockClimbLandingPage.goToLogRockClimbScreen()
-        
+        mockLogRockClimbScreen = mockRockClimbLandingPage.goToLogRockClimbScreen()
+
         //assert
         XCTAssertNotNil(mockLogRockClimbScreen, "The mockLogRockClimbScreen exists")
     }
