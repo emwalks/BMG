@@ -9,29 +9,44 @@
 import XCTest
 
 class RockClimbLandingPage_Tests: XCTestCase {
+    class MockRockClimbLandingPage {
+        func goToLogRockClimbScreen() -> MockLogRockClimbScreen? {
+            let resultOfGoToLogRockClimbScreenFunction = MockLogRockClimbScreen()
+            return resultOfGoToLogRockClimbScreenFunction
+        }
 
-    func testThatWhenLogRockClimbIsSelectedFromLandingPageUserGoesToLogRockClimb() {
+        func goToViewLogbookScreen() -> MockViewLogbookScreen? {
+            return nil
+        }
+    }
+
+    class MockLogRockClimbScreen {
+
+    }
+
+    class MockViewLogbookScreen {
+
+    }
+
+    func testThatWhenLogRockClimbIsSelectedFromLandingPageUserGoesToLogRockClimbScreen() {
         
-        //arrange
         let mockRockClimbLandingPage = MockRockClimbLandingPage()
         var mockLogRockClimbScreen: MockLogRockClimbScreen? = nil
 
-        class MockRockClimbLandingPage {
-            func goToLogRockClimbScreen() -> MockLogRockClimbScreen? {
-                let resultOfGoToLogRockClimbScreenFunction = MockLogRockClimbScreen()
-                return resultOfGoToLogRockClimbScreenFunction
-            }
-        }
-    
-        class MockLogRockClimbScreen {
-            
-        }
-
-        //act
         mockLogRockClimbScreen = mockRockClimbLandingPage.goToLogRockClimbScreen()
 
-        //assert
         XCTAssertNotNil(mockLogRockClimbScreen, "The mockLogRockClimbScreen exists")
     }
-   
+
+    func testThatWhenViewLogbookIsSelectedFromLandingPageUserGoesToViewLogbookScreen() {
+        //arrange
+        let mockRockClimbLandingPage = MockRockClimbLandingPage()
+        var mockViewLogbookScreen: MockViewLogbookScreen? = nil
+
+        //act
+        mockViewLogbookScreen = mockRockClimbLandingPage.goToViewLogbookScreen()
+
+        //assert
+        XCTAssertNotNil(mockViewLogbookScreen, "The mockViewLogbookScreen exists")
+    }
 }
