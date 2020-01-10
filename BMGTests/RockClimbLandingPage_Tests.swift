@@ -16,7 +16,8 @@ class RockClimbLandingPage_Tests: XCTestCase {
         }
 
         func goToViewLogbookScreen() -> MockViewLogbookScreen? {
-            return nil
+            let resultOfGoToViewLogbookScreenFunction = MockViewLogbookScreen()
+            return resultOfGoToViewLogbookScreenFunction
         }
     }
 

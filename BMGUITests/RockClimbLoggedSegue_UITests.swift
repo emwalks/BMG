@@ -71,7 +71,7 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
     }
     
     func testWhenDateIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
-        let dateSelected = "30/01/2020"
+        let dateSelected = "31/01/2020"
         
         let app = XCUIApplication()
         let elementsQuery = app.scrollViews.otherElements
