@@ -7,14 +7,13 @@
 //
 
 import XCTest
+import UIKit
 
 class RockClimbLandingPage_Tests: XCTestCase {
 
-    func testThatTheRockClimbLandingPageExists (){
-        
-        let rockClimbLandingPage: Any? = nil
-        
-        XCTAssertNotNil(rockClimbLandingPage, "The landing page is not nil")
+    func testThatWhenLogRockClimbIsSelectedFromLandingPageUserGoesToLogRockClimb() {
+        let MockLogRockClimbScreen: Any? = nil
+        XCTAssertNotNil(MockLogRockClimbScreen)
     }
    
 }
