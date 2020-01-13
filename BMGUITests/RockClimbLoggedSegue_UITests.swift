@@ -42,12 +42,12 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
     }
     
     func testWhenAGradeIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
-        let gradeSelected = "M 7b"
+        let gradeSelected = "VD 7b"
         let app = XCUIApplication()
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.textFields["E1 5b, E1 5c, etc."].tap()
-        app/*@START_MENU_TOKEN@*/.pickerWheels["M"].swipeRight()/*[[".pickers.pickerWheels[\"M\"]",".swipeUp()",".swipeRight()",".pickerWheels[\"M\"]"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/
-        app.pickers.children(matching: .pickerWheel).element(boundBy: 1).swipeUp()
+        app.pickerWheels["M"].adjust(toPickerWheelValue: "VD")
+        app.pickers.children(matching: .pickerWheel).element(boundBy: 1).adjust(toPickerWheelValue: "7b")
         app.toolbars["Toolbar"].buttons["Done"].tap()
         elementsQuery.buttons["Submit"].tap()
         
@@ -77,7 +77,10 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.textFields["DD/MM/YYYY"].tap()
         
-        app.pickers.children(matching: .pickerWheel).element(boundBy: 1).swipeUp()
+        app.pickers.children(matching: .pickerWheel).element(boundBy: 0).adjust(toPickerWheelValue: "January")
+        app.pickers.children(matching: .pickerWheel).element(boundBy: 1).adjust(toPickerWheelValue: "31")
+        app.pickers.children(matching: .pickerWheel).element(boundBy: 2).adjust(toPickerWheelValue: "2020")
+
         app.toolbars["Toolbar"].buttons["Done"].tap()
         elementsQuery.buttons["Submit"].tap()
         
