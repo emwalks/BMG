@@ -366,7 +366,7 @@
             </objects>
             <point key="canvasLocation" x="3154" y="-224"/>
         </scene>
-        <!--Rock Climb Landing Page View Controller-->
+        <!--Home-->
         <scene sceneID="YIF-dB-JkO">
             <objects>
                 <viewController id="cEN-ER-Jqe" customClass="RockClimbLandingPageViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
@@ -387,7 +387,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="XUG-iU-NSd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ydY-PL-lHQ"/>
+                    <navigationItem key="navigationItem" title="Home" id="ydY-PL-lHQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdz-Pm-lDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -34,7 +34,6 @@ class RockClimbLandingPage_UITests: XCTestCase {
     
     func testWhenSelectingLogRockClimbThatUserIsTakenToLogRockClimbView() {
         XCUIApplication().otherElements.buttons["Log Rock Climb"].tap()
-        sleep(4)
         
         XCTAssertTrue(app.isDisplayingLogRockClimbPage, "logRockClimbView is being displayed")
     }

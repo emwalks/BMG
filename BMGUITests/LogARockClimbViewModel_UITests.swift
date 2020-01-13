@@ -27,7 +27,9 @@ class LogARockClimbViewModelUITests: XCTestCase {
     
     func testNavigateToTheRockClimbLoggedScreen() {
         
-        XCUIApplication().scrollViews.otherElements.buttons["Submit"].tap()
+        app.otherElements.buttons["Log Rock Climb"].tap()
+        
+        app.scrollViews.otherElements.buttons["Submit"].tap()
         sleep(4)
         
         XCTAssertTrue(app.isDisplayingRockClimbLoggedView, "rockClimbLoggedView is being displayed")

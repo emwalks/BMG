@@ -9,25 +9,26 @@
 import XCTest
 
 class RockClimbLoggedSegue_UITests: XCTestCase {
-
+    
     var app: XCUIApplication!
     
     override func setUp() {
-       
+        
         super.setUp()
         continueAfterFailure = false
         app = XCUIApplication()
         app.launch()
         
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testWhenARandomRouteNameIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
         let routeNameEntered:String = "randomRouteName" + String(describing: Int.random(in: 500..<600))
         
+        app.otherElements.buttons["Log Rock Climb"].tap()
         let elementsQuery = app.scrollViews.otherElements
         let textField = elementsQuery.textFields["e.g. The Bat"]
         textField.tap()
@@ -44,6 +45,8 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
     func testWhenAGradeIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
         let gradeSelected = "VD 7b"
         let app = XCUIApplication()
+        
+        app.otherElements.buttons["Log Rock Climb"].tap()
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.textFields["E1 5b, E1 5c, etc."].tap()
         app.pickerWheels["M"].adjust(toPickerWheelValue: "VD")
@@ -54,10 +57,11 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "gradePresented").label, " Grade: \(gradeSelected)")
         
     }
-
+    
     func testWhenARandomVenueNameIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
         let venueNameEntered:String = "randomVenueName" + String(describing: Int.random(in: 500..<600))
         
+        app.otherElements.buttons["Log Rock Climb"].tap()
         let elementsQuery = app.scrollViews.otherElements
         let textField = elementsQuery.textFields["e.g. Ben Nevis"]
         textField.tap()
@@ -73,14 +77,15 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
     func testWhenDateIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
         let dateSelected = "31/01/2020"
         
-        let app = XCUIApplication()
+        
+        app.otherElements.buttons["Log Rock Climb"].tap()
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.textFields["DD/MM/YYYY"].tap()
         
         app.pickers.children(matching: .pickerWheel).element(boundBy: 0).adjust(toPickerWheelValue: "January")
         app.pickers.children(matching: .pickerWheel).element(boundBy: 1).adjust(toPickerWheelValue: "31")
         app.pickers.children(matching: .pickerWheel).element(boundBy: 2).adjust(toPickerWheelValue: "2020")
-
+        
         app.toolbars["Toolbar"].buttons["Done"].tap()
         elementsQuery.buttons["Submit"].tap()
         
@@ -91,6 +96,7 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
     func testWhenARandomPartnersIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
         let partnersEntered:String = "randomPartner" + String(describing: Int.random(in: 500..<600))
         
+        app.otherElements.buttons["Log Rock Climb"].tap()
         let elementsQuery = app.scrollViews.otherElements
         let textField = elementsQuery.containing(.staticText, identifier:"Route:").children(matching: .textField).element(boundBy: 4)
         textField.tap()
@@ -102,14 +108,15 @@ class RockClimbLoggedSegue_UITests: XCTestCase {
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "partnersPresented").label, " Partners: \(partnersEntered)")
     }
-
+    
     func testWhenAClimbingStyleIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
         let climbingStyleSelected:String = "Alternate"
         
+        app.otherElements.buttons["Log Rock Climb"].tap()
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.tables.staticTexts[climbingStyleSelected].tap()
         elementsQuery.buttons["Submit"].tap()
-    
+        
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "climbingStylePresented").label, " Style: \(climbingStyleSelected)")
     }
     
