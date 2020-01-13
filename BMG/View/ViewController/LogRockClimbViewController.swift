@@ -58,6 +58,8 @@ class LogRockClimbViewController: UIViewController {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }
         navigationController?.hidesBarsOnTap = true
+        
+        view.accessibilityIdentifier = "logRockClimbView"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -32,11 +32,22 @@ class RockClimbLandingPage_UITests: XCTestCase {
         XCTAssertTrue(app.isDisplayingRockClimbLandingPage, "RockClimbLandingPage exists")
     }
     
+    func testWhenSelectingLogRockClimbThatUserIsTakenToLogRockClimbView() {
+        XCUIApplication().otherElements.buttons["Log Rock Climb"].tap()
+        sleep(4)
+        
+        XCTAssertTrue(app.isDisplayingLogRockClimbPage, "logRockClimbView is being displayed")
+    }
+    
 }
 
 extension XCUIApplication {
     var isDisplayingRockClimbLandingPage: Bool {
         return otherElements["rockClimbLandingPage"].exists
+    }
+    
+    var isDisplayingLogRockClimbPage: Bool {
+        return otherElements["logRockClimbView"].exists
     }
 }
 

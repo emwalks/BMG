@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cEN-ER-Jqe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VvS-ck-wVs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsj-At-j4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1178" y="127"/>
+            <point key="canvasLocation" x="2419" y="-224"/>
         </scene>
         <!--Rock Climb Logged View Controller-->
         <scene sceneID="zM1-2a-JO2">
@@ -352,6 +352,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uvS-J0-rv1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dMj-BS-9Pe"/>
                     <connections>
                         <outlet property="climbingStyleLabel" destination="V80-Tc-u5n" id="EoN-dG-Igf"/>
                         <outlet property="dateLabel" destination="FXg-Jp-Maz" id="uM0-7e-qHD"/>
@@ -363,40 +364,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7G-Te-gvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911.594202898551" y="126.5625"/>
+            <point key="canvasLocation" x="3154" y="-224"/>
         </scene>
-        <!--rockClimbLandingPage-->
+        <!--Rock Climb Landing Page View Controller-->
         <scene sceneID="YIF-dB-JkO">
             <objects>
-                <viewController title="rockClimbLandingPage" id="cEN-ER-Jqe" customClass="RockClimbLandingPageViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cEN-ER-Jqe" customClass="RockClimbLandingPageViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R06-xT-3WS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
+                                <rect key="frame" x="138" y="263" width="120" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Log Rock Climb"/>
+                                <connections>
+                                    <segue destination="J7o-vn-GuO" kind="show" id="rCp-oi-UzV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="XUG-iU-NSd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ydY-PL-lHQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdz-Pm-lDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-374" y="127"/>
+            <point key="canvasLocation" x="1435" y="-224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzL-RF-Nbf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2S-Wv-wKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VvS-ck-wVs" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pZ3-4Z-N7f"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pKN-xd-OPB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="J7o-vn-GuO" kind="relationship" relationship="rootViewController" id="Phr-RA-wYN"/>
+                        <segue destination="cEN-ER-Jqe" kind="relationship" relationship="rootViewController" id="Fqa-J9-YUH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N2S-Wv-wKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="127"/>
+            <point key="canvasLocation" x="422" y="-224"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
