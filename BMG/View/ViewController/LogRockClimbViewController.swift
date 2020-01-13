@@ -56,9 +56,7 @@ class LogRockClimbViewController: UIViewController {
             navigationController?.navigationBar.prefersLargeTitles = true
             navigationItem.largeTitleDisplayMode = .always
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        }
-        navigationController?.hidesBarsOnTap = true
-        
+        }        
         view.accessibilityIdentifier = "logRockClimbView"
     }
     

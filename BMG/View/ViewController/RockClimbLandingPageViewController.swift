@@ -13,6 +13,12 @@ class RockClimbLandingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 13, *) {
+                   navigationController?.navigationBar.prefersLargeTitles = true
+                   navigationItem.largeTitleDisplayMode = .always
+                   navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+               }     
+        
        view.accessibilityIdentifier = "rockClimbLandingPage"
     }
 }
