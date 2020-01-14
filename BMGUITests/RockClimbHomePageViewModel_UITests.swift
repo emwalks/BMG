@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RockClimbHomePage_UITests: XCTestCase {
+class RockClimbHomePageViewModel_UITests: XCTestCase {
     
     
     var app: XCUIApplication!

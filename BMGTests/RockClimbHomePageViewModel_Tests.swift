@@ -10,7 +10,7 @@ import XCTest
 
 class RockClimbHomePageViewModel_Tests: XCTestCase {
     
-    class MockRockClimbHomePageViewModel {
+    class RockClimbHomePageViewModel {
         
         var screenNavigationController: ScreenNavigationController
         
@@ -28,29 +28,29 @@ class RockClimbHomePageViewModel_Tests: XCTestCase {
         
     }
     
-    func testWhenLogRockClimbButtonIsClickedTheLogRockClimbScreenIsNavigatedToViaScreenNavigationController() {
+    func testWhenLogRockClimbButtonIsClickedTheLogRockClimbScreenIsNavigatedToViaMockScreenNavigationController() {
         //arrange
         let mockScreenNavigationController = MockScreenNavigationController()
-        let mockRockClimbHomePageViewModel = MockRockClimbHomePageViewModel(screenNavigationController: mockScreenNavigationController)
+        let rockClimbHomePageViewModel = RockClimbHomePageViewModel(screenNavigationController: mockScreenNavigationController)
         
         //act
-        mockRockClimbHomePageViewModel.displayLogARockClimbScreen()
+        rockClimbHomePageViewModel.displayLogARockClimbScreen()
         
         //assert
         XCTAssertEqual(logARockClimbScreenExists, true, "The function: displayLogARockClimbScreen has run")
     }
     
-    func testWhenViewLogbookButtonIsClickedTheLogRockClimbScreenIsNavigatedToViaScreenNavigationController() {
+    func testWhenViewLogbookButtonIsClickedTheLogRockClimbScreenIsNavigatedToViaMockScreenNavigationController() {
         //arrange
         let mockScreenNavigationController = MockScreenNavigationController()
-        let mockRockClimbHomePageViewModel = MockRockClimbHomePageViewModel(screenNavigationController: mockScreenNavigationController)
+        let rockClimbHomePageViewModel = RockClimbHomePageViewModel(screenNavigationController: mockScreenNavigationController)
         
         //act
-        mockRockClimbHomePageViewModel.displayLogbookScreen()
+        rockClimbHomePageViewModel.displayLogbookScreen()
         
         //assert
         XCTAssertEqual(logbookScreenExists, true, "The function: displayLogbookScreen has run")
     }
-    
+        
 }
 
