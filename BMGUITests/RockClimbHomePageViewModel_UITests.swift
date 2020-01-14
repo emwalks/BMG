@@ -22,11 +22,6 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
         
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    
     func testThatTheRockClimbHomePageExists(){
                 
         XCTAssertTrue(app.isDisplayingRockClimbHomePage, "RockClimbHomePage exists")
@@ -34,6 +29,8 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
     
     func testWhenSelectingLogRockClimbThatUserIsTakenToLogRockClimbView() {
         XCUIApplication().otherElements.buttons["Log Rock Climb"].tap()
+        
+        sleep(10)
         
         XCTAssertTrue(app.isDisplayingLogRockClimbPage, "logRockClimbView is being displayed")
     }

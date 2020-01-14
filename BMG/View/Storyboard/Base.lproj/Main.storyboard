@@ -374,26 +374,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
-                                <rect key="frame" x="127" y="263" width="160" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
+                                <rect key="frame" x="145" y="271" width="124" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Log Rock Climb">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
                                 </state>
                                 <connections>
-                                    <segue destination="J7o-vn-GuO" kind="show" id="rCp-oi-UzV"/>
+                                    <action selector="logARockClimbButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="W6g-Rz-zjo"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.082352941176470587" green="0.11764705882352941" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="QDa-SZ-3CN" firstAttribute="top" secondItem="XUG-iU-NSd" secondAttribute="top" constant="183" id="60n-kC-pbY"/>
+                            <constraint firstItem="QDa-SZ-3CN" firstAttribute="centerX" secondItem="XUG-iU-NSd" secondAttribute="centerX" id="65H-DF-l6O"/>
+                            <constraint firstItem="XUG-iU-NSd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QDa-SZ-3CN" secondAttribute="trailing" id="Av6-6m-Asa"/>
+                            <constraint firstItem="QDa-SZ-3CN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XUG-iU-NSd" secondAttribute="leading" id="u3d-Oy-92n"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XUG-iU-NSd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="ydY-PL-lHQ"/>
+                    <connections>
+                        <segue destination="J7o-vn-GuO" kind="show" identifier="LogARockClimbSegue" id="2Qy-Is-XqB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdz-Pm-lDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434.7826086956522" y="-224.33035714285714"/>
+            <point key="canvasLocation" x="1649" y="-224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzL-RF-Nbf">
@@ -412,7 +420,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2S-Wv-wKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-224"/>
+            <point key="canvasLocation" x="783" y="-224"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
