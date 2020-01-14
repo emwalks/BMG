@@ -54,6 +54,8 @@
 		98BB333123BE0AF500139725 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB333023BE0AF500139725 /* ColorCompatibility.swift */; };
 		98D223D32397B12A00D3D76A /* RockClimbLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */; };
 		98DE2C3D23CDFA1500B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
+		98DE2C4023CDFB4E00B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
+		98DE2C4123CDFB4F00B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
 		98E8ED2523902ED700DAFF6A /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
 		98E8ED2623902ED800DAFF6A /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
 		98E8ED2723902EDC00DAFF6A /* MockScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */; };
@@ -546,6 +548,7 @@
 				98252AC8239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
 				98E8ED2E23902F0000DAFF6A /* MockDatabaseService.swift in Sources */,
 				987367D4239806AA00416C57 /* RockClimbLoggedScreenProtocol.swift in Sources */,
+				98DE2C4123CDFB4F00B91893 /* RockClimbHomePageViewModel.swift in Sources */,
 				98067C7C23914915000AF417 /* RockClimbLoggedViewModel_Tests.swift in Sources */,
 				98E8ED2A23902EE900DAFF6A /* LogRockClimbViewModel.swift in Sources */,
 				98E8ED3023902F0C00DAFF6A /* SQLiteDatabaseServiceFactory.swift in Sources */,
@@ -597,6 +600,7 @@
 				988535F123C8E22800D16173 /* RockClimbHomePageViewModel_UITests.swift in Sources */,
 				985365AF23C4D06400C08D26 /* RockClimbEntry.swift in Sources */,
 				98E8ED2823902EDE00DAFF6A /* MockScreenNavigationController.swift in Sources */,
+				98DE2C4023CDFB4E00B91893 /* RockClimbHomePageViewModel.swift in Sources */,
 				98252ACD2396847A00C71EAC /* MockDatabaseService.swift in Sources */,
 				98252ACC2396847700C71EAC /* DatabaseService.swift in Sources */,
 				983F677E23AD16A500D486FF /* RockClimbLoggedViewModel_UITests.swift in Sources */,
