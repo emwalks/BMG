@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsj-At-j4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2419" y="-224"/>
+            <point key="canvasLocation" x="2751" y="-471"/>
         </scene>
         <!--Rock Climb Logged View Controller-->
         <scene sceneID="zM1-2a-JO2">
@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7G-Te-gvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3154" y="-224"/>
+            <point key="canvasLocation" x="3486" y="-471"/>
         </scene>
         <!--Home-->
         <scene sceneID="YIF-dB-JkO">
@@ -374,8 +374,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
-                                <rect key="frame" x="132.5" y="271" width="149" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
+                                <rect key="frame" x="133" y="367" width="148" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Rock Climb" image="square.and.pencil" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
                                 </state>
@@ -383,24 +384,43 @@
                                     <action selector="logARockClimbButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="W6g-Rz-zjo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-sK-P0E">
+                                <rect key="frame" x="139" y="508" width="137" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Logbook" image="book" catalog="system"/>
+                                <connections>
+                                    <action selector="viewLogbookButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="NN3-0I-572"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.082352941176470587" green="0.11764705882352941" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="QDa-SZ-3CN" firstAttribute="top" secondItem="XUG-iU-NSd" secondAttribute="top" constant="183" id="60n-kC-pbY"/>
-                            <constraint firstItem="QDa-SZ-3CN" firstAttribute="centerX" secondItem="XUG-iU-NSd" secondAttribute="centerX" id="65H-DF-l6O"/>
-                            <constraint firstItem="XUG-iU-NSd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QDa-SZ-3CN" secondAttribute="trailing" id="Av6-6m-Asa"/>
-                            <constraint firstItem="QDa-SZ-3CN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XUG-iU-NSd" secondAttribute="leading" id="u3d-Oy-92n"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XUG-iU-NSd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="ydY-PL-lHQ"/>
                     <connections>
                         <segue destination="J7o-vn-GuO" kind="show" identifier="LogARockClimbSegue" id="2Qy-Is-XqB"/>
+                        <segue destination="YQh-SF-wFC" kind="show" identifier="ViewLogbookSegue" id="Wjr-i8-k1p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdz-Pm-lDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1649" y="-224"/>
+        </scene>
+        <!--Logbook View Controller-->
+        <scene sceneID="LzG-VX-9hU">
+            <objects>
+                <viewController id="YQh-SF-wFC" customClass="LogbookViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQb-pE-8av">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vXx-HF-5e9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DcC-AY-Cdl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8L-GT-KxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzL-RF-Nbf">
@@ -423,6 +443,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="64" height="50"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

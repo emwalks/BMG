@@ -22,7 +22,7 @@ class SegueNavigationController: ScreenNavigationController {
     }
     
     func displayLogbookScreen() {
-        
+        viewController.performSegue(withIdentifier: "ViewLogbookSegue", sender: (Any)?.self)
     }
     
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {

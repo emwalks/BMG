@@ -27,13 +27,17 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
         XCTAssertTrue(app.isDisplayingRockClimbHomePage, "RockClimbHomePage exists")
     }
     
-    func testWhenSelectingLogRockClimbThatUserIsTakenToLogRockClimbView() {
+    func testWhenLogRockClimbIsSelectedThatUserIsTakenToLogRockClimbView() {
         XCUIApplication().otherElements.buttons["Log Rock Climb"].tap()
-        
-        sleep(10)
         
         XCTAssertTrue(app.isDisplayingLogRockClimbPage, "logRockClimbView is being displayed")
     }
+    
+    func testWhenViewLogbookIsSelectedThatUserIsTakenToLogRockClimbView() {
+          XCUIApplication().otherElements.buttons["View Logbook"].tap()
+          
+          XCTAssertTrue(app.isDisplayingLogbookPage, "logbookView is being displayed")
+      }
     
 }
 
@@ -45,6 +49,11 @@ extension XCUIApplication {
     var isDisplayingLogRockClimbPage: Bool {
         return otherElements["logRockClimbView"].exists
     }
+    
+    var isDisplayingLogbookPage: Bool {
+        return otherElements["logbookView"].exists
+    }
+    
 }
 
 

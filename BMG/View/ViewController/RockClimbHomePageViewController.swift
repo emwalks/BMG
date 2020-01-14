@@ -32,10 +32,7 @@ class RockClimbHomePageViewController: UIViewController {
         rockClimbHomePageViewModel?.displayLogARockClimbScreen()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
-//        if segue.identifier == "LogARockClimbSegue" {
-//            _ = segue.destination as? LogRockClimbViewController
-//        }
-//    }
-    
+    @IBAction func viewLogbookButtonClicked(_ sender: Any) {
+        rockClimbHomePageViewModel?.displayLogbookScreen()
+    }
 }
