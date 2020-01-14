@@ -12,6 +12,8 @@ protocol ScreenNavigationController {
     
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64)
     
+    func displayLogARockClimbScreen()
+    
 }
 
 

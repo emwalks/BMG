@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RockClimbLandingPage_UITests: XCTestCase {
+class RockClimbHomePage_UITests: XCTestCase {
     
     
     var app: XCUIApplication!
@@ -27,9 +27,9 @@ class RockClimbLandingPage_UITests: XCTestCase {
     }
     
     
-    func testThatTheRockClimbLandingPageExists(){
+    func testThatTheRockClimbHomePageExists(){
                 
-        XCTAssertTrue(app.isDisplayingRockClimbLandingPage, "RockClimbLandingPage exists")
+        XCTAssertTrue(app.isDisplayingRockClimbHomePage, "RockClimbHomePage exists")
     }
     
     func testWhenSelectingLogRockClimbThatUserIsTakenToLogRockClimbView() {
@@ -41,8 +41,8 @@ class RockClimbLandingPage_UITests: XCTestCase {
 }
 
 extension XCUIApplication {
-    var isDisplayingRockClimbLandingPage: Bool {
-        return otherElements["rockClimbLandingPage"].exists
+    var isDisplayingRockClimbHomePage: Bool {
+        return otherElements["rockClimbHomePage"].exists
     }
     
     var isDisplayingLogRockClimbPage: Bool {

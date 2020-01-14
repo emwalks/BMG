@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class SegueNavigationController: ScreenNavigationController {
-
+    
     var viewController: UIViewController
 
     init(_ viewController:UIViewController) {
@@ -19,6 +19,9 @@ class SegueNavigationController: ScreenNavigationController {
     
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
         viewController.performSegue(withIdentifier: "RockClimbSubmittedSegue", sender: loggedRockClimbId)
+    }
+    
+    func displayLogARockClimbScreen() {
     }
 
 }

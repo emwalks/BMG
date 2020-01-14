@@ -40,6 +40,7 @@ class LogRockClimbViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         logRockClimbViewModel = LogRockClimbViewModel(SQLiteDatabaseServiceFactory.createDbService(), screenNavigationController: SegueNavigationController(self))
         createGradePicker()
         createDatePicker()

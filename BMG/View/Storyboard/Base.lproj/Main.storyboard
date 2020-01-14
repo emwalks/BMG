@@ -369,7 +369,7 @@
         <!--Home-->
         <scene sceneID="YIF-dB-JkO">
             <objects>
-                <viewController id="cEN-ER-Jqe" customClass="RockClimbLandingPageViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cEN-ER-Jqe" customClass="RockClimbHomePageViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R06-xT-3WS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -378,7 +378,7 @@
                                 <rect key="frame" x="127" y="263" width="160" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Log Rock Climb" image="square.and.pencil" catalog="system">
+                                <state key="normal" title="Log Rock Climb">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
                                 </state>
                                 <connections>
@@ -415,8 +415,5 @@
             <point key="canvasLocation" x="422" y="-224"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
-    </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

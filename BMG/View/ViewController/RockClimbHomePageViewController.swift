@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RockClimbLandingPageViewController: UIViewController {
+class RockClimbHomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,8 +17,8 @@ class RockClimbLandingPageViewController: UIViewController {
                    navigationController?.navigationBar.prefersLargeTitles = true
                    navigationItem.largeTitleDisplayMode = .always
                    navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-               }     
+               }
         
-       view.accessibilityIdentifier = "rockClimbLandingPage"
+       view.accessibilityIdentifier = "rockClimbHomePage"
     }
 }
