@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LogbookViewController: UIViewController {
+class MyLogbookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

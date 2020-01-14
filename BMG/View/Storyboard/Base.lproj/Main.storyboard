@@ -406,17 +406,17 @@
             </objects>
             <point key="canvasLocation" x="1649" y="-224"/>
         </scene>
-        <!--Logbook View Controller-->
+        <!--My Logbook-->
         <scene sceneID="LzG-VX-9hU">
             <objects>
-                <viewController id="YQh-SF-wFC" customClass="LogbookViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YQh-SF-wFC" customClass="MyLogbookViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EQb-pE-8av">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="vXx-HF-5e9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DcC-AY-Cdl"/>
+                    <navigationItem key="navigationItem" title="My Logbook" id="DcC-AY-Cdl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8L-GT-KxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
