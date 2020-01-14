@@ -8,33 +8,48 @@
 
 import XCTest
 
-class RockClimbLandingPageViewModel_Tests: XCTestCase {
+class RockClimbHomePageViewModel_Tests: XCTestCase {
     
+    class MockRockClimbHomePageViewModel {
+        
+        var screenNavigationController: ScreenNavigationController
+        
+        init(screenNavigationController: ScreenNavigationController) {
+            self.screenNavigationController = screenNavigationController
+        }
+        
+        func displayLogARockClimbScreen() {
+            screenNavigationController.displayLogARockClimbScreen()
+        }
+        
+        func displayLogbookScreen() {
+            screenNavigationController.displayLogbookScreen()
+        }
+        
+    }
     
     func testWhenLogRockClimbButtonIsClickedTheLogRockClimbScreenIsNavigatedToViaScreenNavigationController() {
         //arrange
         let mockScreenNavigationController = MockScreenNavigationController()
         let mockRockClimbHomePageViewModel = MockRockClimbHomePageViewModel(screenNavigationController: mockScreenNavigationController)
         
-        class MockRockClimbHomePageViewModel {
-            
-            var screenNavigationController: ScreenNavigationController
-            
-            init(screenNavigationController: ScreenNavigationController) {
-                self.screenNavigationController = screenNavigationController
-            }
-            
-            func displayLogARockClimbScreen() {
-                screenNavigationController.displayLogARockClimbScreen()
-            }
-            
-        }
-        
         //act
         mockRockClimbHomePageViewModel.displayLogARockClimbScreen()
         
         //assert
         XCTAssertEqual(logARockClimbScreenExists, true, "The function: displayLogARockClimbScreen has run")
+    }
+    
+    func testWhenViewLogbookButtonIsClickedTheLogRockClimbScreenIsNavigatedToViaScreenNavigationController() {
+        //arrange
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let mockRockClimbHomePageViewModel = MockRockClimbHomePageViewModel(screenNavigationController: mockScreenNavigationController)
+        
+        //act
+        mockRockClimbHomePageViewModel.displayLogbookScreen()
+        
+        //assert
+        XCTAssertEqual(logbookScreenExists, true, "The function: displayLogbookScreen has run")
     }
     
 }

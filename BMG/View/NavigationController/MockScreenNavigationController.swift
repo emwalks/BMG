@@ -10,6 +10,8 @@ import Foundation
 
 public var logARockClimbScreenExists: Bool = false
 
+public var logbookScreenExists: Bool = false
+
 public var loggedRockClimbDataScreenExists: Bool = false
 
 
@@ -19,6 +21,10 @@ class MockScreenNavigationController: ScreenNavigationController {
     
     func displayLogARockClimbScreen() {
         logARockClimbScreenExists = true
+    }
+    
+    func displayLogbookScreen() {
+        logbookScreenExists = true
     }
     
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {

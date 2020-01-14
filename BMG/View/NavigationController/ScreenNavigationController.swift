@@ -14,6 +14,8 @@ protocol ScreenNavigationController {
     
     func displayLogARockClimbScreen()
     
+    func displayLogbookScreen()
+    
 }
 
 

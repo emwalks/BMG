@@ -12,7 +12,7 @@ import UIKit
 class SegueNavigationController: ScreenNavigationController {
     
     var viewController: UIViewController
-
+    
     init(_ viewController:UIViewController) {
         self.viewController = viewController
     }
@@ -23,6 +23,10 @@ class SegueNavigationController: ScreenNavigationController {
     
     func displayLogARockClimbScreen() {
     }
-
+    
+    func displayLogbookScreen() {
+        
+    }
+    
 }
 
