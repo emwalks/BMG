@@ -10,24 +10,6 @@ import XCTest
 
 class RockClimbHomePageViewModel_Tests: XCTestCase {
     
-    class RockClimbHomePageViewModel {
-        
-        var screenNavigationController: ScreenNavigationController
-        
-        init(screenNavigationController: ScreenNavigationController) {
-            self.screenNavigationController = screenNavigationController
-        }
-        
-        func displayLogARockClimbScreen() {
-            screenNavigationController.displayLogARockClimbScreen()
-        }
-        
-        func displayLogbookScreen() {
-            screenNavigationController.displayLogbookScreen()
-        }
-        
-    }
-    
     func testWhenLogRockClimbButtonIsClickedTheLogRockClimbScreenIsNavigatedToViaMockScreenNavigationController() {
         //arrange
         let mockScreenNavigationController = MockScreenNavigationController()
