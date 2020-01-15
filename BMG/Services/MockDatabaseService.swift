@@ -43,8 +43,11 @@ class MockDatabaseService: DatabaseService {
                }
     }
     
-    func getAllRockClimbDataFromDb() {
-        
+    func getAllRockClimbDataFromDb() -> Array<RockClimbEntry> {
+        let stringForExampleRockClimb = "rock climb data in mock db service"
+        let rockClimbEntry = RockClimbEntry.init(routeName: stringForExampleRockClimb, grade: stringForExampleRockClimb, venueName: stringForExampleRockClimb, date: stringForExampleRockClimb, partners: stringForExampleRockClimb, climbingStyle: stringForExampleRockClimb)
+        let arrayOfRockClimbs = [rockClimbEntry]
+        return arrayOfRockClimbs
     }
     
 }

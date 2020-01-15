@@ -14,6 +14,6 @@ protocol DatabaseService {
     
     func getRockClimbDataFromDb(idOfRockClimb: Int64) -> RockClimbEntry
     
-    func getAllRockClimbDataFromDb()
+    func getAllRockClimbDataFromDb() -> Array<RockClimbEntry>
     
 }

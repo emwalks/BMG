@@ -88,8 +88,11 @@ class SQLiteDatabaseService: DatabaseService {
             routeName: databaseExcpetionString, grade: databaseExcpetionString, venueName: databaseExcpetionString, date: databaseExcpetionString, partners: databaseExcpetionString, climbingStyle: databaseExcpetionString)
     }
     
-    func getAllRockClimbDataFromDb() {
-        
+    func getAllRockClimbDataFromDb() -> Array<RockClimbEntry> {
+        let getAllRockClimbDataFromDbString = "getAllRockClimbDataFromDb blank function"
+        let rockClimbEntrySample = RockClimbEntry.init(
+            routeName: getAllRockClimbDataFromDbString, grade: getAllRockClimbDataFromDbString, venueName: getAllRockClimbDataFromDbString, date: getAllRockClimbDataFromDbString, partners: getAllRockClimbDataFromDbString, climbingStyle: getAllRockClimbDataFromDbString)
+        return [rockClimbEntrySample]
     }
         
 }
