@@ -14,10 +14,12 @@ class RockClimbLoggedViewModel {
     var databaseService: DatabaseService
     var rockClimbLoggedScreen: RockClimbLoggedScreen
     
+    //Emma thinks she has successfully refactored this - for review
     init(_ databaseService: DatabaseService, idOfRockClimbReceived: Int64, rockClimbLoggedScreen: RockClimbLoggedScreen) {
         self.databaseService = databaseService
         self.idOfRockClimbReceived = idOfRockClimbReceived
         self.rockClimbLoggedScreen = rockClimbLoggedScreen
+        retrieveRockClimb(idOfRockClimb: idOfRockClimbReceived)
     }
     
     func retrieveRockClimb(idOfRockClimb: Int64) {

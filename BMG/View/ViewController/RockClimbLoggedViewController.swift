@@ -74,10 +74,9 @@ class RockClimbLoggedViewController: UIViewController, RockClimbLoggedScreen {
         climbingStyleLabel.layer.cornerRadius = 5
         
         
-        //let's review this
+        //Emma thinks she has successfully refactored this - for review
         rockClimbLoggedViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: rockClimbIdFromSegue, rockClimbLoggedScreen: self)
-        rockClimbLoggedViewModel?.retrieveRockClimb(idOfRockClimb: rockClimbIdFromSegue)
-        
+                
         routeNameLabel.backgroundColor = ColorCompatibility.systemGray4
         gradeLabel.backgroundColor = ColorCompatibility.systemGray4
         venueNameLabel.backgroundColor = ColorCompatibility.systemGray4

@@ -12,14 +12,41 @@ class MyLogbookViewModel_Tests: XCTestCase {
     
     func testThatWhenLogbookScreenIsPresentedTheLoggedClimbDataIsDisplayed(){
         
+        class MockMyLogbookViewModel {
+            
+            var databaseService: DatabaseService
+            
+            init(_ databaseService: DatabaseService) {
+                self.databaseService = databaseService
+            }
+            
+        }
+        
+        class MockMyLogbookScreen {
+            
+            public var tableOfLoggedClimbs: Bool = false
+            
+        }
+        
         //arrange
-        //think about initialising the VC with the function instead of calling a function in view did load
+        //think about initialising the VC with the function calling all climb data back instead of calling a function in view did load?
+        let mockDatabaseService = MockDatabaseService()
+        let mockMyLogbookViewModel = MockMyLogbookViewModel(mockDatabaseService)
+        
+        let mockMyLogbookScreen = MockMyLogbookScreen()
+        
         //act
-        let actualResult = 
-        let expectedResult = 
+        mockDatabaseService.getAllRockClimbData()
+        let expectedResult = mockMyLogbookScreen.tableOfLoggedClimbs
         
         //assert
-        XCTAssertEqual(actualResult, expectedResult)
+        XCTAssertEqual(true, expectedResult)
     }
     
+}
+
+extension MockDatabaseService {
+    func getAllRockClimbData() {
+        
+    }
 }
