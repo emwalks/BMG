@@ -87,5 +87,9 @@ class SQLiteDatabaseService: DatabaseService {
         return RockClimbEntry.init(
             routeName: databaseExcpetionString, grade: databaseExcpetionString, venueName: databaseExcpetionString, date: databaseExcpetionString, partners: databaseExcpetionString, climbingStyle: databaseExcpetionString)
     }
+    
+    func getAllRockClimbDataFromDb() {
+        
+    }
         
 }

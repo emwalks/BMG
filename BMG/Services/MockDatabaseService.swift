@@ -43,4 +43,8 @@ class MockDatabaseService: DatabaseService {
                }
     }
     
+    func getAllRockClimbDataFromDb() {
+        
+    }
+    
 }

@@ -12,41 +12,48 @@ class MyLogbookViewModel_Tests: XCTestCase {
     
     func testThatWhenLogbookScreenIsPresentedTheLoggedClimbDataIsDisplayed(){
         
-        class MockMyLogbookViewModel {
+        class MockLogbookViewModel {
             
             var databaseService: DatabaseService
+            var mockLogbookScreen: MockLogbookScreen
             
-            init(_ databaseService: DatabaseService) {
+            init(_ databaseService: DatabaseService, logbookScreen: MockLogbookScreen) {
                 self.databaseService = databaseService
+                self.mockLogbookScreen = logbookScreen
+                retrieveAllRockClimbData()
+            }
+            
+            func retrieveAllRockClimbData() {
+                databaseService.getAllRockClimbDataFromDb()
+                mockLogbookScreen.allRockClimbDataPresented()
             }
             
         }
         
-        class MockMyLogbookScreen {
+        class MockLogbookScreen {
             
             public var tableOfLoggedClimbs: Bool = false
+            
+            func allRockClimbDataPresented() {
+                tableOfLoggedClimbs = true
+            }
             
         }
         
         //arrange
-        //think about initialising the VC with the function calling all climb data back instead of calling a function in view did load?
+       
         let mockDatabaseService = MockDatabaseService()
-        let mockMyLogbookViewModel = MockMyLogbookViewModel(mockDatabaseService)
+        let mockLogbookScreen = MockLogbookScreen()
         
-        let mockMyLogbookScreen = MockMyLogbookScreen()
+        let mockLogbookViewModel = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         
         //act
-        mockDatabaseService.getAllRockClimbData()
-        let expectedResult = mockMyLogbookScreen.tableOfLoggedClimbs
+        mockLogbookViewModel.retrieveAllRockClimbData()
+        
+        let actualResult = mockLogbookScreen.tableOfLoggedClimbs
         
         //assert
-        XCTAssertEqual(true, expectedResult)
+        XCTAssertEqual(actualResult, true, "the table of Rock Climbs exists in MockMyLogbookScreen")
     }
     
-}
-
-extension MockDatabaseService {
-    func getAllRockClimbData() {
-        
-    }
 }
