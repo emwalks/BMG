@@ -28,7 +28,7 @@
 		98252ACD2396847A00C71EAC /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
 		9826265023912B90003054B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F72350B1C2003768CE /* AppDelegate.swift */; };
 		98329F7D23CE248500216D45 /* MyLogbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98329F7C23CE248500216D45 /* MyLogbookViewController.swift */; };
-		98329F7F23CE2A5E00216D45 /* MyLogbookViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98329F7E23CE2A5E00216D45 /* MyLogbookViewModel_Tests.swift */; };
+		98329F7F23CE2A5E00216D45 /* LogbookViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98329F7E23CE2A5E00216D45 /* LogbookViewModel_Tests.swift */; };
 		983C4FA123901056009384BA /* ScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA023901056009384BA /* ScreenNavigationController.swift */; };
 		983C4FA3239010B0009384BA /* MockScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */; };
 		983F677E23AD16A500D486FF /* RockClimbLoggedViewModel_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F677D23AD16A500D486FF /* RockClimbLoggedViewModel_UITests.swift */; };
@@ -105,7 +105,7 @@
 		981B0D452369EC0A00D701D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewModel_Tests.swift; sourceTree = "<group>"; };
 		98329F7C23CE248500216D45 /* MyLogbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogbookViewController.swift; sourceTree = "<group>"; };
-		98329F7E23CE2A5E00216D45 /* MyLogbookViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogbookViewModel_Tests.swift; sourceTree = "<group>"; };
+		98329F7E23CE2A5E00216D45 /* LogbookViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookViewModel_Tests.swift; sourceTree = "<group>"; };
 		983C4FA023901056009384BA /* ScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenNavigationController.swift; sourceTree = "<group>"; };
 		983C4FA2239010B0009384BA /* MockScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScreenNavigationController.swift; sourceTree = "<group>"; };
 		983F677D23AD16A500D486FF /* RockClimbLoggedViewModel_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbLoggedViewModel_UITests.swift; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 				988535EE23C898BA00D16173 /* RockClimbHomePageViewModel_Tests.swift */,
 				981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */,
 				98067C7B23914915000AF417 /* RockClimbLoggedViewModel_Tests.swift */,
-				98329F7E23CE2A5E00216D45 /* MyLogbookViewModel_Tests.swift */,
+				98329F7E23CE2A5E00216D45 /* LogbookViewModel_Tests.swift */,
 				986A246B2387E8DE00BD43E7 /* SQLiteDatabaseService_Tests.swift */,
 				981B0D452369EC0A00D701D0 /* Info.plist */,
 			);
@@ -548,7 +548,7 @@
 				98E8ED2D23902EFD00DAFF6A /* DatabaseService.swift in Sources */,
 				98E8ED2F23902F0400DAFF6A /* SQLiteDatabaseService.swift in Sources */,
 				986A246C2387E8DE00BD43E7 /* SQLiteDatabaseService_Tests.swift in Sources */,
-				98329F7F23CE2A5E00216D45 /* MyLogbookViewModel_Tests.swift in Sources */,
+				98329F7F23CE2A5E00216D45 /* LogbookViewModel_Tests.swift in Sources */,
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
 				98E8ED2723902EDC00DAFF6A /* MockScreenNavigationController.swift in Sources */,
 				988535EF23C898BA00D16173 /* RockClimbHomePageViewModel_Tests.swift in Sources */,
