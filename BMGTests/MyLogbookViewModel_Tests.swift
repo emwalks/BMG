@@ -51,6 +51,7 @@ class MyLogbookViewModel_Tests: XCTestCase {
                 dateOnScreen = rockClimbEntry.date
                 partnersOnScreen = rockClimbEntry.partners
                 climbingStyleOnScreen = rockClimbEntry.climbingStyle
+                print(routeNameOnScreen, gradeOnScreen, venueNameOnScreen, dateOnScreen, partnersOnScreen, climbingStyleOnScreen)
                 }
                 tableOfLoggedClimbs = true
             }
