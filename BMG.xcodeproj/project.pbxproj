@@ -26,6 +26,15 @@
 		98252AC9239680EA00C71EAC /* SegueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98067C79239140E5000AF417 /* SegueNavigationController.swift */; };
 		98252ACC2396847700C71EAC /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24632386D55B00BD43E7 /* DatabaseService.swift */; };
 		98252ACD2396847A00C71EAC /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A24662386DE2400BD43E7 /* MockDatabaseService.swift */; };
+		9825602723D1F4E000EF6D55 /* LogbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602623D1F4E000EF6D55 /* LogbookViewModel.swift */; };
+		9825602923D1F50600EF6D55 /* MockLogbookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602823D1F50600EF6D55 /* MockLogbookScreen.swift */; };
+		9825602B23D1F52300EF6D55 /* LogbookScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602A23D1F52300EF6D55 /* LogbookScreenProtocol.swift */; };
+		9825602C23D1F65900EF6D55 /* LogbookScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602A23D1F52300EF6D55 /* LogbookScreenProtocol.swift */; };
+		9825602D23D1F67600EF6D55 /* LogbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602623D1F4E000EF6D55 /* LogbookViewModel.swift */; };
+		9825602E23D1F67A00EF6D55 /* LogbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602623D1F4E000EF6D55 /* LogbookViewModel.swift */; };
+		9825602F23D1F6B200EF6D55 /* MockLogbookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602823D1F50600EF6D55 /* MockLogbookScreen.swift */; };
+		9825603023D1F6B300EF6D55 /* MockLogbookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602823D1F50600EF6D55 /* MockLogbookScreen.swift */; };
+		9825603123D1F6B700EF6D55 /* LogbookScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825602A23D1F52300EF6D55 /* LogbookScreenProtocol.swift */; };
 		9826265023912B90003054B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985413F72350B1C2003768CE /* AppDelegate.swift */; };
 		98329F7D23CE248500216D45 /* MyLogbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98329F7C23CE248500216D45 /* MyLogbookViewController.swift */; };
 		98329F7F23CE2A5E00216D45 /* LogbookViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98329F7E23CE2A5E00216D45 /* LogbookViewModel_Tests.swift */; };
@@ -104,6 +113,9 @@
 		981B0D412369EC0A00D701D0 /* BMGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981B0D452369EC0A00D701D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRockClimbViewModel_Tests.swift; sourceTree = "<group>"; };
+		9825602623D1F4E000EF6D55 /* LogbookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookViewModel.swift; sourceTree = "<group>"; };
+		9825602823D1F50600EF6D55 /* MockLogbookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLogbookScreen.swift; sourceTree = "<group>"; };
+		9825602A23D1F52300EF6D55 /* LogbookScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookScreenProtocol.swift; sourceTree = "<group>"; };
 		98329F7C23CE248500216D45 /* MyLogbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogbookViewController.swift; sourceTree = "<group>"; };
 		98329F7E23CE2A5E00216D45 /* LogbookViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookViewModel_Tests.swift; sourceTree = "<group>"; };
 		983C4FA023901056009384BA /* ScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenNavigationController.swift; sourceTree = "<group>"; };
@@ -221,6 +233,8 @@
 				8DF3EEF6235DF2FE00D5D0E2 /* GradePickerView.swift */,
 				987367CF2398031300416C57 /* MockRockClimbLoggedScreen.swift */,
 				987367D22398042700416C57 /* RockClimbLoggedScreenProtocol.swift */,
+				9825602823D1F50600EF6D55 /* MockLogbookScreen.swift */,
+				9825602A23D1F52300EF6D55 /* LogbookScreenProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +256,7 @@
 				98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */,
 				8D2C75F42359F9590081D22F /* LogRockClimbViewModel.swift */,
 				98067C7D239173A6000AF417 /* RockClimbLoggedViewModel.swift */,
+				9825602623D1F4E000EF6D55 /* LogbookViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -552,9 +567,12 @@
 				981B0D4E236B069D00D701D0 /* Grades.swift in Sources */,
 				98E8ED2723902EDC00DAFF6A /* MockScreenNavigationController.swift in Sources */,
 				988535EF23C898BA00D16173 /* RockClimbHomePageViewModel_Tests.swift in Sources */,
+				9825602F23D1F6B200EF6D55 /* MockLogbookScreen.swift in Sources */,
 				98252AC8239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
 				98E8ED2E23902F0000DAFF6A /* MockDatabaseService.swift in Sources */,
+				9825602C23D1F65900EF6D55 /* LogbookScreenProtocol.swift in Sources */,
 				987367D4239806AA00416C57 /* RockClimbLoggedScreenProtocol.swift in Sources */,
+				9825602D23D1F67600EF6D55 /* LogbookViewModel.swift in Sources */,
 				98DE2C4123CDFB4F00B91893 /* RockClimbHomePageViewModel.swift in Sources */,
 				98067C7C23914915000AF417 /* RockClimbLoggedViewModel_Tests.swift in Sources */,
 				98E8ED2A23902EE900DAFF6A /* LogRockClimbViewModel.swift in Sources */,
@@ -584,6 +602,7 @@
 				98B34DA123C4C7BD00F4DE82 /* RockClimbEntry.swift in Sources */,
 				98D223D32397B12A00D3D76A /* RockClimbLoggedViewController.swift in Sources */,
 				983C4FA3239010B0009384BA /* MockScreenNavigationController.swift in Sources */,
+				9825602723D1F4E000EF6D55 /* LogbookViewModel.swift in Sources */,
 				98B8B41123CC7721009AB071 /* RockClimbHomePageViewController.swift in Sources */,
 				986A24642386D55B00BD43E7 /* DatabaseService.swift in Sources */,
 				8D56E813235F53670024CD50 /* Grades.swift in Sources */,
@@ -591,8 +610,10 @@
 				8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */,
 				986A246E2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */,
 				98067C7E239173A6000AF417 /* RockClimbLoggedViewModel.swift in Sources */,
+				9825602B23D1F52300EF6D55 /* LogbookScreenProtocol.swift in Sources */,
 				8D2C75F7235A09F30081D22F /* ClimbingStylesTableView.swift in Sources */,
 				987367D32398042700416C57 /* RockClimbLoggedScreenProtocol.swift in Sources */,
+				9825602923D1F50600EF6D55 /* MockLogbookScreen.swift in Sources */,
 				983C4FA123901056009384BA /* ScreenNavigationController.swift in Sources */,
 				8D2C75FB235A0CEE0081D22F /* CustomPickerToolbar.swift in Sources */,
 			);
@@ -604,13 +625,16 @@
 			files = (
 				98252AC9239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
 				9826265023912B90003054B8 /* AppDelegate.swift in Sources */,
+				9825602E23D1F67A00EF6D55 /* LogbookViewModel.swift in Sources */,
 				98951660238EA1D100130140 /* LogARockClimbViewModel_UITests.swift in Sources */,
 				988535F123C8E22800D16173 /* RockClimbHomePageViewModel_UITests.swift in Sources */,
+				9825603123D1F6B700EF6D55 /* LogbookScreenProtocol.swift in Sources */,
 				985365AF23C4D06400C08D26 /* RockClimbEntry.swift in Sources */,
 				98E8ED2823902EDE00DAFF6A /* MockScreenNavigationController.swift in Sources */,
 				98DE2C4023CDFB4E00B91893 /* RockClimbHomePageViewModel.swift in Sources */,
 				98252ACD2396847A00C71EAC /* MockDatabaseService.swift in Sources */,
 				98252ACC2396847700C71EAC /* DatabaseService.swift in Sources */,
+				9825603023D1F6B300EF6D55 /* MockLogbookScreen.swift in Sources */,
 				983F677E23AD16A500D486FF /* RockClimbLoggedViewModel_UITests.swift in Sources */,
 				98E8ED2623902ED800DAFF6A /* ScreenNavigationController.swift in Sources */,
 			);
