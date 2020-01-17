@@ -375,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
-                                <rect key="frame" x="133" y="367" width="148" height="22"/>
+                                <rect key="frame" x="133" y="367" width="164" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Rock Climb" image="square.and.pencil" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
@@ -384,8 +384,8 @@
                                     <action selector="logARockClimbButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="W6g-Rz-zjo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-sK-P0E">
-                                <rect key="frame" x="139" y="508" width="138" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-sK-P0E">
+                                <rect key="frame" x="140" y="508" width="138" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Logbook" image="book" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
@@ -401,28 +401,48 @@
                     <navigationItem key="navigationItem" title="Home" id="ydY-PL-lHQ"/>
                     <connections>
                         <segue destination="J7o-vn-GuO" kind="show" identifier="LogARockClimbSegue" id="2Qy-Is-XqB"/>
-                        <segue destination="YQh-SF-wFC" kind="show" identifier="ViewLogbookSegue" id="Wjr-i8-k1p"/>
+                        <segue destination="lPa-EO-71b" kind="show" identifier="ViewLogbookSegue" id="UvT-eE-US1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdz-Pm-lDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1649" y="-224"/>
+            <point key="canvasLocation" x="1647.826086956522" y="-224.33035714285714"/>
         </scene>
         <!--My Logbook-->
-        <scene sceneID="LzG-VX-9hU">
+        <scene sceneID="xJb-Od-23M">
             <objects>
-                <viewController id="YQh-SF-wFC" customClass="MyLogbookViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EQb-pE-8av">
+                <tableViewController id="lPa-EO-71b" customClass="MyLogbookViewController" customModule="BMG" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Tak-Yj-aLd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.082352941176470587" green="0.11764705882352941" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="vXx-HF-5e9"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Logbook" id="DcC-AY-Cdl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C8L-GT-KxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.08235294118" green="0.1176470588" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GoC-Qy-32c">
+                                <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GoC-Qy-32c" id="hav-E5-g2V">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="logbookView"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="logbookView"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="lPa-EO-71b" id="sY8-TT-wWb"/>
+                            <outlet property="delegate" destination="lPa-EO-71b" id="epd-oX-sWa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Logbook" id="Wu8-Fg-6Ea"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="logbookView"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1jq-rd-PyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2926" y="246"/>
+            <point key="canvasLocation" x="2670" y="269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzL-RF-Nbf">

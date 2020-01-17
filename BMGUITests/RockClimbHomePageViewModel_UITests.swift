@@ -28,16 +28,16 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
     }
     
     func testWhenLogRockClimbIsSelectedThatUserIsTakenToLogRockClimbView() {
-        XCUIApplication().otherElements.buttons["Log Rock Climb"].tap()
+        app.otherElements.buttons["Log Rock Climb"].tap()
         
         XCTAssertTrue(app.isDisplayingLogRockClimbPage, "logRockClimbView is being displayed")
     }
     
     func testWhenViewLogbookIsSelectedThatUserIsTakenToLogRockClimbView() {
-          XCUIApplication().otherElements.buttons["View Logbook"].tap()
-          
-          XCTAssertTrue(app.isDisplayingLogbookPage, "logbookView is being displayed")
-      }
+        app.otherElements.buttons["View Logbook"].tap()
+        
+        XCTAssertTrue(app.isDisplayingLogbookPage, "logRockClimbView is being displayed")
+    }
     
 }
 
