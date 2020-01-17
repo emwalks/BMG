@@ -141,6 +141,28 @@ class SQLiteDatabaseServiceTests: XCTestCase {
      XCTAssertEqual(climbingStyleEntered, actualResult, "Climbing style has been returned based on id")
         
     }
+    
+    func testWhenGetAllRockClimbDataFromDbIsCalledAnArrayOfRockClimbEntriesIsReturned() {
+        
+        //arrange
+        let sqliteDatabaseService = SQLiteDatabaseService(db!)
+        
+        let routeNameEntered:String = "randomRouteName" + String(describing: Int.random(in: 0..<100))
+        let gradeSelected = "VD 7b"
+        let venueNameEntered:String = "randomVenueName" + String(describing: Int.random(in: 0..<100))
+        let dateSelected = "31/01/2020"
+        let partnersEntered:String = "randomPartner" + String(describing: Int.random(in: 0..<100))
+        let climbingStyleSelected:String = "Alternate"
+        
+        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)
+        
+        //act
+        let actualResult = sqliteDatabaseService.getAllRockClimbDataFromDb()
+        let expectedResult = [RockClimbEntry.init(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)]
+        
+        //assert
+        XCTAssertEqual(actualResult, expectedResult)
+     }
 
     
     override func tearDown() {

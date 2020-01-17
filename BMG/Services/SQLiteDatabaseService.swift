@@ -89,10 +89,27 @@ class SQLiteDatabaseService: DatabaseService {
     }
     
     func getAllRockClimbDataFromDb() -> Array<RockClimbEntry> {
-        let getAllRockClimbDataFromDbString = "getAllRockClimbDataFromDb blank function"
-        let rockClimbEntrySample = RockClimbEntry.init(
-            routeName: getAllRockClimbDataFromDbString, grade: getAllRockClimbDataFromDbString, venueName: getAllRockClimbDataFromDbString, date: getAllRockClimbDataFromDbString, partners: getAllRockClimbDataFromDbString, climbingStyle: getAllRockClimbDataFromDbString)
-        return [rockClimbEntrySample]
+        do {
+            for rockClimb in try database.prepare(rockClimbTable) {
+            let routeName = String(describing: rockClimb[loggedRouteName]!)
+            let grade = String(describing: rockClimb[loggedGrade]!)
+            let venueName = String(describing: rockClimb[loggedVenueName]!)
+            let date = String(describing: rockClimb[loggedDate]!)
+            let partners = String(describing: rockClimb[loggedPartners]!)
+            let climbingStyle = String(describing: rockClimb[loggedClimbingStyle]!)
+            let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: partners, climbingStyle: climbingStyle)
+            return [rockClimbEntryFromDB]
+            }
+        }catch {
+        let queryExceptionString = "getAllRockClimbDataFromDb query failed"
+        let queryException = RockClimbEntry.init(
+            routeName: queryExceptionString, grade: queryExceptionString, venueName: queryExceptionString, date: queryExceptionString, partners: queryExceptionString, climbingStyle: queryExceptionString)
+        return [queryException]
+        }
+        let databaseExcpetionString = "an error has occured in getAllRockClimbDataFromDb function"
+        let databaseException = RockClimbEntry.init(
+            routeName: databaseExcpetionString, grade: databaseExcpetionString, venueName: databaseExcpetionString, date: databaseExcpetionString, partners: databaseExcpetionString, climbingStyle: databaseExcpetionString)
+        return [databaseException]
     }
         
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RockClimbEntry {
+struct RockClimbEntry: Equatable {
     
     let routeName: String
     let grade: String

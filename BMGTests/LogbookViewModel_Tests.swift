@@ -18,7 +18,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockLogbookScreen = MockLogbookScreen()
         
         //act
-        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         
         let actualResult = mockLogbookScreen.tableOfLoggedClimbs
         
@@ -34,7 +34,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockLogbookScreen = MockLogbookScreen()
         
         //act
-        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         //assert
         XCTAssertNotNil(mockLogbookScreen.routeNameOnScreen)
     }
@@ -47,7 +47,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockLogbookScreen = MockLogbookScreen()
         
         //act
-        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         //assert
         XCTAssertNotNil(mockLogbookScreen.gradeOnScreen)
     }
@@ -60,7 +60,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockLogbookScreen = MockLogbookScreen()
         
         //act
-        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         //assert
         XCTAssertNotNil(mockLogbookScreen.venueNameOnScreen)
     }
@@ -73,7 +73,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockLogbookScreen = MockLogbookScreen()
         
         //act
-        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         //assert
         XCTAssertNotNil(mockLogbookScreen.dateOnScreen)
     }
@@ -86,7 +86,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockLogbookScreen = MockLogbookScreen()
         
         //act
-        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         //assert
         XCTAssertNotNil(mockLogbookScreen.partnersOnScreen)
     }
@@ -99,7 +99,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockLogbookScreen = MockLogbookScreen()
         
         //act
-        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         //assert
         XCTAssertNotNil(mockLogbookScreen.climbingStyleOnScreen)
     }
