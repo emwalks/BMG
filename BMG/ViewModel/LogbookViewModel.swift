@@ -8,20 +8,20 @@
 
 import Foundation
 
-class MockLogbookViewModel {
+class LogbookViewModel {
        
        var databaseService: DatabaseService
-       var mockLogbookScreen: MockLogbookScreen
+       var logbookScreen: LogbookScreenProtocol
        
-       init(_ databaseService: DatabaseService, logbookScreen: MockLogbookScreen) {
+       init(_ databaseService: DatabaseService, logbookScreen: LogbookScreenProtocol) {
            self.databaseService = databaseService
-           self.mockLogbookScreen = logbookScreen
+           self.logbookScreen = logbookScreen
            retrieveAllRockClimbData()
        }
        
        func retrieveAllRockClimbData() {
            let rockClimbDataArrayReceived = databaseService.getAllRockClimbDataFromDb()
-           mockLogbookScreen.allRockClimbDataPresented(arrayOfRockClimbs: rockClimbDataArrayReceived)
+           logbookScreen.allRockClimbDataPresented(arrayOfRockClimbs: rockClimbDataArrayReceived)
        }
        
    }

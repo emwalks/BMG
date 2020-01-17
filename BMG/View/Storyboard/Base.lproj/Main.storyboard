@@ -185,7 +185,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.082660904209999997" green="0.122477498" blue="0.26055261489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.082660904209999997" green="0.11764705882352941" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="jK6-zd-n2f" firstAttribute="bottom" secondItem="EkK-Du-IDo" secondAttribute="bottom" id="ESI-YJ-0sy"/>
                             <constraint firstItem="WVk-Oc-wyO" firstAttribute="width" secondItem="EkK-Du-IDo" secondAttribute="width" id="FfX-Hr-YCE"/>
@@ -343,7 +343,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.082660904209999997" green="0.122477498" blue="0.26055261489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.11764705882352941" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5GN-rg-GzU" firstAttribute="trailing" secondItem="uvS-J0-rv1" secondAttribute="trailing" id="D0T-ue-C9w"/>
                             <constraint firstItem="5GN-rg-GzU" firstAttribute="top" secondItem="uvS-J0-rv1" secondAttribute="top" id="HeK-ip-Zgo"/>
@@ -385,9 +385,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-sK-P0E">
-                                <rect key="frame" x="139" y="508" width="137" height="22"/>
+                                <rect key="frame" x="139" y="508" width="138" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Logbook" image="book" catalog="system"/>
+                                <state key="normal" title="View Logbook" image="book" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
+                                </state>
                                 <connections>
                                     <action selector="viewLogbookButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="NN3-0I-572"/>
                                 </connections>
@@ -413,14 +415,14 @@
                     <view key="view" contentMode="scaleToFill" id="EQb-pE-8av">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.11764705882352941" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="vXx-HF-5e9"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Logbook" id="DcC-AY-Cdl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8L-GT-KxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="232"/>
+            <point key="canvasLocation" x="2926" y="246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzL-RF-Nbf">
