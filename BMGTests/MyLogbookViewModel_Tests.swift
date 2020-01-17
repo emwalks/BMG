@@ -62,11 +62,9 @@ class MyLogbookViewModel_Tests: XCTestCase {
        
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
-        
-        let mockLogbookViewModel = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
-        
+    
         //act
-        mockLogbookViewModel.retrieveAllRockClimbData()
+        _ = MockLogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
         
         let actualResult = mockLogbookScreen.tableOfLoggedClimbs
         
