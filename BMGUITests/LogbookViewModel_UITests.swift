@@ -59,31 +59,20 @@ class LogbookViewModel_UITests: XCTestCase {
         app.scrollViews.otherElements.tables.staticTexts["Alternate"].tap()
         app.scrollViews.otherElements.buttons["Submit"].tap()
         
-        sleep(4)
-        
-        
-        
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    func testThatWhenLogbookScreenIsPresentedATableOfLoggedClimbsIsDisplayed() {
         
+    func testThatWhenLogbookScreenIsPresentedATableOfLoggedClimbsIsDisplayed() {
         app.launch()
         app.otherElements.buttons["View Logbook"].tap()
         
-        XCTAssertNotNil(app/*@START_MENU_TOKEN@*/.tables["logbookView"]/*[[".tables[\"Empty list\"]",".tables[\"logbookView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/)
+        XCTAssertTrue(app.tables["logbookView"].children(matching: .cell).element(boundBy: 0).staticTexts["\(routeNameEntered)"].exists)
+        
+        //only passes if this class is run in isolation as otherwise other data in the table - also code only in first index of array
     
     }
-    
-//    func testThatWhenLogbookScreenIsPresentedATableOfLoggedClimbsIsDisplayed() {
-//        app.launch()
-//        app.otherElements.buttons["View Logbook"].tap()
-//        
-//        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "My Logbook").label, " Route Name: \(routeNameEntered)")
-//        
-//    }
     
 }

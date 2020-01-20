@@ -36,9 +36,10 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
     func testWhenViewLogbookIsSelectedThatUserIsTakenToLogRockClimbView() {
         app.otherElements.buttons["View Logbook"].tap()
         
+        //can't use extension as until data is in table the view does not exist
         XCTAssertNotNil(app.staticTexts.element(matching:.any, identifier: "My Logbook"))
     }
-    
+        
 }
 
 extension XCUIApplication {
