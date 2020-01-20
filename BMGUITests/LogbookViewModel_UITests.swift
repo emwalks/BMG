@@ -74,7 +74,16 @@ class LogbookViewModel_UITests: XCTestCase {
         app.launch()
         app.otherElements.buttons["View Logbook"].tap()
         
-        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "My Logbook").label, " Route Name: \(routeNameEntered)")
+        XCTAssertNotNil(app/*@START_MENU_TOKEN@*/.tables["logbookView"]/*[[".tables[\"Empty list\"]",".tables[\"logbookView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/)
+    
     }
+    
+//    func testThatWhenLogbookScreenIsPresentedATableOfLoggedClimbsIsDisplayed() {
+//        app.launch()
+//        app.otherElements.buttons["View Logbook"].tap()
+//        
+//        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "My Logbook").label, " Route Name: \(routeNameEntered)")
+//        
+//    }
     
 }
