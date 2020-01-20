@@ -36,7 +36,7 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
     func testWhenViewLogbookIsSelectedThatUserIsTakenToLogRockClimbView() {
         app.otherElements.buttons["View Logbook"].tap()
         
-        XCTAssertTrue(app.isDisplayingLogbookPage, "logRockClimbView is being displayed")
+        XCTAssertNotNil(app.staticTexts.element(matching:.any, identifier: "My Logbook"))
     }
     
 }

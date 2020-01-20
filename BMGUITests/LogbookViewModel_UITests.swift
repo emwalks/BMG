@@ -11,6 +11,12 @@ import XCTest
 class LogbookViewModel_UITests: XCTestCase {
     
     var app: XCUIApplication!
+    let routeNameEntered: String = "randomRouteName" + String(describing: Int.random(in: 500..<600))
+    let gradeSelected = "VD 7b"
+    let venueNameEntered: String = "randomVenueName" + String(describing: Int.random(in: 500..<600))
+    let dateSelected = "31/01/2020"
+    let partnersEntered: String = "randomPartner" + String(describing: Int.random(in: 500..<600))
+    let climbingStyleSelected: String = "Alternate"
     
     override func setUp() {
         
@@ -20,13 +26,6 @@ class LogbookViewModel_UITests: XCTestCase {
         app.launch()
         
         app.otherElements.buttons["Log Rock Climb"].tap()
-        
-        let routeNameEntered:String = "randomRouteName" + String(describing: Int.random(in: 500..<600))
-        let gradeSelected = "VD 7b"
-        let venueNameEntered:String = "randomVenueName" + String(describing: Int.random(in: 500..<600))
-        let dateSelected = "31/01/2020"
-        let partnersEntered:String = "randomPartner" + String(describing: Int.random(in: 500..<600))
-        let climbingStyleSelected:String = "Alternate"
         
         let routeField = app.scrollViews.otherElements.textFields["e.g. The Bat"]
         routeField.tap()
@@ -53,7 +52,14 @@ class LogbookViewModel_UITests: XCTestCase {
         partnersField.tap()
         partnersField.typeText(partnersEntered)
         
-        app.scrollViews.otherElements.tables.staticTexts[climbingStyleSelected].tap()
+        
+        let exitRouteFieldKeyboard = app.scrollViews.otherElements
+        exitRouteFieldKeyboard.staticTexts["Route:"].tap()
+        
+        app.scrollViews.otherElements.tables.staticTexts["Alternate"].tap()
+        app.scrollViews.otherElements.buttons["Submit"].tap()
+        
+        sleep(4)
         
         
         
@@ -65,7 +71,10 @@ class LogbookViewModel_UITests: XCTestCase {
     
     func testThatWhenLogbookScreenIsPresentedATableOfLoggedClimbsIsDisplayed() {
         
+        app.launch()
+        app.otherElements.buttons["View Logbook"].tap()
         
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "My Logbook").label, " Route Name: \(routeNameEntered)")
     }
     
 }
