@@ -13,12 +13,9 @@ class MyLogbookViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.accessibilityLabel = "logbookView"
+    
         tableView.accessibilityIdentifier = "logbookView"
-        tableView.isAccessibilityElement = true
-        
-        view.accessibilityIdentifier = "logbookView"
+       
         
     }
     

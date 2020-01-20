@@ -374,28 +374,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
-                                <rect key="frame" x="133" y="367" width="164" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log Rock Climb" image="square.and.pencil" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
-                                </state>
-                                <connections>
-                                    <action selector="logARockClimbButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="W6g-Rz-zjo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-sK-P0E">
-                                <rect key="frame" x="140" y="508" width="138" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Logbook" image="book" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
-                                </state>
-                                <connections>
-                                    <action selector="viewLogbookButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="NN3-0I-572"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="J2p-iI-kSG">
+                                <rect key="frame" x="128" y="409" width="158.5" height="78"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
+                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Log Rock Climb" image="square.and.pencil" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logARockClimbButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="W6g-Rz-zjo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-sK-P0E">
+                                        <rect key="frame" x="0.0" y="54" width="158.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="View Logbook" image="book" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="viewLogbookButtonClicked:" destination="cEN-ER-Jqe" eventType="touchUpInside" id="NN3-0I-572"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.082352941176470587" green="0.11764705882352941" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="J2p-iI-kSG" firstAttribute="centerY" secondItem="XUG-iU-NSd" secondAttribute="centerY" id="Aqh-GA-bQx"/>
+                            <constraint firstItem="J2p-iI-kSG" firstAttribute="centerX" secondItem="XUG-iU-NSd" secondAttribute="centerX" id="Jxq-bd-um9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XUG-iU-NSd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="ydY-PL-lHQ"/>
@@ -426,19 +435,12 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="logbookView"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="logbookView"/>
-                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="lPa-EO-71b" id="sY8-TT-wWb"/>
                             <outlet property="delegate" destination="lPa-EO-71b" id="epd-oX-sWa"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Logbook" id="Wu8-Fg-6Ea"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="logbookView"/>
-                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jq-rd-PyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
