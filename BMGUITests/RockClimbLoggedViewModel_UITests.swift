@@ -29,14 +29,15 @@ class RockClimbLoggedViewModel_UITests: XCTestCase {
         let routeNameEntered:String = "randomRouteName" + String(describing: Int.random(in: 500..<600))
         
         app.otherElements.buttons["Log Rock Climb"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        let textField = elementsQuery.textFields["e.g. The Bat"]
-        textField.tap()
-        textField.typeText(routeNameEntered)
         
-        let routeQuery = app.scrollViews.otherElements
-        routeQuery.staticTexts["Route:"].tap()
-        routeQuery.buttons["Submit"].tap()
+        let routeField = app.scrollViews.otherElements.textFields["e.g. The Bat"]
+        routeField.tap()
+        routeField.typeText(routeNameEntered)
+        
+        let exitRouteFieldKeyboard = app.scrollViews.otherElements
+        exitRouteFieldKeyboard.staticTexts["Route:"].tap()
+        
+        app.scrollViews.otherElements.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "routeNamePresented").label, " Route Name: \(routeNameEntered)")
         
@@ -44,15 +45,17 @@ class RockClimbLoggedViewModel_UITests: XCTestCase {
     
     func testWhenAGradeIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
         let gradeSelected = "VD 7b"
-        let app = XCUIApplication()
         
         app.otherElements.buttons["Log Rock Climb"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.textFields["E1 5b, E1 5c, etc."].tap()
+
+        
+        let gradeField = app.scrollViews.otherElements.textFields["E1 5b, E1 5c, etc."]
+        gradeField.tap()
         app.pickerWheels["M"].adjust(toPickerWheelValue: "VD")
         app.pickers.children(matching: .pickerWheel).element(boundBy: 1).adjust(toPickerWheelValue: "7b")
         app.toolbars["Toolbar"].buttons["Done"].tap()
-        elementsQuery.buttons["Submit"].tap()
+        
+        app.scrollViews.otherElements.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "gradePresented").label, " Grade: \(gradeSelected)")
         
@@ -62,14 +65,14 @@ class RockClimbLoggedViewModel_UITests: XCTestCase {
         let venueNameEntered:String = "randomVenueName" + String(describing: Int.random(in: 500..<600))
         
         app.otherElements.buttons["Log Rock Climb"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        let textField = elementsQuery.textFields["e.g. Ben Nevis"]
-        textField.tap()
-        textField.typeText(venueNameEntered)
+        let venueField =  app.scrollViews.otherElements.textFields["e.g. Ben Nevis"]
+        venueField.tap()
+        venueField.typeText(venueNameEntered)
         
-        let routeQuery = app.scrollViews.otherElements
-        routeQuery.staticTexts["Route:"].tap()
-        routeQuery.buttons["Submit"].tap()
+        let exitRouteFieldKeyboard = app.scrollViews.otherElements
+        exitRouteFieldKeyboard.staticTexts["Route:"].tap()
+        
+        app.scrollViews.otherElements.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").label, " Venue: \(venueNameEntered)")
     }
@@ -79,15 +82,16 @@ class RockClimbLoggedViewModel_UITests: XCTestCase {
         
         
         app.otherElements.buttons["Log Rock Climb"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.textFields["DD/MM/YYYY"].tap()
+        
+        let dateField = app.scrollViews.otherElements.textFields["DD/MM/YYYY"]
+        dateField.tap()
         
         app.pickers.children(matching: .pickerWheel).element(boundBy: 0).adjust(toPickerWheelValue: "January")
         app.pickers.children(matching: .pickerWheel).element(boundBy: 1).adjust(toPickerWheelValue: "31")
         app.pickers.children(matching: .pickerWheel).element(boundBy: 2).adjust(toPickerWheelValue: "2020")
-        
         app.toolbars["Toolbar"].buttons["Done"].tap()
-        elementsQuery.buttons["Submit"].tap()
+        
+        app.scrollViews.otherElements.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "datePresented").label, " Date: \(dateSelected)")
         
@@ -97,14 +101,14 @@ class RockClimbLoggedViewModel_UITests: XCTestCase {
         let partnersEntered:String = "randomPartner" + String(describing: Int.random(in: 500..<600))
         
         app.otherElements.buttons["Log Rock Climb"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        let textField = elementsQuery.containing(.staticText, identifier:"Route:").children(matching: .textField).element(boundBy: 4)
-        textField.tap()
-        textField.typeText(partnersEntered)
+        let partnersField = app.scrollViews.otherElements.containing(.staticText, identifier:"Route:").children(matching: .textField).element(boundBy: 4)
+        partnersField.tap()
+        partnersField.typeText(partnersEntered)
         
-        let routeQuery = app.scrollViews.otherElements
-        routeQuery.staticTexts["Route:"].tap()
-        routeQuery.buttons["Submit"].tap()
+        let exitRouteFieldKeyboard = app.scrollViews.otherElements
+        exitRouteFieldKeyboard.staticTexts["Route:"].tap()
+        
+        app.scrollViews.otherElements.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "partnersPresented").label, " Partners: \(partnersEntered)")
     }
@@ -113,9 +117,10 @@ class RockClimbLoggedViewModel_UITests: XCTestCase {
         let climbingStyleSelected:String = "Alternate"
         
         app.otherElements.buttons["Log Rock Climb"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.tables.staticTexts[climbingStyleSelected].tap()
-        elementsQuery.buttons["Submit"].tap()
+        
+        app.scrollViews.otherElements.tables.staticTexts[climbingStyleSelected].tap()
+        
+        app.scrollViews.otherElements.buttons["Submit"].tap()
         
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "climbingStylePresented").label, " Style: \(climbingStyleSelected)")
     }

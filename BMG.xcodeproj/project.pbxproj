@@ -59,6 +59,7 @@
 		988535F123C8E22800D16173 /* RockClimbHomePageViewModel_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988535F023C8E22800D16173 /* RockClimbHomePageViewModel_UITests.swift */; };
 		9895164E238D83E100130140 /* SQLiteDatabaseServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895164D238D83E100130140 /* SQLiteDatabaseServiceFactory.swift */; };
 		98951660238EA1D100130140 /* LogARockClimbViewModel_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895165E238EA1D100130140 /* LogARockClimbViewModel_UITests.swift */; };
+		98A88A3423D5C34000493935 /* LogbookViewModel_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88A3323D5C34000493935 /* LogbookViewModel_UITests.swift */; };
 		98B34DA123C4C7BD00F4DE82 /* RockClimbEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B34DA023C4C7BD00F4DE82 /* RockClimbEntry.swift */; };
 		98B34DA223C4C84900F4DE82 /* RockClimbEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B34DA023C4C7BD00F4DE82 /* RockClimbEntry.swift */; };
 		98B8B41123CC7721009AB071 /* RockClimbHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B8B41023CC7721009AB071 /* RockClimbHomePageViewController.swift */; };
@@ -140,6 +141,7 @@
 		98951654238EA07900130140 /* BMGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98951658238EA07900130140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9895165E238EA1D100130140 /* LogARockClimbViewModel_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogARockClimbViewModel_UITests.swift; sourceTree = "<group>"; };
+		98A88A3323D5C34000493935 /* LogbookViewModel_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookViewModel_UITests.swift; sourceTree = "<group>"; };
 		98B34DA023C4C7BD00F4DE82 /* RockClimbEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbEntry.swift; sourceTree = "<group>"; };
 		98B8B41023CC7721009AB071 /* RockClimbHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbHomePageViewController.swift; sourceTree = "<group>"; };
 		98BB333023BE0AF500139725 /* ColorCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCompatibility.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				988535F023C8E22800D16173 /* RockClimbHomePageViewModel_UITests.swift */,
 				9895165E238EA1D100130140 /* LogARockClimbViewModel_UITests.swift */,
 				983F677D23AD16A500D486FF /* RockClimbLoggedViewModel_UITests.swift */,
+				98A88A3323D5C34000493935 /* LogbookViewModel_UITests.swift */,
 				98951658238EA07900130140 /* Info.plist */,
 			);
 			path = BMGUITests;
@@ -624,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98252AC9239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
+				98A88A3423D5C34000493935 /* LogbookViewModel_UITests.swift in Sources */,
 				9826265023912B90003054B8 /* AppDelegate.swift in Sources */,
 				9825602E23D1F67A00EF6D55 /* LogbookViewModel.swift in Sources */,
 				98951660238EA1D100130140 /* LogARockClimbViewModel_UITests.swift in Sources */,
