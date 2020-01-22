@@ -23,6 +23,9 @@ class LogbookViewModel_UITests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         app = XCUIApplication()
+        //may not need this if I have it set in scheme
+        //i.e. could program it or have it run for all tests - to investigate
+//       app.launchEnvironment = ["RESET_DB":"1"]
         app.launch()
         
         app.otherElements.buttons["Log Rock Climb"].tap()
