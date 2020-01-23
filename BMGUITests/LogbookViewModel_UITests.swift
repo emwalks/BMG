@@ -25,9 +25,15 @@ class LogbookViewModel_UITests: XCTestCase {
         app = XCUIApplication()
         //may not need this if I have it set in scheme
         //i.e. could program it or have it run for all tests - to investigate
-//       app.launchEnvironment = ["RESET_DB":"1"]
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func testThatWhenLogbookScreenIsPresentedATableOfLoggedClimbsIsDisplayed() {
+       app.launchArguments = ["RESET_DB"]
         app.launch()
-        
         app.otherElements.buttons["Log Rock Climb"].tap()
         
         let routeField = app.scrollViews.otherElements.textFields["e.g. The Bat"]
@@ -55,27 +61,18 @@ class LogbookViewModel_UITests: XCTestCase {
         partnersField.tap()
         partnersField.typeText(partnersEntered)
         
-        
         let exitRouteFieldKeyboard = app.scrollViews.otherElements
         exitRouteFieldKeyboard.staticTexts["Route:"].tap()
         
         app.scrollViews.otherElements.tables.staticTexts["Alternate"].tap()
         app.scrollViews.otherElements.buttons["Submit"].tap()
-        
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-        
-    func testThatWhenLogbookScreenIsPresentedATableOfLoggedClimbsIsDisplayed() {
+        app.launchArguments = []
         app.launch()
+        
         app.otherElements.buttons["View Logbook"].tap()
         
         XCTAssertTrue(app.tables["logbookView"].children(matching: .cell).element(boundBy: 0).staticTexts["\(routeNameEntered)"].exists)
         
-        //only passes if this class is run in isolation as otherwise other data in the table - also code only in first index of array
-    
     }
     
 }
