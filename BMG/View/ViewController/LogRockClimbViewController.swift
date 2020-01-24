@@ -42,23 +42,33 @@ class LogRockClimbViewController: UIViewController {
         super.viewDidLoad()
         
         logRockClimbViewModel = LogRockClimbViewModel(SQLiteDatabaseServiceFactory.createDbService(), screenNavigationController: SegueNavigationController(self))
+        
         createGradePicker()
         createDatePicker()
         styleTableView.setup()
         submitButton.layer.cornerRadius = 5
         addKeyboardDismissRecogniser()
+        
         routeTextField.backgroundColor = ColorCompatibility.systemGray4
         gradeTextField.backgroundColor = ColorCompatibility.systemGray4
         venueTextField.backgroundColor = ColorCompatibility.systemGray4
         dateTextField.backgroundColor = ColorCompatibility.systemGray4
         partnersTextField.backgroundColor = ColorCompatibility.systemGray4
         styleTableView.backgroundColor = ColorCompatibility.systemGray4
+        
         if #available(iOS 13, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
             navigationItem.largeTitleDisplayMode = .always
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }        
+        
         view.accessibilityIdentifier = "logRockClimbView"
+        routeTextField.accessibilityIdentifier = "routeTextField"
+        gradeTextField.accessibilityIdentifier = "gradeTextField"
+        venueTextField.accessibilityIdentifier = "venueTextField"
+        dateTextField.accessibilityIdentifier = "dateTextField"
+        partnersTextField.accessibilityIdentifier = "partnersTextField"
+        styleTableView.accessibilityIdentifier = "climbingStyleTableView"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
