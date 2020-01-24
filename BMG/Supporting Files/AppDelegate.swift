@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    try fileManager.removeItem(atPath: "\(appDocumetDirectory)/BMGDB.sqlite3")
                    print("Database Deleted via Launch Argument")
                } catch {
-                   print("Error on Delete Database via Launch Argument")
+                   print("Exception on Delete Database via Launch Argument")
                    
                }
            }

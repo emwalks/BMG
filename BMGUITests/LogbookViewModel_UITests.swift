@@ -50,7 +50,7 @@ class LogbookViewModel_UITests: XCTestCase {
         app.toolbars["Toolbar"].buttons["Done"].tap()
         
 //        let partnersField = app.scrollViews.otherElements.containing(.staticText, identifier:"Route:").children(matching: .textField).element(boundBy: 4)
-         let partnersField = app.scrollViews.otherElements.textFields["venueTextField"]
+         let partnersField = app.scrollViews.otherElements.textFields["partnersTextField"]
         partnersField.tap()
         partnersField.typeText(partnersEntered)
         
@@ -76,15 +76,15 @@ class LogbookViewModel_UITests: XCTestCase {
         
     }
     
-//    func testThatWhenLogbookScreenShowsTheClimbDetailsOfClimbEnteredAreDisplayedInATable() {
-//        
-//        app.launchArguments = []
-//        app.launch()
-//        
-//        app.otherElements.buttons["View Logbook"].tap()
-//        
-//        XCTAssertTrue(app.tables["logbookView"].children(matching: .cell).element(boundBy: 0).staticTexts["\(venueNameEntered)"].exists)
+    func testThatWhenLogbookScreenShowsTheClimbDetailsOfClimbEnteredAreDisplayedInATable() {
         
-//    }
+        app.launchArguments = []
+        app.launch()
+        
+        app.otherElements.buttons["View Logbook"].tap()
+        
+        XCTAssertTrue(app.tables["logbookView"].children(matching: .cell).element(boundBy: 0).staticTexts["\(venueNameEntered)"].exists)
+        
+    }
     
 }

@@ -29,7 +29,11 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let rockClimbLogbookCell = tableView.dequeueReusableCell(withIdentifier: "RockClimbCell", for: indexPath)
             
-            rockClimbLogbookCell.textLabel?.text = arrayOfRockClimbsFromDb[indexPath.row].routeName
+            rockClimbLogbookCell.textLabel?.text = "Route: \(arrayOfRockClimbsFromDb[indexPath.row].routeName)"
+        rockClimbLogbookCell.detailTextLabel?.text = """
+        Venue: \(arrayOfRockClimbsFromDb[indexPath.row].venueName)
+        
+        """
             rockClimbLogbookCell.backgroundColor = ColorCompatibility.systemGray4
             return rockClimbLogbookCell
         }

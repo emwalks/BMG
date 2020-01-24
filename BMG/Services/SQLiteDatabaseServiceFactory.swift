@@ -32,7 +32,6 @@ class SQLiteDatabaseServiceFactory {
             }
             
             db = try Connection("\(dbDirectoryString)/BMGDB.sqlite3")
-            print("\(dbDirectoryString)")
         } catch {
             db = nil
             print("Unable to create SQLite database")
