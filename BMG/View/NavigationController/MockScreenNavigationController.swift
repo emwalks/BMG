@@ -14,6 +14,8 @@ public var logbookScreenExists: Bool = false
 
 public var loggedRockClimbDataScreenExists: Bool = false
 
+public var showLogbookDetailScreenExists: Bool = false
+
 
 class MockScreenNavigationController: ScreenNavigationController {
     
@@ -27,6 +29,10 @@ class MockScreenNavigationController: ScreenNavigationController {
         logbookScreenExists = true
     }
     
+    func displayLogbookDetailScreen() {
+        showLogbookDetailScreenExists = true
+    }
+
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
         loggedRockClimbDataScreenExists = true
         self.loggedRockClimbId = loggedRockClimbId
