@@ -31,8 +31,8 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
             
             rockClimbLogbookCell.textLabel?.text = "Route: \(arrayOfRockClimbsFromDb[indexPath.row].routeName)"
         rockClimbLogbookCell.detailTextLabel?.text = """
-        Venue: \(arrayOfRockClimbsFromDb[indexPath.row].venueName)
-        
+        Crag: \(arrayOfRockClimbsFromDb[indexPath.row].venueName)
+        Date: \(arrayOfRockClimbsFromDb[indexPath.row].date)
         """
             rockClimbLogbookCell.backgroundColor = ColorCompatibility.systemGray4
             return rockClimbLogbookCell
