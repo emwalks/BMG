@@ -49,7 +49,7 @@ class LogbookViewModel_UITests: XCTestCase {
         app.pickers.children(matching: .pickerWheel).element(boundBy: 2).adjust(toPickerWheelValue: "2020")
         app.toolbars["Toolbar"].buttons["Done"].tap()
         
-
+        
         let partnersField = app.scrollViews.otherElements.textFields["partnersTextField"]
         partnersField.tap()
         partnersField.typeText(partnersEntered)
@@ -65,36 +65,27 @@ class LogbookViewModel_UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testThatWhenLogbookScreenIsNAvigatedToTheRouteNamesOfClimbEnteredAreDisplayedInATable() {
+    func testThatWhenLogbookScreenIsNavigatedToTheRouteNamesOfClimbEnteredAreDisplayedInTheTitlePositionOfTheCell() {
         
         app.launchArguments = []
         app.launch()
         
         app.otherElements.buttons["View Logbook"].tap()
         
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "cellTitleText").label, "Route: \(routeNameEntered)")
         
-        XCTAssertTrue(app.tables["logbookView"].children(matching: .cell).element(boundBy: 0).staticTexts["Route: \(routeNameEntered)"].exists)
     }
+        
     
-    func testThatWhenLogbookScreenIsNAvigatedToTheVenueNamesOfClimbEnteredAreDisplayedInATable() {
+    func testThatWhenLogbookScreenIsNavigatedToTheGradeAndStyleOfClimbEnteredAreDisplayedInTheDetailPositionOfTheCell(){
         
         app.launchArguments = []
         app.launch()
         
         app.otherElements.buttons["View Logbook"].tap()
-       
-        XCTAssertTrue(app.tables["logbookView"].children(matching: .cell).element(boundBy: 0).staticTexts["Crag: \(venueNameEntered)"].exists)
-    }
-    
-    
-    func testThatWhenLogbookScreenIsNAvigatedToTheDateOfClimbEnteredAreDisplayedInATable(){
         
-        app.launchArguments = []
-        app.launch()
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "cellDetailText").label, "Grade: \(gradeSelected) Style: \(climbingStyleSelected)")
         
-        app.otherElements.buttons["View Logbook"].tap()
-       
-        XCTAssertTrue(app.tables["logbookView"].children(matching: .cell).element(boundBy: 0).staticTexts["Date: \(dateSelected)"].exists)
     }
     
 }

@@ -27,22 +27,25 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let rockClimbLogbookCell = tableView.dequeueReusableCell(withIdentifier: "RockClimbCell", for: indexPath)
-            
-            rockClimbLogbookCell.textLabel?.text = "Route: \(arrayOfRockClimbsFromDb[indexPath.row].routeName)"
+        let rockClimbLogbookCell = tableView.dequeueReusableCell(withIdentifier: "RockClimbCell", for: indexPath)
+        
+        rockClimbLogbookCell.textLabel?.text = "Route: \(arrayOfRockClimbsFromDb[indexPath.row].routeName)"
         rockClimbLogbookCell.detailTextLabel?.text = """
-        Crag: \(arrayOfRockClimbsFromDb[indexPath.row].venueName)
-        Date: \(arrayOfRockClimbsFromDb[indexPath.row].date)
+        Grade: \(arrayOfRockClimbsFromDb[indexPath.row].grade)
+        Style: \(arrayOfRockClimbsFromDb[indexPath.row].climbingStyle)
         """
-            rockClimbLogbookCell.backgroundColor = ColorCompatibility.systemGray4
-            return rockClimbLogbookCell
-        }
+        rockClimbLogbookCell.backgroundColor = ColorCompatibility.systemGray4
+        rockClimbLogbookCell.textLabel?.accessibilityIdentifier = "cellTitleText"
+        rockClimbLogbookCell.detailTextLabel?.accessibilityIdentifier = "cellDetailText"
+        
+        return rockClimbLogbookCell
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.accessibilityIdentifier = "logbookView"
-        
+       
         logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), logbookScreen: self)
     }
     
