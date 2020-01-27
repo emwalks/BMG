@@ -22,8 +22,6 @@ class SQLiteDatabaseService: DatabaseService {
     let loggedPartners = Expression<String?>("loggedPartners")
     let loggedClimbingStyle = Expression<String?>("loggedClimbingStyle")
     
-    
-    
     var rowid:Int64 = -4000
     
     init(_ db: Connection) {
@@ -68,24 +66,25 @@ class SQLiteDatabaseService: DatabaseService {
         do {
             let query = rockClimbTable.filter(loggedRockClimbId == idOfRockClimb)
             for rockClimb in try database.prepare(query) {
+                let climbId = rockClimb[loggedRockClimbId]
                 let routeName = String(describing: rockClimb[loggedRouteName]!)
                 let grade = String(describing: rockClimb[loggedGrade]!)
                 let venueName = String(describing: rockClimb[loggedVenueName]!)
                 let date = String(describing: rockClimb[loggedDate]!)
                 let partners = String(describing: rockClimb[loggedPartners]!)
                 let climbingStyle = String(describing: rockClimb[loggedClimbingStyle]!)
-                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: partners, climbingStyle: climbingStyle)
+                let rockClimbEntryFromDB = RockClimbEntry.init(climbId: climbId, routeName: routeName, grade: grade, venueName: venueName, date: date, partners: partners, climbingStyle: climbingStyle)
                 return rockClimbEntryFromDB
             }
             
         } catch {
             let queryExceptionString = "getRockClimbDataFromDb query failed"
             return RockClimbEntry.init(
-                routeName: queryExceptionString, grade: queryExceptionString, venueName: queryExceptionString, date: queryExceptionString, partners: queryExceptionString, climbingStyle: queryExceptionString)
+                climbId: 400, routeName: queryExceptionString, grade: queryExceptionString, venueName: queryExceptionString, date: queryExceptionString, partners: queryExceptionString, climbingStyle: queryExceptionString)
         }
         let databaseExcpetionString = "an error has occured in getRockClimbDataFromDb function"
         return RockClimbEntry.init(
-            routeName: databaseExcpetionString, grade: databaseExcpetionString, venueName: databaseExcpetionString, date: databaseExcpetionString, partners: databaseExcpetionString, climbingStyle: databaseExcpetionString)
+            climbId: 400, routeName: databaseExcpetionString, grade: databaseExcpetionString, venueName: databaseExcpetionString, date: databaseExcpetionString, partners: databaseExcpetionString, climbingStyle: databaseExcpetionString)
     }
     
     func getAllRockClimbDataFromDb() -> Array<RockClimbEntry> {
@@ -94,13 +93,14 @@ class SQLiteDatabaseService: DatabaseService {
             var arrayOfLogbookEntries = [RockClimbEntry]()
             
             for rockClimb in arrayOfRockClimbsFromDb {
+                let climbId = rockClimb[loggedRockClimbId]
                 let routeName = String(describing: rockClimb[loggedRouteName]!)
                 let grade = String(describing: rockClimb[loggedGrade]!)
                 let venueName = String(describing: rockClimb[loggedVenueName]!)
                 let date = String(describing: rockClimb[loggedDate]!)
                 let partners = String(describing: rockClimb[loggedPartners]!)
                 let climbingStyle = String(describing: rockClimb[loggedClimbingStyle]!)
-                let rockClimbEntryFromDB = RockClimbEntry.init(routeName: routeName, grade: grade, venueName: venueName, date: date, partners: partners, climbingStyle: climbingStyle)
+                let rockClimbEntryFromDB = RockClimbEntry.init(climbId: climbId, routeName: routeName, grade: grade, venueName: venueName, date: date, partners: partners, climbingStyle: climbingStyle)
                 
                 arrayOfLogbookEntries.append(rockClimbEntryFromDB)
             }
@@ -109,7 +109,7 @@ class SQLiteDatabaseService: DatabaseService {
         } catch {
             let queryExceptionString = "getAllRockClimbDataFromDb query failed"
             let queryException = RockClimbEntry.init(
-                routeName: queryExceptionString, grade: queryExceptionString, venueName: queryExceptionString, date: queryExceptionString, partners: queryExceptionString, climbingStyle: queryExceptionString)
+                climbId: 400, routeName: queryExceptionString, grade: queryExceptionString, venueName: queryExceptionString, date: queryExceptionString, partners: queryExceptionString, climbingStyle: queryExceptionString)
             return [queryException]
         }
         

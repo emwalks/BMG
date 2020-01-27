@@ -154,11 +154,11 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let partnersEntered:String = "randomPartner" + String(describing: Int.random(in: 0..<100))
         let climbingStyleSelected:String = "Alternate"
         
-        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)
+       let id = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)
         
         //act
         let actualResult = sqliteDatabaseService.getAllRockClimbDataFromDb()
-        let expectedResult = [RockClimbEntry.init(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)]
+        let expectedResult = [RockClimbEntry.init(climbId: id, routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)]
         
         //assert
         XCTAssertEqual(actualResult, expectedResult)
@@ -176,13 +176,13 @@ class SQLiteDatabaseServiceTests: XCTestCase {
         let partnersEntered:String = "randomPartner" + String(describing: Int.random(in: 0..<100))
         let climbingStyleSelected:String = "Alternate"
         
-        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)
+        let rockClimbEntryId1 = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)
         
-        sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)
+        let rockClimbEntryId2 = sqliteDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)
         
         
         //act
-        let expectedResult = [RockClimbEntry.init(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected), RockClimbEntry.init(routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)]
+        let expectedResult = [RockClimbEntry.init(climbId: rockClimbEntryId1, routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected), RockClimbEntry.init(climbId: rockClimbEntryId2, routeName: routeNameEntered, grade: gradeSelected, venueName: venueNameEntered, date: dateSelected, partners: partnersEntered, climbingStyle: climbingStyleSelected)]
         
         let actualResult = sqliteDatabaseService.getAllRockClimbDataFromDb()
 

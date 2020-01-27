@@ -10,6 +10,7 @@ import Foundation
 
 struct RockClimbEntry: Equatable {
     
+    let climbId: Int64
     let routeName: String
     let grade: String
     let venueName: String
@@ -17,7 +18,8 @@ struct RockClimbEntry: Equatable {
     let partners: String
     let climbingStyle: String
     
-    init(routeName:String, grade:String, venueName:String, date: String, partners: String, climbingStyle: String) {
+    init(climbId: Int64, routeName:String, grade:String, venueName:String, date: String, partners: String, climbingStyle: String) {
+        self.climbId = climbId
         self.routeName = routeName
         self.grade = grade
         self.venueName = venueName
