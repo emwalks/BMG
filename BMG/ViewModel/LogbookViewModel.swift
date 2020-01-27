@@ -9,19 +9,28 @@
 import Foundation
 
 class LogbookViewModel {
-       
-       var databaseService: DatabaseService
-       var logbookScreen: LogbookScreenProtocol
-       
-       init(_ databaseService: DatabaseService, logbookScreen: LogbookScreenProtocol) {
-           self.databaseService = databaseService
-           self.logbookScreen = logbookScreen
-           retrieveAllRockClimbData()
-       }
-       
-       func retrieveAllRockClimbData() {
-           let rockClimbDataArrayReceived = databaseService.getAllRockClimbDataFromDb()
-           logbookScreen.allRockClimbDataPresented(arrayOfRockClimbs: rockClimbDataArrayReceived)
-       }
-       
-   }
+    
+    var databaseService: DatabaseService
+    var logbookScreen: LogbookScreenProtocol
+    var screenNavigationController: ScreenNavigationController
+
+    
+    init(_ databaseService: DatabaseService, logbookScreen: LogbookScreenProtocol, screenNavigationController: ScreenNavigationController) {
+        self.databaseService = databaseService
+        self.logbookScreen = logbookScreen
+        self.screenNavigationController = screenNavigationController
+        retrieveAllRockClimbData()
+    }
+    
+    func retrieveAllRockClimbData() {
+        let rockClimbDataArrayReceived = databaseService.getAllRockClimbDataFromDb()
+        logbookScreen.allRockClimbDataPresented(arrayOfRockClimbs: rockClimbDataArrayReceived)
+    }
+    
+    var idOfRockClimbSelected: Int64 = -1
+    
+    func showRockClimbDetails(){
+        screenNavigationController.displayLoggedRockClimbDataScreen(Int64(idOfRockClimbSelected))
+    }
+    
+}

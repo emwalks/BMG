@@ -65,10 +65,6 @@
 		98B8B41123CC7721009AB071 /* RockClimbHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B8B41023CC7721009AB071 /* RockClimbHomePageViewController.swift */; };
 		98BB333123BE0AF500139725 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB333023BE0AF500139725 /* ColorCompatibility.swift */; };
 		98D223D32397B12A00D3D76A /* RockClimbLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */; };
-		98D6A14A23DB217D00E6DF90 /* ShowLogbookDetailViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6A14923DB217D00E6DF90 /* ShowLogbookDetailViewModel_Tests.swift */; };
-		98D6A14C23DB4F8100E6DF90 /* ShowLogbookDetailScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6A14B23DB4F8100E6DF90 /* ShowLogbookDetailScreenProtocol.swift */; };
-		98D6A14D23DB4FBA00E6DF90 /* ShowLogbookDetailScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6A14B23DB4F8100E6DF90 /* ShowLogbookDetailScreenProtocol.swift */; };
-		98D6A14E23DB4FC200E6DF90 /* ShowLogbookDetailScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6A14B23DB4F8100E6DF90 /* ShowLogbookDetailScreenProtocol.swift */; };
 		98DE2C3D23CDFA1500B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
 		98DE2C4023CDFB4E00B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
 		98DE2C4123CDFB4F00B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
@@ -152,8 +148,6 @@
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbLoggedViewController.swift; sourceTree = "<group>"; };
-		98D6A14923DB217D00E6DF90 /* ShowLogbookDetailViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLogbookDetailViewModel_Tests.swift; sourceTree = "<group>"; };
-		98D6A14B23DB4F8100E6DF90 /* ShowLogbookDetailScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLogbookDetailScreenProtocol.swift; sourceTree = "<group>"; };
 		98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbHomePageViewModel.swift; sourceTree = "<group>"; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,7 +237,6 @@
 				987367D22398042700416C57 /* RockClimbLoggedScreenProtocol.swift */,
 				9825602823D1F50600EF6D55 /* MockLogbookScreen.swift */,
 				9825602A23D1F52300EF6D55 /* LogbookScreenProtocol.swift */,
-				98D6A14B23DB4F8100E6DF90 /* ShowLogbookDetailScreenProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,7 +279,6 @@
 				981B0D4C2369F8CC00D701D0 /* LogRockClimbViewModel_Tests.swift */,
 				98067C7B23914915000AF417 /* RockClimbLoggedViewModel_Tests.swift */,
 				98329F7E23CE2A5E00216D45 /* LogbookViewModel_Tests.swift */,
-				98D6A14923DB217D00E6DF90 /* ShowLogbookDetailViewModel_Tests.swift */,
 				986A246B2387E8DE00BD43E7 /* SQLiteDatabaseService_Tests.swift */,
 				981B0D452369EC0A00D701D0 /* Info.plist */,
 			);
@@ -590,7 +582,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E8ED2D23902EFD00DAFF6A /* DatabaseService.swift in Sources */,
-				98D6A14A23DB217D00E6DF90 /* ShowLogbookDetailViewModel_Tests.swift in Sources */,
 				98E8ED2F23902F0400DAFF6A /* SQLiteDatabaseService.swift in Sources */,
 				986A246C2387E8DE00BD43E7 /* SQLiteDatabaseService_Tests.swift in Sources */,
 				98329F7F23CE2A5E00216D45 /* LogbookViewModel_Tests.swift in Sources */,
@@ -600,7 +591,6 @@
 				9825602F23D1F6B200EF6D55 /* MockLogbookScreen.swift in Sources */,
 				98252AC8239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
 				98E8ED2E23902F0000DAFF6A /* MockDatabaseService.swift in Sources */,
-				98D6A14D23DB4FBA00E6DF90 /* ShowLogbookDetailScreenProtocol.swift in Sources */,
 				9825602C23D1F65900EF6D55 /* LogbookScreenProtocol.swift in Sources */,
 				987367D4239806AA00416C57 /* RockClimbLoggedScreenProtocol.swift in Sources */,
 				9825602D23D1F67600EF6D55 /* LogbookViewModel.swift in Sources */,
@@ -639,7 +629,6 @@
 				8D56E813235F53670024CD50 /* Grades.swift in Sources */,
 				98DE2C3D23CDFA1500B91893 /* RockClimbHomePageViewModel.swift in Sources */,
 				8D2C75F52359F9590081D22F /* LogRockClimbViewModel.swift in Sources */,
-				98D6A14C23DB4F8100E6DF90 /* ShowLogbookDetailScreenProtocol.swift in Sources */,
 				986A246E2387E9CF00BD43E7 /* SQLiteDatabaseService.swift in Sources */,
 				98067C7E239173A6000AF417 /* RockClimbLoggedViewModel.swift in Sources */,
 				9825602B23D1F52300EF6D55 /* LogbookScreenProtocol.swift in Sources */,
@@ -658,7 +647,6 @@
 				98252AC9239680EA00C71EAC /* SegueNavigationController.swift in Sources */,
 				98A88A3423D5C34000493935 /* LogbookViewModel_UITests.swift in Sources */,
 				9826265023912B90003054B8 /* AppDelegate.swift in Sources */,
-				98D6A14E23DB4FC200E6DF90 /* ShowLogbookDetailScreenProtocol.swift in Sources */,
 				9825602E23D1F67A00EF6D55 /* LogbookViewModel.swift in Sources */,
 				98951660238EA1D100130140 /* LogARockClimbViewModel_UITests.swift in Sources */,
 				988535F123C8E22800D16173 /* RockClimbHomePageViewModel_UITests.swift in Sources */,

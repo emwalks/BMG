@@ -16,9 +16,10 @@ class LogbookViewModel_Tests: XCTestCase {
         
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
         
         let actualResult = mockLogbookScreen.tableOfLoggedClimbs
         
@@ -32,9 +33,10 @@ class LogbookViewModel_Tests: XCTestCase {
         
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.routeNameOnScreen)
     }
@@ -45,9 +47,10 @@ class LogbookViewModel_Tests: XCTestCase {
         
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.gradeOnScreen)
     }
@@ -58,22 +61,24 @@ class LogbookViewModel_Tests: XCTestCase {
         
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.venueNameOnScreen)
     }
     
     func testThatWhenLogbookScreenIsPresentedTheLoggedClimbDatesAreDisplayed(){
-        
+
         //arrange
         
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.dateOnScreen)
     }
@@ -84,9 +89,10 @@ class LogbookViewModel_Tests: XCTestCase {
         
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.partnersOnScreen)
     }
@@ -94,13 +100,31 @@ class LogbookViewModel_Tests: XCTestCase {
     func testThatWhenLogbookScreenIsPresentedTheLoggedClimbStyleAreDisplayed(){
         
         //arrange
+        //arrange
         
         let mockDatabaseService = MockDatabaseService()
         let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen)
+        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.climbingStyleOnScreen)
     }
+    
+    
+    func testWhenShowRockClimbDetailButtonIsClickedTheRockClimbLoggedScreenIsNavigatedToViaMockScreenNavigationController() {
+        //arrange
+        let databaseService = MockDatabaseService()
+        let mockLogbookScreen = MockLogbookScreen()
+        let mockScreenNavigationController = MockScreenNavigationController()
+        let logbookViewModel = LogbookViewModel(databaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+        
+        //act
+        logbookViewModel.showRockClimbDetails()
+        
+        //assert
+        XCTAssertEqual(logbookViewModel.idOfRockClimbSelected, mockScreenNavigationController.loggedRockClimbId)
+    }
+    
 }

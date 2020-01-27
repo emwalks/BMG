@@ -46,7 +46,7 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
         
         tableView.accessibilityIdentifier = "logbookView"
        
-        logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), logbookScreen: self)
+        logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), logbookScreen: self, screenNavigationController: SegueNavigationController(self))
     }
     
 }
