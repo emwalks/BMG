@@ -30,7 +30,7 @@ class LogbookViewModel {
     var idOfRockClimbSelected: Int64 = -1
     
     func showRockClimbDetails(){
-        screenNavigationController.displayLoggedRockClimbDataScreen(Int64(idOfRockClimbSelected))
+        screenNavigationController.displayLoggedRockClimbDataScreen(idOfRockClimbSelected)
     }
     
 }
