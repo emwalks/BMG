@@ -88,4 +88,21 @@ class LogbookViewModel_UITests: XCTestCase {
         
     }
     
+    func testThatWhenShowDetailButtonIsClickedTheLoggedClimbDataIsShown(){
+        
+        app.launchArguments = []
+        app.launch()
+        
+        app.otherElements.buttons["View Logbook"].tap()
+        app.tables["logbookView"].cells.children(matching: .other).element(boundBy: 0).tap()
+       
+        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "routeNamePresented").exists)
+        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "gradePresented").exists)
+        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").exists)
+        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "datePresented").exists)
+        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").exists)
+        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "climbingStylePresented").exists)
+        
+    }
+    
 }

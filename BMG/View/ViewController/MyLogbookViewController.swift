@@ -34,13 +34,28 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
         Grade: \(arrayOfRockClimbsFromDb[indexPath.row].grade)
         Style: \(arrayOfRockClimbsFromDb[indexPath.row].climbingStyle)
         """
+        
         rockClimbLogbookCell.backgroundColor = ColorCompatibility.systemGray4
         rockClimbLogbookCell.textLabel?.accessibilityIdentifier = "cellTitleText"
         rockClimbLogbookCell.detailTextLabel?.accessibilityIdentifier = "cellDetailText"
+        rockClimbLogbookCell.accessoryView?.accessibilityIdentifier = "disclosureAccessory"
         
         return rockClimbLogbookCell
-    }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ViewLoggedRockClimbSegue" {
+            if let rockClimbLogbookCell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: rockClimbLogbookCell),
+                let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
+                rockClimbLoggedViewController.rockClimbIdFromSegue = arrayOfRockClimbsFromDb[indexPath.row].climbId
+            }
+        }
+    }
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

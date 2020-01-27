@@ -312,8 +312,8 @@
                                                     <constraint firstItem="3t2-Y3-oUu" firstAttribute="top" secondItem="FXg-Jp-Maz" secondAttribute="bottom" constant="15" id="xVu-1p-cfy"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your climb has been logged!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDp-YF-bFo">
-                                                <rect key="frame" x="40" y="30" width="258" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged climb details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDp-YF-bFo">
+                                                <rect key="frame" x="40" y="30" width="189.5" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" red="0.82884467959999997" green="0.79044581709999995" blue="0.98328930140000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7G-Te-gvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3486" y="-471"/>
+            <point key="canvasLocation" x="3581" y="-471"/>
         </scene>
         <!--Home-->
         <scene sceneID="YIF-dB-JkO">
@@ -426,7 +426,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.08235294118" green="0.1176470588" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RockClimbCell" editingAccessoryType="disclosureIndicator" textLabel="rDD-pQ-7XW" detailTextLabel="fZP-ly-raU" style="IBUITableViewCellStyleSubtitle" id="GoC-Qy-32c">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RockClimbCell" textLabel="rDD-pQ-7XW" detailTextLabel="fZP-ly-raU" style="IBUITableViewCellStyleSubtitle" id="GoC-Qy-32c">
                                 <rect key="frame" x="20" y="55.5" width="374" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GoC-Qy-32c" id="hav-E5-g2V">
@@ -450,6 +450,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <connections>
+                                    <segue destination="tje-OO-8aO" kind="show" identifier="ViewLoggedRockClimbSegue" id="K54-nm-r9m"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -487,5 +490,8 @@
         <image name="book" catalog="system" width="64" height="50"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K54-nm-r9m"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
