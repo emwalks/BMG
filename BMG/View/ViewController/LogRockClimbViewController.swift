@@ -72,7 +72,7 @@ class LogRockClimbViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RockClimbSubmittedSegue" {
+        if segue.identifier == "ViewLoggedRockClimbSegue" {
             if let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
                 rockClimbLoggedViewController.rockClimbIdFromSegue = (sender as? Int64)!
             }
