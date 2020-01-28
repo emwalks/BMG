@@ -27,10 +27,12 @@ class LogbookViewModel {
         logbookScreen.allRockClimbDataPresented(arrayOfRockClimbs: rockClimbDataArrayReceived)
     }
     
-    var idOfRockClimbSelected: Int64 = -1
-    
-    func showRockClimbDetails(){
-        screenNavigationController.displayLoggedRockClimbDataScreen(idOfRockClimbSelected)
-    }
+    //MARK: TODO
+    //passing UI test means this data is passing only via segue and not via VM at all - is this correct?
+//    var idOfRockClimbSelected: Int64 = -1
+//    in logRockClimbVM needs to be returned from db and passed to segue nav controller
+//    func showRockClimbDetails(){
+//        screenNavigationController.displayLoggedRockClimbDataScreen(idOfRockClimbSelected)
+//    }
     
 }

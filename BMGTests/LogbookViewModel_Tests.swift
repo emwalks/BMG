@@ -113,18 +113,18 @@ class LogbookViewModel_Tests: XCTestCase {
     }
     
     
-    func testWhenShowRockClimbDetailButtonIsClickedTheRockClimbLoggedScreenIsNavigatedToViaMockScreenNavigationController() {
-        //arrange
-        let databaseService = MockDatabaseService()
-        let mockLogbookScreen = MockLogbookScreen()
-        let mockScreenNavigationController = MockScreenNavigationController()
-        let logbookViewModel = LogbookViewModel(databaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
-        
-        //act
-        logbookViewModel.showRockClimbDetails()
-        
-        //assert
-        XCTAssertEqual(logbookViewModel.idOfRockClimbSelected, mockScreenNavigationController.loggedRockClimbId)
-    }
-    
+//    func testWhenShowRockClimbDetailButtonIsClickedTheRockClimbLoggedScreenIsNavigatedToViaMockScreenNavigationController() {
+//        //arrange
+//        let databaseService = MockDatabaseService()
+//        let mockLogbookScreen = MockLogbookScreen()
+//        let mockScreenNavigationController = MockScreenNavigationController()
+//        let logbookViewModel = LogbookViewModel(databaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+//
+//        //act
+//        logbookViewModel.showRockClimbDetails()
+//
+//        //assert
+//        XCTAssertEqual(logbookViewModel.idOfRockClimbSelected, mockScreenNavigationController.loggedRockClimbId)
+//    }
+//
 }
