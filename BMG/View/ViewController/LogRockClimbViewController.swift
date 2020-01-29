@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogRockClimbViewController: UIViewController {
+class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
     
     var logRockClimbViewModel: LogRockClimbViewModel? = nil
     
@@ -70,6 +70,18 @@ class LogRockClimbViewController: UIViewController {
         dateTextField.accessibilityIdentifier = "dateTextField"
         partnersTextField.accessibilityIdentifier = "partnersTextField"
         styleTableView.accessibilityIdentifier = "climbingStyleTableView"
+        
+        routeTextField.tag = 1
+        gradeTextField.tag = 2
+        venueTextField.tag = 3
+        dateTextField.tag = 4
+        partnersTextField.tag = 5
+        
+        routeTextField.delegate = self
+        gradeTextField.delegate = self
+        venueTextField.delegate = self
+        dateTextField.delegate = self
+        partnersTextField.delegate = self
         
         ///adds observers to readjust the view
         let notificationCenter = NotificationCenter.default
@@ -139,6 +151,18 @@ class LogRockClimbViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+
+        return true
+    }
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
