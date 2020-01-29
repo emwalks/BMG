@@ -197,10 +197,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log a Rock Climb" leftItemsSupplementBackButton="YES" id="6Bx-fs-qhg"/>
                     <connections>
+                        <outlet property="contentView" destination="WVk-Oc-wyO" id="uqQ-yr-5bo"/>
                         <outlet property="dateTextField" destination="ZMZ-vz-h5Z" id="9qR-ZP-oov"/>
                         <outlet property="gradeTextField" destination="OZ9-ZG-hju" id="wgb-X1-Ubj"/>
                         <outlet property="partnersTextField" destination="qdT-dw-izn" id="XiP-SA-e7I"/>
                         <outlet property="routeTextField" destination="zKC-sS-i7R" id="jTa-vx-ar0"/>
+                        <outlet property="scrollView" destination="jK6-zd-n2f" id="hkj-lh-tpo"/>
                         <outlet property="styleTableView" destination="fjU-do-nKr" id="gR8-nt-UT3"/>
                         <outlet property="submitButton" destination="UMQ-LW-lla" id="UiW-0B-i5g"/>
                         <outlet property="venueTextField" destination="e7l-u4-zzn" id="bGb-JZ-ekh"/>
@@ -491,7 +493,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gQW-Ei-qGk"/>
+        <segue reference="K54-nm-r9m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

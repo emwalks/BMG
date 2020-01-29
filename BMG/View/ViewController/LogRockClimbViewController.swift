@@ -46,9 +46,10 @@ class LogRockClimbViewController: UIViewController {
         createGradePicker()
         createDatePicker()
         styleTableView.setup()
-        submitButton.layer.cornerRadius = 5
         addKeyboardDismissRecogniser()
+        setDoneOnKeyboard()
         
+        submitButton.layer.cornerRadius = 5
         routeTextField.backgroundColor = ColorCompatibility.systemGray4
         gradeTextField.backgroundColor = ColorCompatibility.systemGray4
         venueTextField.backgroundColor = ColorCompatibility.systemGray4
@@ -69,6 +70,12 @@ class LogRockClimbViewController: UIViewController {
         dateTextField.accessibilityIdentifier = "dateTextField"
         partnersTextField.accessibilityIdentifier = "partnersTextField"
         styleTableView.accessibilityIdentifier = "climbingStyleTableView"
+        
+        ///adds observers to readjust the view
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+                
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -132,6 +139,37 @@ class LogRockClimbViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = .zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        }
+
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+
+    }
+    
+    func setDoneOnKeyboard() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        self.routeTextField.inputAccessoryView = keyboardToolbar
+        self.venueTextField.inputAccessoryView = keyboardToolbar
+        self.partnersTextField.inputAccessoryView = keyboardToolbar
+    }
+    
     func addKeyboardDismissRecogniser(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         // Fixes bug where you can't tap on tableview
@@ -145,3 +183,4 @@ class LogRockClimbViewController: UIViewController {
         self.view.removeGestureRecognizer(tap)
     }
 }
+

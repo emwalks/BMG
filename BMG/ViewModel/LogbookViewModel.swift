@@ -27,8 +27,9 @@ class LogbookViewModel {
         logbookScreen.allRockClimbDataPresented(arrayOfRockClimbs: rockClimbDataArrayReceived)
     }
     
-    //MARK: TODO
+    //MARK: TODO pass the id to the VM not to the next VC
     //passing UI test means this data is passing only via segue and not via VM at all - is this correct?
+    //
 //    var idOfRockClimbSelected: Int64 = -1
 //    in logRockClimbVM needs to be returned from db and passed to segue nav controller
 //    func showRockClimbDetails(){
