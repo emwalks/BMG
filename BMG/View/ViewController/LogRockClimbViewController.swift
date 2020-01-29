@@ -23,12 +23,12 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var venueTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var partnersTextField: UITextField!
-    @IBOutlet weak var styleTableView: ClimbingStylesTableView!
+    @IBOutlet weak var climbingStyleTableView: ClimbingStylesTableView!
     @IBOutlet weak var submitButton: UIButton!
     
     
     @IBAction func clickedSubmitButton(_ sender: UIButton) {
-        logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given", grade: gradeTextField.text ?? "No grade selected", venueName: venueTextField.text ?? "No venue given", date: dateTextField.text ?? "No date selected", partners: partnersTextField.text ?? "No partner given", climbingStyle: styleTableView.climbingStyles[styleTableView.climbingStyleSelectedIndex])
+        logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given", grade: gradeTextField.text ?? "No grade selected", venueName: venueTextField.text ?? "No venue given", date: dateTextField.text ?? "No date selected", partners: partnersTextField.text ?? "No partner given", climbingStyle: climbingStyleTableView.climbingStyles[climbingStyleTableView.climbingStyleSelectedIndex])
         
         routeTextField.text = ""
         gradeTextField.text = ""
@@ -48,7 +48,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         createGradePicker()
         createDatePicker()
         createKeyboardToolbar()
-        styleTableView.setup()
+        climbingStyleTableView.setup()
         addKeyboardDismissRecogniser()
         
         submitButton.layer.cornerRadius = 5
@@ -57,7 +57,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         venueTextField.backgroundColor = ColorCompatibility.systemGray4
         dateTextField.backgroundColor = ColorCompatibility.systemGray4
         partnersTextField.backgroundColor = ColorCompatibility.systemGray4
-        styleTableView.backgroundColor = ColorCompatibility.systemGray4
+        climbingStyleTableView.backgroundColor = ColorCompatibility.systemGray4
         
         if #available(iOS 13, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
@@ -71,7 +71,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         venueTextField.accessibilityIdentifier = "venueTextField"
         dateTextField.accessibilityIdentifier = "dateTextField"
         partnersTextField.accessibilityIdentifier = "partnersTextField"
-        styleTableView.accessibilityIdentifier = "climbingStyleTableView"
+        climbingStyleTableView.accessibilityIdentifier = "climbingStyleTableView"
         
         routeTextField.tag = 1
         gradeTextField.tag = 2
@@ -87,8 +87,8 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         
         ///adds observers to readjust the view
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustViewForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustViewForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
     }
     
@@ -126,21 +126,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         gradeTextField.text = logRockClimbViewModel!.gradeText()
         self.view.endEditing(true)
     }
-    
-    
-    func createKeyboardToolbar() {
-        keyboardToolbar.setup(doneSelector: #selector(dismissKeyboard), cancelSelector: #selector(cancelKeyboardButton))
         
-        self.routeTextField.inputAccessoryView = keyboardToolbar
-        self.venueTextField.inputAccessoryView = keyboardToolbar
-        self.partnersTextField.inputAccessoryView = keyboardToolbar
-    }
-    
-    @objc func cancelKeyboardButton(){
-        
-        self.view.endEditing(true)
-    }
-    
     func createDatePicker(){
         
         datePicker.formatDatePicker()
@@ -150,10 +136,18 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func doneDatePicker(){
-        let selectedDate =   datePicker.date
+        let selectedDate = datePicker.date
         
         dateTextField.text = logRockClimbViewModel!.dateFormatter(date: selectedDate)
         self.view.endEditing(true)
+    }
+    
+    func createKeyboardToolbar() {
+        keyboardToolbar.setup(doneSelector: #selector(dismissKeyboard), cancelSelector: #selector(cancelKeyboardButton))
+        
+        self.routeTextField.inputAccessoryView = keyboardToolbar
+        self.venueTextField.inputAccessoryView = keyboardToolbar
+        self.partnersTextField.inputAccessoryView = keyboardToolbar
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -170,7 +164,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @objc func adjustForKeyboard(notification: Notification) {
+    @objc func adjustViewForKeyboard(notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         
         let keyboardScreenEndFrame = keyboardValue.cgRectValue
@@ -197,6 +191,10 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.endEditing(true)
         self.view.removeGestureRecognizer(tap)
+    }
+    
+    @objc func cancelKeyboardButton(){
+        self.view.endEditing(true)
     }
 }
 

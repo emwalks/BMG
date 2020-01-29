@@ -197,12 +197,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log a Rock Climb" leftItemsSupplementBackButton="YES" id="6Bx-fs-qhg"/>
                     <connections>
+                        <outlet property="climbingStyleTableView" destination="fjU-do-nKr" id="gR8-nt-UT3"/>
                         <outlet property="dateTextField" destination="ZMZ-vz-h5Z" id="9qR-ZP-oov"/>
                         <outlet property="gradeTextField" destination="OZ9-ZG-hju" id="wgb-X1-Ubj"/>
                         <outlet property="partnersTextField" destination="qdT-dw-izn" id="XiP-SA-e7I"/>
                         <outlet property="routeTextField" destination="zKC-sS-i7R" id="jTa-vx-ar0"/>
                         <outlet property="scrollView" destination="jK6-zd-n2f" id="hkj-lh-tpo"/>
-                        <outlet property="styleTableView" destination="fjU-do-nKr" id="gR8-nt-UT3"/>
                         <outlet property="submitButton" destination="UMQ-LW-lla" id="UiW-0B-i5g"/>
                         <outlet property="venueTextField" destination="e7l-u4-zzn" id="bGb-JZ-ekh"/>
                         <segue destination="tje-OO-8aO" kind="show" identifier="ViewLoggedRockClimbSegue" id="gQW-Ei-qGk"/>
