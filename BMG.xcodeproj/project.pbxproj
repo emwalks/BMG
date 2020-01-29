@@ -65,6 +65,7 @@
 		98B8B41123CC7721009AB071 /* RockClimbHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B8B41023CC7721009AB071 /* RockClimbHomePageViewController.swift */; };
 		98BB333123BE0AF500139725 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB333023BE0AF500139725 /* ColorCompatibility.swift */; };
 		98D223D32397B12A00D3D76A /* RockClimbLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */; };
+		98D98AB023E1CD8E00B0FD11 /* CustomKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D98AAF23E1CD8E00B0FD11 /* CustomKeyboardToolbar.swift */; };
 		98DE2C3D23CDFA1500B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
 		98DE2C4023CDFB4E00B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
 		98DE2C4123CDFB4F00B91893 /* RockClimbHomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */; };
@@ -148,6 +149,7 @@
 		98C7CC29237070FD002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7CC2B2370714A002AA781 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D223D22397B12A00D3D76A /* RockClimbLoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbLoggedViewController.swift; sourceTree = "<group>"; };
+		98D98AAF23E1CD8E00B0FD11 /* CustomKeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboardToolbar.swift; sourceTree = "<group>"; };
 		98DE2C3C23CDFA1500B91893 /* RockClimbHomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockClimbHomePageViewModel.swift; sourceTree = "<group>"; };
 		9B58C51DD30D429BC843CD73 /* Pods-BMGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMGTests.release.xcconfig"; path = "Target Support Files/Pods-BMGTests/Pods-BMGTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCA0F277C9CF1277C8E25B83 /* Pods_BMGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +234,7 @@
 				8D2C75F6235A09F30081D22F /* ClimbingStylesTableView.swift */,
 				8D2C75F8235A0CDC0081D22F /* CustomDatePicker.swift */,
 				8D2C75FA235A0CEE0081D22F /* CustomPickerToolbar.swift */,
+				98D98AAF23E1CD8E00B0FD11 /* CustomKeyboardToolbar.swift */,
 				8DF3EEF6235DF2FE00D5D0E2 /* GradePickerView.swift */,
 				987367CF2398031300416C57 /* MockRockClimbLoggedScreen.swift */,
 				987367D22398042700416C57 /* RockClimbLoggedScreenProtocol.swift */,
@@ -611,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98BB333123BE0AF500139725 /* ColorCompatibility.swift in Sources */,
+				98D98AB023E1CD8E00B0FD11 /* CustomKeyboardToolbar.swift in Sources */,
 				986A24672386DE2400BD43E7 /* MockDatabaseService.swift in Sources */,
 				98329F7D23CE248500216D45 /* MyLogbookViewController.swift in Sources */,
 				8D2C75F9235A0CDC0081D22F /* CustomDatePicker.swift in Sources */,

@@ -197,7 +197,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log a Rock Climb" leftItemsSupplementBackButton="YES" id="6Bx-fs-qhg"/>
                     <connections>
-                        <outlet property="contentView" destination="WVk-Oc-wyO" id="uqQ-yr-5bo"/>
                         <outlet property="dateTextField" destination="ZMZ-vz-h5Z" id="9qR-ZP-oov"/>
                         <outlet property="gradeTextField" destination="OZ9-ZG-hju" id="wgb-X1-Ubj"/>
                         <outlet property="partnersTextField" destination="qdT-dw-izn" id="XiP-SA-e7I"/>

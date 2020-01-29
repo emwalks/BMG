@@ -1,15 +1,16 @@
 //
-//  CustomDatePickerToolbar.swift
+//  CustomKeyboardToolbar.swift
 //  BMG
 //
-//  Created by Andrew Wilson-Jones on 18/10/2019.
-//  Copyright © 2019 Emma Walker - TVandMobile Platforms - Core Engineering. All rights reserved.
+//  Created by Emma Walker - TVandMobile Platforms - Core Engineering on 29/01/2020.
+//  Copyright © 2020 Emma Walker - TVandMobile Platforms - Core Engineering. All rights reserved.
 //
 
 import Foundation
+
 import UIKit
 
-class CustomPickerToolbar: UIToolbar{
+class CustomKeyboardToolbar: UIToolbar {
     
     func setup(doneSelector: Selector, cancelSelector: Selector){
         

@@ -12,10 +12,12 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
     
     var logRockClimbViewModel: LogRockClimbViewModel? = nil
     
+    private let keyboardToolbar = CustomKeyboardToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     private let datePicker = CustomDatePicker()
     private let datePickerToolbar = CustomPickerToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     private let gradePicker = GradePickerView()
     private let gradePickerToolbar = CustomPickerToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    
     @IBOutlet weak var routeTextField: UITextField!
     @IBOutlet weak var gradeTextField: UITextField!
     @IBOutlet weak var venueTextField: UITextField!
@@ -45,9 +47,9 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         
         createGradePicker()
         createDatePicker()
+        createKeyboardToolbar()
         styleTableView.setup()
         addKeyboardDismissRecogniser()
-        setDoneOnKeyboard()
         
         submitButton.layer.cornerRadius = 5
         routeTextField.backgroundColor = ColorCompatibility.systemGray4
@@ -87,7 +89,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-                
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,7 +105,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         // TODO: Make picker uneditable / enforce validation
         
         gradePicker.setup(withData: logRockClimbViewModel!.rockClimbGrades)
-        gradePickerToolbar.setup(doneSelector: #selector(doneGradePicker), cancelSelector: #selector(cancelGradePicker))
+        gradePickerToolbar.setup(doneSelector: #selector(doneGradePicker), cancelSelector: #selector(cancelKeyboardButton))
         gradeTextField.inputAccessoryView = gradePickerToolbar
         gradeTextField.inputView = gradePicker
     }
@@ -125,16 +127,24 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    @objc func cancelGradePicker(){
+    
+    func createKeyboardToolbar() {
+        keyboardToolbar.setup(doneSelector: #selector(dismissKeyboard), cancelSelector: #selector(cancelKeyboardButton))
+        
+        self.routeTextField.inputAccessoryView = keyboardToolbar
+        self.venueTextField.inputAccessoryView = keyboardToolbar
+        self.partnersTextField.inputAccessoryView = keyboardToolbar
+    }
+    
+    @objc func cancelKeyboardButton(){
         
         self.view.endEditing(true)
     }
     
-    
     func createDatePicker(){
         
         datePicker.formatDatePicker()
-        datePickerToolbar.setup(doneSelector: #selector(doneDatePicker), cancelSelector: #selector(cancelDatePicker))
+        datePickerToolbar.setup(doneSelector: #selector(doneDatePicker), cancelSelector: #selector(cancelKeyboardButton))
         dateTextField.inputAccessoryView = datePickerToolbar
         dateTextField.inputView = datePicker
     }
@@ -146,52 +156,34 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    @objc func cancelDatePicker(){
-        
-        self.view.endEditing(true)
-    }
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
-
+        
         if let nextResponder = textField.superview?.viewWithTag(nextTag) {
             nextResponder.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }
-
+        
         return true
     }
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-
+    
     @objc func adjustForKeyboard(notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-
+        
         let keyboardScreenEndFrame = keyboardValue.cgRectValue
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
+        
         if notification.name == UIResponder.keyboardWillHideNotification {
             scrollView.contentInset = .zero
         } else {
             scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
         }
-
+        
         scrollView.scrollIndicatorInsets = scrollView.contentInset
-
-    }
-    
-    func setDoneOnKeyboard() {
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.sizeToFit()
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
-        keyboardToolbar.items = [flexBarButton, doneBarButton]
-        self.routeTextField.inputAccessoryView = keyboardToolbar
-        self.venueTextField.inputAccessoryView = keyboardToolbar
-        self.partnersTextField.inputAccessoryView = keyboardToolbar
+        
     }
     
     func addKeyboardDismissRecogniser(){
