@@ -75,7 +75,7 @@ class LogbookViewModel_UITests: XCTestCase {
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "cellTitleText").label, "Route: \(routeNameEntered)")
         
     }
-        
+    
     
     func testThatWhenLogbookScreenIsNavigatedToTheGradeAndStyleOfClimbEnteredAreDisplayedInTheDetailPositionOfTheCell(){
         
@@ -95,13 +95,25 @@ class LogbookViewModel_UITests: XCTestCase {
         
         app.otherElements.buttons["View Logbook"].tap()
         app.tables["logbookView"].cells.children(matching: .other).element(boundBy: 0).tap()
-       
+        
         XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "routeNamePresented").exists)
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "routeNamePresented").label, " Route Name: \(routeNameEntered)")
+        
         XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "gradePresented").exists)
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "gradePresented").label, " Grade: \(gradeSelected)")
+        
         XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").exists)
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").label, " Venue: \(venueNameEntered)")
+        
         XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "datePresented").exists)
-        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "venueNamePresented").exists)
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "datePresented").label, " Date: \(dateSelected)")
+        
+        XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "partnersPresented").exists)
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "partnersPresented").label, " Partners: \(partnersEntered)")
+        
         XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "climbingStylePresented").exists)
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "climbingStylePresented").label, " Style: \(climbingStyleSelected)")
+        
         
     }
     
