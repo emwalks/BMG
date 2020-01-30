@@ -44,14 +44,14 @@ class RockClimbLoggedViewModel_UITests: XCTestCase {
     }
     
     func testWhenAGradeIsEnteredItIsPassedViaSenderInSegueToNextViewController() {
-        let gradeSelected = "VD 7b"
+        let gradeSelected = "VDiff 7b"
         
         app.otherElements.buttons["Log Rock Climb"].tap()
 
         
         let gradeField = app.scrollViews.otherElements.textFields["E1 5b, E1 5c, etc."]
         gradeField.tap()
-        app.pickerWheels["M"].adjust(toPickerWheelValue: "VD")
+        app.pickerWheels["Mod"].adjust(toPickerWheelValue: "VDiff")
         app.pickers.children(matching: .pickerWheel).element(boundBy: 1).adjust(toPickerWheelValue: "7b")
         app.toolbars["Toolbar"].buttons["Done"].tap()
         

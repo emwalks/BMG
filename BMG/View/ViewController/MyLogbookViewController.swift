@@ -14,6 +14,13 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     var logbookViewModel: LogbookViewModel? = nil
     var arrayOfRockClimbsFromDb: Array<RockClimbEntry> = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.accessibilityIdentifier = "logbookView"
+        
+        logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), logbookScreen: self, screenNavigationController: SegueNavigationController(self))
+    }
+    
     func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>) {
         arrayOfRockClimbsFromDb = arrayOfRockClimbs
     }
@@ -21,7 +28,7 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfRockClimbsFromDb.count
     }
@@ -43,25 +50,21 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
         return rockClimbLogbookCell
         
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let idOfSelectedClimb = arrayOfRockClimbsFromDb[indexPath.row].climbId
+        logbookViewModel?.idOfRockClimbSelected = idOfSelectedClimb
+        logbookViewModel?.showRockClimbDetails()
+
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ViewLoggedRockClimbSegue" {
-            if let rockClimbLogbookCell = sender as? UITableViewCell,
-                let indexPath = tableView.indexPath(for: rockClimbLogbookCell),
-                let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
-                rockClimbLoggedViewController.rockClimbIdFromSegue = arrayOfRockClimbsFromDb[indexPath.row].climbId
+            if let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
+                rockClimbLoggedViewController.rockClimbIdFromSegue = (sender as? Int64)!
             }
         }
-    }
-    
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.accessibilityIdentifier = "logbookView"
-       
-        logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), logbookScreen: self, screenNavigationController: SegueNavigationController(self))
     }
     
 }

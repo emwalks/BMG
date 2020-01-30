@@ -12,7 +12,7 @@ class LogbookViewModel_UITests: XCTestCase {
     
     var app: XCUIApplication!
     let routeNameEntered: String = "randomRouteName" + String(describing: Int.random(in: 500..<600))
-    let gradeSelected = "VD 7b"
+    let gradeSelected = "VDiff 7b"
     let venueNameEntered: String = "randomVenueName" + String(describing: Int.random(in: 500..<600))
     let dateSelected = "31/01/2020"
     let partnersEntered: String = "randomPartner" + String(describing: Int.random(in: 500..<600))
@@ -34,7 +34,7 @@ class LogbookViewModel_UITests: XCTestCase {
         
         let gradeField = app.scrollViews.otherElements.textFields["gradeTextField"]
         gradeField.tap()
-        app.pickerWheels["M"].adjust(toPickerWheelValue: "VD")
+        app.pickerWheels["Mod"].adjust(toPickerWheelValue: "VDiff")
         app.pickers.children(matching: .pickerWheel).element(boundBy: 1).adjust(toPickerWheelValue: "7b")
         app.toolbars["Toolbar"].buttons["Done"].tap()
         

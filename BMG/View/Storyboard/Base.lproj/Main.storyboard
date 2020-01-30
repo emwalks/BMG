@@ -451,9 +451,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <connections>
-                                    <segue destination="tje-OO-8aO" kind="show" identifier="ViewLoggedRockClimbSegue" id="K54-nm-r9m"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -462,6 +459,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Logbook" id="Wu8-Fg-6Ea"/>
+                    <connections>
+                        <segue destination="tje-OO-8aO" kind="show" identifier="ViewLoggedRockClimbSegue" id="aQl-RD-EvG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jq-rd-PyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -492,7 +492,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K54-nm-r9m"/>
+        <segue reference="aQl-RD-EvG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
