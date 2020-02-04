@@ -29,7 +29,5 @@ class SegueNavigationController: ScreenNavigationController {
         viewController.performSegue(withIdentifier: "ViewLoggedRockClimbSegue", sender: loggedRockClimbId)
     }
     
-    
-    
 }
 
