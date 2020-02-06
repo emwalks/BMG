@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
+    func thereAreThisManyRows(count: Int) {
+        
+    }
+    
+    func addObserver(obs: LogbookScreenProtocolListener) {
+        
+    }
+    
     
     var logbookViewModel: LogbookViewModel? = nil
     var arrayOfRockClimbsFromDb: Array<RockClimbEntry> = []
@@ -25,6 +33,10 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
         arrayOfRockClimbsFromDb = arrayOfRockClimbs
     }
     
+    func userWantsToSeeRowAt(index: Int) -> RockClimbEntry {
+            return arrayOfRockClimbsFromDb[index]
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -36,10 +48,12 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let rockClimbLogbookCell = tableView.dequeueReusableCell(withIdentifier: "RockClimbCell", for: indexPath)
         
-        rockClimbLogbookCell.textLabel?.text = "Route: \(arrayOfRockClimbsFromDb[indexPath.row].routeName)"
+        let rockClimbEntry = userWantsToSeeRowAt(index: indexPath.row)
+        
+        rockClimbLogbookCell.textLabel?.text = "Route: \(rockClimbEntry.routeName)"
         rockClimbLogbookCell.detailTextLabel?.text = """
-        Grade: \(arrayOfRockClimbsFromDb[indexPath.row].grade)
-        Style: \(arrayOfRockClimbsFromDb[indexPath.row].climbingStyle)
+        Grade: \(rockClimbEntry.grade)
+        Style: \(rockClimbEntry.climbingStyle)
         """
         
         rockClimbLogbookCell.backgroundColor = ColorCompatibility.systemGray4
@@ -53,7 +67,9 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let idOfSelectedClimb = arrayOfRockClimbsFromDb[indexPath.row].climbId
+        let rockClimbEntry = userWantsToSeeRowAt(index: indexPath.row)
+        
+        let idOfSelectedClimb = rockClimbEntry.climbId
         logbookViewModel?.idOfRockClimbSelected = idOfSelectedClimb
         logbookViewModel?.showRockClimbDetails()
 

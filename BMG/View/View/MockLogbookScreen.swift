@@ -10,6 +10,15 @@ import Foundation
 
 class MockLogbookScreen: LogbookScreenProtocol {
     
+    func thereAreThisManyRows(count: Int) {
+        
+    }
+    
+    func addObserver(obs: LogbookScreenProtocolListener) {
+        
+    }
+    
+    
     //optionals for test purposes only?
     public var routeNameOnScreen: String? = nil
     public var gradeOnScreen: String? = nil
