@@ -376,10 +376,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="J2p-iI-kSG">
-                                <rect key="frame" x="128" y="436" width="158.5" height="78"/>
+                                <rect key="frame" x="20" y="436" width="374" height="78"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-SZ-3CN">
-                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Log Rock Climb" image="square.and.pencil" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
@@ -389,7 +389,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-sK-P0E">
-                                        <rect key="frame" x="0.0" y="54" width="158.5" height="24"/>
+                                        <rect key="frame" x="0.0" y="54" width="374" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="View Logbook" image="book" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
@@ -405,6 +405,8 @@
                         <constraints>
                             <constraint firstItem="J2p-iI-kSG" firstAttribute="centerY" secondItem="XUG-iU-NSd" secondAttribute="centerY" id="Aqh-GA-bQx"/>
                             <constraint firstItem="J2p-iI-kSG" firstAttribute="centerX" secondItem="XUG-iU-NSd" secondAttribute="centerX" id="Jxq-bd-um9"/>
+                            <constraint firstItem="XUG-iU-NSd" firstAttribute="trailing" secondItem="J2p-iI-kSG" secondAttribute="trailing" constant="20" id="VHH-5h-xBK"/>
+                            <constraint firstItem="J2p-iI-kSG" firstAttribute="leading" secondItem="XUG-iU-NSd" secondAttribute="leading" constant="20" id="uMr-v3-agz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XUG-iU-NSd"/>
                     </view>
@@ -465,7 +467,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jq-rd-PyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="269"/>
+            <point key="canvasLocation" x="2714" y="237"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzL-RF-Nbf">
@@ -492,7 +494,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aQl-RD-EvG"/>
+        <segue reference="gQW-Ei-qGk"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
