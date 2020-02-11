@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SQLite
 
 class LogARockClimbViewModelUITests: XCTestCase {
     

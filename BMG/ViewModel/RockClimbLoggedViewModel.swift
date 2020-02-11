@@ -8,22 +8,22 @@
 
 import Foundation
 
+
 class RockClimbLoggedViewModel {
     
     var idOfRockClimbReceived: Int64 = -1
     var databaseService: DatabaseService
     var rockClimbLoggedScreen: RockClimbLoggedScreen
-    
-    //Emma thinks she has successfully refactored this - for review
+
     init(_ databaseService: DatabaseService, idOfRockClimbReceived: Int64, rockClimbLoggedScreen: RockClimbLoggedScreen) {
         self.databaseService = databaseService
         self.idOfRockClimbReceived = idOfRockClimbReceived
         self.rockClimbLoggedScreen = rockClimbLoggedScreen
+
         retrieveRockClimb(idOfRockClimb: idOfRockClimbReceived)
     }
     
     func retrieveRockClimb(idOfRockClimb: Int64) {
-        
         if idOfRockClimbReceived == idOfRockClimb {
            let rockClimbDataReceived = databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
             rockClimbLoggedScreen.rockClimbDataPresented(rockClimbEntry: rockClimbDataReceived)
@@ -32,4 +32,9 @@ class RockClimbLoggedViewModel {
         }
     }
     
+
+    
 }
+
+    
+

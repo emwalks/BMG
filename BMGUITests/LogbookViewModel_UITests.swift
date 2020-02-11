@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SQLite
 
 class LogbookViewModel_UITests: XCTestCase {
     

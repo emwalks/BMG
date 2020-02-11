@@ -12,5 +12,11 @@ target 'BMG' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+  target 'BMGUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 
 end

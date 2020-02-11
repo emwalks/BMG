@@ -92,13 +92,6 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ViewLoggedRockClimbSegue" {
-            if let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
-                rockClimbLoggedViewController.rockClimbIdFromSegue = (sender as? Int64)!
-            }
-        }
-    }
     
     func createGradePicker(){
         

@@ -74,14 +74,5 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
         logbookViewModel?.showRockClimbDetails()
 
     }
-    
-    //this is the same code as in LogRockClimbViewController - consider moving/re-purposing?
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ViewLoggedRockClimbSegue" {
-            if let rockClimbLoggedViewController = segue.destination as? RockClimbLoggedViewController {
-                rockClimbLoggedViewController.rockClimbIdFromSegue = (sender as? Int64)!
-            }
-        }
-    }
-    
+        
 }

@@ -18,15 +18,21 @@ class SegueNavigationController: ScreenNavigationController {
     }
     
     func displayLogARockClimbScreen() {
-        viewController.performSegue(withIdentifier: "LogARockClimbSegue", sender: (Any)?.self)
+        viewController.performSegue(withIdentifier: "LogARockClimbSegue", sender: self)
+        
     }
     
     func displayLogbookScreen() {
-        viewController.performSegue(withIdentifier: "ViewLogbookSegue", sender: (Any)?.self)
+        viewController.performSegue(withIdentifier: "ViewLogbookSegue", sender: self)
     }
     
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
-        viewController.performSegue(withIdentifier: "ViewLoggedRockClimbSegue", sender: loggedRockClimbId)
+        
+        if let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rockClimbLogged") as? RockClimbLoggedViewController {
+            newViewController.rockClimbIdFromSegue = loggedRockClimbId
+            viewController.navigationController?.pushViewController(newViewController, animated: true)
+        }
+//        viewController.performSegue(withIdentifier: "ViewLoggedRockClimbSegue", sender: self)
     }
     
 }
