@@ -13,27 +13,12 @@ class RockClimbLoggedViewModel {
     
     var idOfRockClimbReceived: Int64 = -1
     var databaseService: DatabaseService
-//    var rockClimbLoggedScreen: RockClimbLoggedScreen
 
     init(_ databaseService: DatabaseService, idOfRockClimbReceived: Int64) {
         self.databaseService = databaseService
         self.idOfRockClimbReceived = idOfRockClimbReceived
-//        self.rockClimbLoggedScreen = rockClimbLoggedScreen
-
-//        retrieveRockClimb(idOfRockClimb: idOfRockClimbReceived)
+        
     }
-    
-//    func retrieveRockClimb(idOfRockClimb: Int64) {
-//        if idOfRockClimbReceived == idOfRockClimb {
-//            //even if through protocol, is it correct to call view controllers methods?
-//           let rockClimbDataReceived = databaseService.getRockClimbDataFromDb(idOfRockClimb: idOfRockClimb)
-//            rockClimbLoggedScreen.rockClimbDataPresented(rockClimbEntry: rockClimbDataReceived)
-//        } else {
-//            print("Error: Id of rock climb received does match id of rock climb logged")
-//        }
-//    }
-    
- 
     
     func getRockClimbData() -> [String : NSAttributedString] {
         var rockClimbDictionary = [String : NSAttributedString]()
@@ -58,9 +43,11 @@ class RockClimbLoggedViewModel {
         rockClimbDictionary["climbingStylePresented"] = climbingStylePresented
         return rockClimbDictionary
     }
-    
+        
+}
 
-    
+protocol RockClimbLoggedViewModelDelegate {
+    func presentRockClimbData(rockClimbDictionary: [String : NSAttributedString])
 }
 
     

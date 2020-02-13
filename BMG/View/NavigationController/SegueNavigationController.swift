@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// this should singleton
 class SegueNavigationController: ScreenNavigationController {
     
     var viewController: UIViewController
@@ -23,8 +24,12 @@ class SegueNavigationController: ScreenNavigationController {
     }
     
     func displayLogbookScreen() {
-        viewController.performSegue(withIdentifier: "ViewLogbookSegue", sender: self)
-    }
+        if let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "logbook") as? MyLogbookViewController {
+            newViewController.logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), screenNavigationController: self)
+                viewController.navigationController?.pushViewController(newViewController, animated: true)
+                
+            }
+        }
     
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
         
@@ -36,4 +41,5 @@ class SegueNavigationController: ScreenNavigationController {
     }
     
 }
+
 

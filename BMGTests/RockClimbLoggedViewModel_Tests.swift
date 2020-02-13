@@ -16,9 +16,10 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
                
         let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: "", venueName: "", date: "", partners: "", climbingStyle: "")
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId)
         
-        rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: climbId)
+        let dictionary = rockClimbLoggedViewModel.getRockClimbData()
+        
         
         let expectedResult = routeNameEntered
         let actualResult = mockRockClimbLoggedScreen.routeNameOnScreen
@@ -34,7 +35,7 @@ class RockClimbLoggedViewModel_Tests: XCTestCase {
         
         let climbId: Int64 = mockDatabaseService.addRockClimbToDb(routeName: routeNameEntered, grade: gradeEntered, venueName: "", date: "", partners: "", climbingStyle: "")
         let mockRockClimbLoggedScreen = MockRockClimbLoggedScreen()
-        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId, rockClimbLoggedScreen: mockRockClimbLoggedScreen)
+        let rockClimbLoggedViewModel = RockClimbLoggedViewModel(mockDatabaseService, idOfRockClimbReceived: climbId)
         
         rockClimbLoggedViewModel.retrieveRockClimb(idOfRockClimb: climbId)
         

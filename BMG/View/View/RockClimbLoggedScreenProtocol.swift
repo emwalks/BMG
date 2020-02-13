@@ -12,4 +12,5 @@ protocol RockClimbLoggedScreen {
     
      func rockClimbDataPresented(rockClimbEntry: RockClimbEntry)
     
+
 }

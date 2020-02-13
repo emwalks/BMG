@@ -11,21 +11,19 @@ import Foundation
 class LogbookViewModel {
     
     var databaseService: DatabaseService
-    var logbookScreen: LogbookScreenProtocol
     var screenNavigationController: ScreenNavigationController
-
     
-    init(_ databaseService: DatabaseService, logbookScreen: LogbookScreenProtocol, screenNavigationController: ScreenNavigationController) {
+    init(_ databaseService: DatabaseService, screenNavigationController: ScreenNavigationController) {
         self.databaseService = databaseService
-        self.logbookScreen = logbookScreen
         self.screenNavigationController = screenNavigationController
-        retrieveAllRockClimbData()
     }
     
-    func retrieveAllRockClimbData() {
+    //is it SOOOO bad to pass a model type into the VC?? seems a bit derivative to require a new object....???
+    func retrieveAllRockClimbData()  -> Array<RockClimbEntry> {
         let rockClimbDataArrayReceived = databaseService.getAllRockClimbDataFromDb()
-        logbookScreen.allRockClimbDataPresented(arrayOfRockClimbs: rockClimbDataArrayReceived)
+        return rockClimbDataArrayReceived
     }
+    
     
     var idOfRockClimbSelected: Int64 = -1
    

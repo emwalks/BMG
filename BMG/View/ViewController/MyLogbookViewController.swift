@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
+    func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>) {
+        
+    }
+    
     func thereAreThisManyRows(count: Int) {
         
     }
@@ -20,23 +24,21 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     
     
     var logbookViewModel: LogbookViewModel? = nil
-    var arrayOfRockClimbsFromDb: Array<RockClimbEntry> = []
+    var arrayOfRockClimbsFromVM: Array<RockClimbEntry> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.accessibilityIdentifier = "logbookView"
         
-        //Same DB should not be instantiated from viewController nether should the navigation controller
-        logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), logbookScreen: self, screenNavigationController: SegueNavigationController(self))
+        if let logbookViewModel = logbookViewModel {
+           arrayOfRockClimbsFromVM = logbookViewModel.retrieveAllRockClimbData()
+        }
+        
     }
     
-    // again should view controller have funtions used from outside?
-    func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>) {
-        arrayOfRockClimbsFromDb = arrayOfRockClimbs
-    }
-    
+ 
     func userWantsToSeeRowAt(index: Int) -> RockClimbEntry {
-            return arrayOfRockClimbsFromDb[index]
+            return arrayOfRockClimbsFromVM[index]
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,7 +46,7 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfRockClimbsFromDb.count
+        return arrayOfRockClimbsFromVM.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

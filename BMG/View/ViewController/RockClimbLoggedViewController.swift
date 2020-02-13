@@ -21,6 +21,7 @@ class RockClimbLoggedViewController: UIViewController {
     var rockClimbLoggedViewModel: RockClimbLoggedViewModel? = nil
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
