@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+
 class RockClimbLoggedViewController: UIViewController {
     
     @IBOutlet weak var routeNameLabel: UILabel!
@@ -20,13 +22,11 @@ class RockClimbLoggedViewController: UIViewController {
     
     var rockClimbLoggedViewModel: RockClimbLoggedViewModel? = nil
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.formatLabels()
-        self.presentRockClimbData()
+        rockClimbLoggedViewModel?.delegate = self
+        rockClimbLoggedViewModel?.getRockClimbData()
     }
     
     
@@ -60,20 +60,18 @@ class RockClimbLoggedViewController: UIViewController {
         climbingStyleLabel.backgroundColor = ColorCompatibility.systemGray4
     }
     
-    
-    private func presentRockClimbData() {
-        if let viewModel = rockClimbLoggedViewModel {
-            let entryDictionary = viewModel.getRockClimbData()
-            routeNameLabel.attributedText = entryDictionary["routeNamePresented"]
-            gradeLabel.attributedText = entryDictionary["gradePresented"]
-            venueNameLabel.attributedText = entryDictionary["venueNamePresented"]
-            dateLabel.attributedText = entryDictionary["datePresented"]
-            partnersLabel.attributedText = entryDictionary["partnersPresented"]
-            climbingStyleLabel.attributedText = entryDictionary["climbingStylePresented"]
-        }
+}
+
+
+extension RockClimbLoggedViewController : RockClimbLoggedViewModelDelegate {
+    func presentData(route: NSAttributedString, grade: NSAttributedString, venue: NSAttributedString, date: NSAttributedString, partners: NSAttributedString, style: NSAttributedString) {
+        routeNameLabel.attributedText = route
+        gradeLabel.attributedText = grade
+        venueNameLabel.attributedText = venue
+        dateLabel.attributedText = date
+        partnersLabel.attributedText = partners
+        climbingStyleLabel.attributedText = style
     }
-        
-    
 }
 
 

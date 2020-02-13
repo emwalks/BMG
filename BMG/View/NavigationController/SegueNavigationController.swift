@@ -13,6 +13,7 @@ import UIKit
 class SegueNavigationController: ScreenNavigationController {
     
     var viewController: UIViewController
+
     
     init(_ viewController:UIViewController) {
         self.viewController = viewController
@@ -32,11 +33,11 @@ class SegueNavigationController: ScreenNavigationController {
         }
     
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
-        
+
         if let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rockClimbLogged") as? RockClimbLoggedViewController {
-            newViewController.rockClimbLoggedViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: loggedRockClimbId)
+            let rockClimbViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: loggedRockClimbId)
+            newViewController.rockClimbLoggedViewModel = rockClimbViewModel
             viewController.navigationController?.pushViewController(newViewController, animated: true)
-            
         }
     }
     
