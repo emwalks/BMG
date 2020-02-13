@@ -26,7 +26,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var climbingStyleTableView: ClimbingStylesTableView!
     @IBOutlet weak var submitButton: UIButton!
     
-    
+    // Same type of questions about responsabilities
     @IBAction func clickedSubmitButton(_ sender: UIButton) {
         logRockClimbViewModel?.logClimbData(routeName: routeTextField.text ?? "No route name given", grade: gradeTextField.text ?? "No grade selected", venueName: venueTextField.text ?? "No venue given", date: dateTextField.text ?? "No date selected", partners: partnersTextField.text ?? "No partner given", climbingStyle: climbingStyleTableView.climbingStyles[climbingStyleTableView.climbingStyleSelectedIndex])
         

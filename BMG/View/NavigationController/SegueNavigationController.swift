@@ -29,10 +29,10 @@ class SegueNavigationController: ScreenNavigationController {
     func displayLoggedRockClimbDataScreen(_ loggedRockClimbId: Int64) {
         
         if let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rockClimbLogged") as? RockClimbLoggedViewController {
-            newViewController.rockClimbIdFromSegue = loggedRockClimbId
+            newViewController.rockClimbLoggedViewModel = RockClimbLoggedViewModel(SQLiteDatabaseServiceFactory.createDbService(), idOfRockClimbReceived: loggedRockClimbId)
             viewController.navigationController?.pushViewController(newViewController, animated: true)
+            
         }
-//        viewController.performSegue(withIdentifier: "ViewLoggedRockClimbSegue", sender: self)
     }
     
 }

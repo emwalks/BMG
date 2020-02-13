@@ -26,9 +26,11 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
         super.viewDidLoad()
         tableView.accessibilityIdentifier = "logbookView"
         
+        //Same DB should not be instantiated from viewController nether should the navigation controller
         logbookViewModel = LogbookViewModel(SQLiteDatabaseServiceFactory.createDbService(), logbookScreen: self, screenNavigationController: SegueNavigationController(self))
     }
     
+    // again should view controller have funtions used from outside?
     func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>) {
         arrayOfRockClimbsFromDb = arrayOfRockClimbs
     }

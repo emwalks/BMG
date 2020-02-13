@@ -16,6 +16,7 @@ class RockClimbHomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //I feel like ViewControl should not instantiate the navigationcontroller (and it does not even need to)
         rockClimbHomePageViewModel = RockClimbHomePageViewModel(screenNavigationController: SegueNavigationController(self))
         
         if #available(iOS 13, *) {
@@ -27,7 +28,7 @@ class RockClimbHomePageViewController: UIViewController {
         view.accessibilityIdentifier = "rockClimbHomePage"
     }
     
-    
+    //Is it correct for the View controller to have logic? should it be the ViewModel responsability to say which method to call and viewController should just say "Somebody pressed this botton of mine!)
     @IBAction func logARockClimbButtonClicked(_ sender: Any) {
         rockClimbHomePageViewModel?.displayLogARockClimbScreen()
     }

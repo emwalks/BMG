@@ -16,6 +16,7 @@ class RockClimbHomePageViewModel {
         self.screenNavigationController = screenNavigationController
     }
     
+    
     func displayLogARockClimbScreen() {
         screenNavigationController.displayLogARockClimbScreen()
     }
