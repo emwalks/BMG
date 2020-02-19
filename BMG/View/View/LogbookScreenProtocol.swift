@@ -12,13 +12,4 @@ protocol LogbookScreenProtocol {
     //del me
     func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>)
     
-    func thereAreThisManyRows(count : Int)
-    
-    func addObserver(obs : LogbookScreenProtocolListener)
-    
-}
-
-protocol LogbookScreenProtocolListener {
-    func userWantsToSeeRowAt(index: Int) -> RockClimbEntry
-    func userSelectedRowAt(index : Int)
 }

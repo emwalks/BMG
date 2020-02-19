@@ -13,16 +13,7 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>) {
         
     }
-    
-    func thereAreThisManyRows(count: Int) {
-        
-    }
-    
-    func addObserver(obs: LogbookScreenProtocolListener) {
-        
-    }
-    
-    
+
     var logbookViewModel: LogbookViewModel? = nil
     var arrayOfRockClimbsFromVM: Array<RockClimbEntry> = []
     

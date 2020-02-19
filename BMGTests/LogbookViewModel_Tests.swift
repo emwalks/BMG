@@ -19,7 +19,8 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
+        let logbookViewModel = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
+        logbookViewModel.retrieveAllRockClimbData()
         
         let actualResult = mockLogbookScreen.tableOfLoggedClimbs
         
