@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var appCoordinator: AppCoordinator!
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -19,19 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let resetDbArgument = ProcessInfo.processInfo.arguments
         if resetDbArgument.contains("RESET_DB") {
-           let fileManager = FileManager.default
-               
-               let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
-                   .documentDirectory, .userDomainMask, true).first!
-               
-               do {
-                   try fileManager.removeItem(atPath: "\(appDocumetDirectory)/BMGDB.sqlite3")
-                   print("Database Deleted via Launch Argument")
-               } catch {
-                   print("Exception on Delete Database via Launch Argument")
-                   
-               }
-           }
+            let fileManager = FileManager.default
+            
+            let appDocumetDirectory = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true).first!
+            
+            do {
+                try fileManager.removeItem(atPath: "\(appDocumetDirectory)/BMGDB.sqlite3")
+                print("Database Deleted via Launch Argument")
+            } catch {
+                print("Exception on Delete Database via Launch Argument")
+                
+            }
+        }
+        let navController = UINavigationController()
+        
+        appCoordinator = AppCoordinator(navigationController: navController)
+        appCoordinator.displayRockClimbHomeScreen()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
         return true
     }
     

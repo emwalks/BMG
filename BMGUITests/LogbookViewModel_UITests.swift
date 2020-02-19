@@ -95,7 +95,7 @@ class LogbookViewModel_UITests: XCTestCase {
         app.launch()
         
         app.otherElements.buttons["View Logbook"].tap()
-        app.tables["logbookView"].cells.children(matching: .other).element(boundBy: 0).tap()
+        app.tables["logbookScreen"].cells.children(matching: .other).element(boundBy: 0).tap()
         
         XCTAssertTrue(app.staticTexts.element(matching:.any, identifier: "routeNamePresented").exists)
         XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "routeNamePresented").label, " Route Name: \(routeNameEntered)")

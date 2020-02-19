@@ -9,6 +9,7 @@
 import XCTest
 import SQLite
 
+
 class LogARockClimbViewModelUITests: XCTestCase {
     
     var app: XCUIApplication!
@@ -40,7 +41,7 @@ class LogARockClimbViewModelUITests: XCTestCase {
 
 extension XCUIApplication {
     var isDisplayingRockClimbLoggedView: Bool {
-        return otherElements["rockClimbLoggedView"].exists
+        return otherElements["rockClimbLoggedScreen"].exists
     }
 }
 

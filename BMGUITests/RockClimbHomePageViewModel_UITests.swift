@@ -44,15 +44,15 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
 
 extension XCUIApplication {
     var isDisplayingRockClimbHomePage: Bool {
-        return otherElements["rockClimbHomePage"].exists
+        return otherElements["rockClimbHomeScreen"].exists
     }
     
     var isDisplayingLogRockClimbPage: Bool {
-        return otherElements["logRockClimbView"].exists
+        return otherElements["logRockClimbScreen"].exists
     }
     
     var isDisplayingLogbookPage: Bool {
-        return otherElements["logbookView"].exists
+        return otherElements["logbookScreen"].exists
     }
     
 }

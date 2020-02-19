@@ -43,7 +43,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
         
         super.viewDidLoad()
         
-        logRockClimbViewModel = LogRockClimbViewModel(SQLiteDatabaseServiceFactory.createDbService(), screenNavigationController: SegueNavigationController(self))
+//        logRockClimbViewModel = LogRockClimbViewModel(SQLiteDatabaseServiceFactory.createDbService(), screenNavigationController: SegueNavigationController(self))
         
         createGradePicker()
         createDatePicker()
@@ -65,7 +65,7 @@ class LogRockClimbViewController: UIViewController, UITextFieldDelegate {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }        
         
-        view.accessibilityIdentifier = "logRockClimbView"
+        view.accessibilityIdentifier = "logRockClimbScreen"
         routeTextField.accessibilityIdentifier = "routeTextField"
         gradeTextField.accessibilityIdentifier = "gradeTextField"
         venueTextField.accessibilityIdentifier = "venueTextField"

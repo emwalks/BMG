@@ -31,7 +31,7 @@ class RockClimbLoggedViewController: UIViewController {
     
     
     private func formatLabels() {
-        view.accessibilityIdentifier = "rockClimbLoggedView"
+        view.accessibilityIdentifier = "rockClimbLoggedScreen"
         routeNameLabel.accessibilityIdentifier = "routeNamePresented"
         gradeLabel.accessibilityIdentifier = "gradePresented"
         venueNameLabel.accessibilityIdentifier = "venueNamePresented"

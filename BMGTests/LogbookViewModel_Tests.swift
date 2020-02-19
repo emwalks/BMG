@@ -19,7 +19,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+        _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
         
         let actualResult = mockLogbookScreen.tableOfLoggedClimbs
         
@@ -36,7 +36,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+        _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.routeNameOnScreen)
     }
@@ -50,7 +50,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+       _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.gradeOnScreen)
     }
@@ -64,7 +64,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+       _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.venueNameOnScreen)
     }
@@ -78,7 +78,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+       _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.dateOnScreen)
     }
@@ -92,7 +92,7 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+        _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.partnersOnScreen)
     }
@@ -107,24 +107,9 @@ class LogbookViewModel_Tests: XCTestCase {
         let mockScreenNavigationController = MockScreenNavigationController()
         
         //act
-        _ = LogbookViewModel(mockDatabaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
+        _ = LogbookViewModel(mockDatabaseService, screenNavigationController: mockScreenNavigationController)
         //assert
         XCTAssertNotNil(mockLogbookScreen.climbingStyleOnScreen)
     }
     
-    
-//    func testWhenShowRockClimbDetailButtonIsClickedTheRockClimbLoggedScreenIsNavigatedToViaMockScreenNavigationController() {
-//        //arrange
-//        let databaseService = MockDatabaseService()
-//        let mockLogbookScreen = MockLogbookScreen()
-//        let mockScreenNavigationController = MockScreenNavigationController()
-//        let logbookViewModel = LogbookViewModel(databaseService, logbookScreen: mockLogbookScreen, screenNavigationController: mockScreenNavigationController)
-//
-//        //act
-//        logbookViewModel.showRockClimbDetails()
-//
-//        //assert
-//        XCTAssertEqual(logbookViewModel.idOfRockClimbSelected, mockScreenNavigationController.loggedRockClimbId)
-//    }
-//
 }

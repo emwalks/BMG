@@ -15,6 +15,8 @@ target 'BMG' do
   
   target 'BMGUITests' do
     inherit! :search_paths
+	pod 'SQLite.swift', '~> 0.12.0'
+
     # Pods for testing
   end
 

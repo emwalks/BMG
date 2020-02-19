@@ -28,7 +28,7 @@ class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.accessibilityIdentifier = "logbookView"
+        tableView.accessibilityIdentifier = "logbookScreen"
         
         if let logbookViewModel = logbookViewModel {
            arrayOfRockClimbsFromVM = logbookViewModel.retrieveAllRockClimbData()
