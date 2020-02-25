@@ -10,7 +10,6 @@ import Foundation
 
 protocol RockClimbLoggedScreen {
     
-     func rockClimbDataPresented(rockClimbEntry: RockClimbEntry)
-    
+    var rockClimbLoggedViewModel: RockClimbLoggedViewModel? {get set}
 
 }

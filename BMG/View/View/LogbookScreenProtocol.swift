@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LogbookScreenProtocol {
-    //del me
-    func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>)
+    
+    var logbookViewModel: LogbookViewModel? { get set }
     
 }

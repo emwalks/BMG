@@ -19,6 +19,7 @@ class RockClimbHomePageViewModel_UITests: XCTestCase {
         continueAfterFailure = false
         app = XCUIApplication()
         app.launch()
+        let ws = app.windows
         
     }
     

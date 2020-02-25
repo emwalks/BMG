@@ -10,7 +10,7 @@ import Foundation
 
 class MockLogbookScreen: LogbookScreenProtocol {
 
-    
+  
     //optionals for test purposes only?
     public var routeNameOnScreen: String? = nil
     public var gradeOnScreen: String? = nil
@@ -23,16 +23,22 @@ class MockLogbookScreen: LogbookScreenProtocol {
     
     public var tableOfLoggedClimbs: Bool = false
     
-    func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>) {
-        arrayOfRockClimbs.forEach {
-            routeNameOnScreen = $0.routeName;
-            gradeOnScreen = $0.grade;
-            venueNameOnScreen = $0.venueName;
-            dateOnScreen = $0.date;
-            partnersOnScreen = $0.partners;
-            climbingStyleOnScreen = $0.climbingStyle
+    var logbookViewModel: LogbookViewModel?
+    
+    init(logbookViewModel: LogbookViewModel) {
+        self.logbookViewModel = logbookViewModel
+        arrayOfRockClimbs = logbookViewModel.retrieveAllRockClimbData()
+        if !arrayOfRockClimbs.isEmpty {
+            tableOfLoggedClimbs = true
+            routeNameOnScreen = arrayOfRockClimbs[0].routeName
+            gradeOnScreen = arrayOfRockClimbs[0].grade
+            venueNameOnScreen = arrayOfRockClimbs[0].venueName
+            dateOnScreen = arrayOfRockClimbs[0].date
+            partnersOnScreen = arrayOfRockClimbs[0].partners
+            climbingStyleOnScreen = arrayOfRockClimbs[0].climbingStyle
         }
-        tableOfLoggedClimbs = true
-    }
+      }
+    
+
     
 }

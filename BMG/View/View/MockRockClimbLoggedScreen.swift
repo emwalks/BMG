@@ -17,12 +17,25 @@ class MockRockClimbLoggedScreen: RockClimbLoggedScreen {
     public var partnersOnScreen: String = ""
     public var climbingStyleOnScreen : String = ""
     
-    func rockClimbDataPresented(rockClimbEntry: RockClimbEntry) {
-        routeNameOnScreen = rockClimbEntry.routeName
-        gradeOnScreen = rockClimbEntry.grade
-        venueNameOnScreen = rockClimbEntry.venueName
-        dateOnScreen = rockClimbEntry.date
-        partnersOnScreen = rockClimbEntry.partners
-        climbingStyleOnScreen = rockClimbEntry.climbingStyle
+    var rockClimbLoggedViewModel: RockClimbLoggedViewModel?
+    
+    init(rockClimbLoggedViewModel: RockClimbLoggedViewModel) {
+        self.rockClimbLoggedViewModel = rockClimbLoggedViewModel
+        rockClimbLoggedViewModel.delegate = self
+        rockClimbLoggedViewModel.getRockClimbData()
     }
+
+}
+
+extension MockRockClimbLoggedScreen: RockClimbLoggedViewModelDelegate {
+    func presentData(route: NSAttributedString, grade: NSAttributedString, venue: NSAttributedString, date: NSAttributedString, partners: NSAttributedString, style: NSAttributedString) {
+        routeNameOnScreen = route.string
+        gradeOnScreen = grade.string
+        venueNameOnScreen = venue.string
+        dateOnScreen = date.string
+        partnersOnScreen = partners.string
+        climbingStyleOnScreen = style.string
+    }
+    
+    
 }

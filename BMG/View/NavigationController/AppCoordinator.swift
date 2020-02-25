@@ -15,6 +15,7 @@ class AppCoordinator: ScreenNavigationController {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        displayRockClimbHomeScreen()
     }
     
     

@@ -10,10 +10,7 @@ import Foundation
 import UIKit
 
 class MyLogbookViewController: UITableViewController, LogbookScreenProtocol {
-    func allRockClimbDataPresented(arrayOfRockClimbs: Array<RockClimbEntry>) {
-        
-    }
-
+    
     var logbookViewModel: LogbookViewModel? = nil
     var arrayOfRockClimbsFromVM: Array<RockClimbEntry> = []
     
