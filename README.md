@@ -2,7 +2,7 @@
 
 An app to track your progress to becoming a British Mountain Guide Trainee. 
 
-Design pattern: MVVM
+Design pattern: MVVM-C
 
 Architecture: Hexagonal (ish)
 
