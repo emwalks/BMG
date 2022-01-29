@@ -10,7 +10,7 @@ IDE: Xcode 11.2
 
 Language: Swift 5
 
-Tools: SQLite, cocoapods, 
+Tools: SQLite, cocoapods 
 
 Development Techniques:
 - TDD
@@ -22,4 +22,4 @@ Development Techniques:
 - Launch Arguments
 - Navigation Controllers
 - TableViewControllers
-- 
+- Uses [SQLite.swift](https://github.com/stephencelis/SQLite.swift) framework. This dependency is managed via cocoapods. Adds a swift language layer over [SQLite3](https://www.sqlite.org/index.html). 
