@@ -26,6 +26,7 @@
 
 - The database manages and uses a lot of the "model" concerns - separation here could be better. 
 - Also the Model type is pssed into the VC in the LogbookViewModel - breaks the MVVM-C separation. 
+- See Trivago use of MVVM-C [here](https://tech.trivago.com/post/2016-08-26-mvvmc/).
 
 
 ### General
