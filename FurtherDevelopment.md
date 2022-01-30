@@ -15,7 +15,7 @@
 - The "View" protocols are only used to link the view models with the appropriate views. 
 - There is a view protocol missing for LogRockClimbScreen, as this was the first screen implemented. As this does not have a protocol, this is breaking the ports and adapters architecture principle.
 
-- UI tests were never re-written following introduction of the App Co-ordinator (ran out of time). Testing could use a hosted app. Testing of coordinator was investigated, see the following repo: 
+- UI tests were never re-written following introduction of the App Coordinator (ran out of time). Testing could use a hosted app. Testing of coordinator was investigated, see the following repo: 
 	- https://github.com/bbc/TDD_Coordinators_TestingAppDelegate
 
 - Other (disregarded) investigations here:
@@ -26,8 +26,10 @@
 
 - The database manages and uses a lot of the "model" concerns - separation here could be better. 
 - Also the Model type is pssed into the VC in the LogbookViewModel - breaks the MVVM-C separation. 
-- See Trivago use of MVVM-C [here](https://tech.trivago.com/post/2016-08-26-mvvmc/).
 
+
+- The App Coordinator can become a bit of a God class because it does all the gluing together. You could factory out the creation of different types of co-ordinators if your app was big enough to warrant it. 
+- See Trivago use of MVVM-C [here](https://tech.trivago.com/post/2016-08-26-mvvmc/).
 
 ### General
 
