@@ -40,9 +40,15 @@
 - You could even factory out the creation of different types of co-ordinators if your app was big enough to warrant it. 
 - See Trivago use of MVVM-C [here](https://tech.trivago.com/post/2016-08-26-mvvmc/).
 
-### General
+### Notes on Current Status
 
 - Launch arguments were used to clear the database in the UI tests to ensure reproducible db environment.
 - Mocks are in the folders of the real implementations. Would probably be better in testing folders.
 - N.B. ensure you have switched off toggling to hardware keyboard on the simulator for UI Tests. 
 - UI tests mega flakey - e.g. if a small phone is used the submit button may not be on screen. 
+
+### Notes on Development Process
+
+- This work gave basis for the SMP Sample App Update in terms of rough architecture. 
+- This gave me an opportunity to get to know the processes of the team including project management, TDD, pairing. 
+- This gave me experience in using software architectures and patterns. Also experience in leading a piece of development - being accountable for the features, design, getting buy in from team etc. 
