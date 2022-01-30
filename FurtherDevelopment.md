@@ -28,7 +28,16 @@
 - Also the Model type is pssed into the VC in the LogbookViewModel - breaks the MVVM-C separation. 
 
 
-- The App Coordinator can become a bit of a God class because it does all the gluing together. You could factory out the creation of different types of co-ordinators if your app was big enough to warrant it. 
+- The App Coordinator can become a bit of a God class because it does all the gluing together. E.g. 
+	- It identifies the screen required using the accessibility identifier
+	- it sets the appropriate view model for the identified view. 
+	- it adds the appropriate database service for the VM via a factory.
+	- it sets itself as the nav controller for the VM
+	... 🙈
+
+- You could farm out VM creation to a ViewModel Factory. This could use the already existing DatabaseServiceFactory. 
+- You could farm out VC creation to a factory and pass in the previously created VM 
+- You could even factory out the creation of different types of co-ordinators if your app was big enough to warrant it. 
 - See Trivago use of MVVM-C [here](https://tech.trivago.com/post/2016-08-26-mvvmc/).
 
 ### General
